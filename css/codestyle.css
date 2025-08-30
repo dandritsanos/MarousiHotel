@@ -1,0 +1,192 @@
+/* ========== SELECT BOX WRAPPER ========== */
+.select-box {
+  position: relative;
+}
+
+
+/* ========== INPUT STYLES ========== */
+.select-box input {
+  width: 100%;
+  padding: 0.8rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.select-box input::placeholder {
+  color: #999;
+  opacity: 1;
+  line-height: 1.5;
+}
+
+.select-box input:focus {
+  border: 0.1rem solid var(--primary);
+}
+
+/* ========== PHONE INPUT STYLE ========== */
+input[type="tel"] {
+  border-radius: 0 0.5rem 0.5rem 0;
+  height: 3rem;
+}
+
+/* ========== SELECTED OPTION CONTAINER ========== */
+.selected-option {
+  display: flex;
+  align-items: center;
+  background-color: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  height: 3.1rem;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* ========== COUNTRY DISPLAY INSIDE SELECTED OPTION ========== */
+.country-display {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem; /* Just enough spacing between flag, code, and arrow */
+  padding: 0 1.5rem 0 0.6rem; /* ⬅️ Increased right padding to 1.5rem */
+
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  border-right: 1px solid #d2d7e1;
+  height: 100%;
+  position: relative;
+}
+
+.country-display .iconify {
+  font-size: 0.9rem;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Clean and aligned arrow */
+.country-display::after {
+  content: '';
+  position: absolute;
+  right: 0.5rem; /* More breathing room from the code */
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 0.35rem;
+  height: 0.35rem;
+  border-right: 1.5px solid #555;
+  border-bottom: 1.5px solid #555;
+  pointer-events: none;
+}
+
+
+.country-display.active::after {
+  transform: translateY(-50%) rotate(225deg);
+}
+
+/* ========== PHONE INPUT FIELD ========== */
+.selected-option input[type="tel"] {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  flex: 1;
+  outline: none;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 0.6rem;
+}
+
+/* ========== OPTIONS DROPDOWN ========== */
+.select-box .options {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  margin-top: 0.2rem;
+  overflow: hidden;
+  display: none;
+}
+
+.select-box .options.active {
+  display: block;
+}
+
+.select-box .options::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: -1.2rem;
+  border: 0.6rem solid transparent;
+  border-bottom-color: var(--primary);
+}
+
+/* ========== SEARCH INPUT IN DROPDOWN ========== */
+input.search-box {
+  background-color: #fff;          /* make sure it's readable */
+  color: #333;                     /* dark text for contrast */
+  border: none;
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 1.2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;                 /* optional: ensure font is visible */
+  outline: none;
+}
+
+input.search-box:focus {
+  border: 1px solid var(--primary);
+}
+
+/* ========== DROPDOWN COUNTRY LIST ========== */
+.select-box ol {
+  list-style: none;
+  max-height: 23rem;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.select-box ol::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+.select-box ol::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 0.4rem;
+}
+
+.select-box ol li {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.select-box ol li:not(:last-child) {
+  border-bottom: 0.1rem solid #eee;
+}
+
+.select-box ol li:hover {
+  background-color: lightcyan;
+}
+
+.select-box ol li.hide {
+  display: none;
+}
+
+.select-box ol li .country-name {
+  margin-left: 0.4rem;
+}
+
+/* ========== FORM CONTAINER ========== */
+#bookingForm {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}

@@ -1,0 +1,6509 @@
+/* Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    line-height: 1.6;
+    color: #111;
+    background-color: #eee7d9;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  /* Containers */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+
+
+/* Logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+/* Logo Image */
+.logo-img {
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+}
+
+/* Brand Text Container */
+.brand-name-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+/* Brand Name */
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+
+/* Navigation Links */
+
+.nav-links {
+  display: flex;
+  margin-left: 0;
+}
+
+.nav-links a {
+  margin-left: 2.5rem;
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: white;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #eee8de;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #ebdcc9;
+  font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #eee8de;
+}
+
+
+/* HERO SECTION */
+
+/* Container */
+.hero-carousel {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* Slides */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeCarousel 15s infinite;
+  z-index: 0;
+}
+
+.hero-slide.slide1 {
+  background-image: url('../assets-marousi/127924648.jpg');
+  animation-delay: 0s;
+}
+
+.hero-slide.slide2 {
+  background-image: url('../assets-marousi/127924717.jpg');
+  animation-delay: 5s;
+}
+
+.hero-slide.slide3 {
+  background-image: url('../assets-marousi/190487037.jpg');
+  animation-delay: 10s;
+}
+
+/* Dark blue filter overlay */
+.hero-filter {
+  position: absolute;
+  inset: 0;
+  background-color: #673131;
+  z-index: 1;
+}
+/* Fade animation */
+@keyframes fadeCarousel {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Overlay */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Optional dark overlay effect */
+.hero-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #673131;
+  z-index: 0;
+}
+
+/* Text styling */
+.hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+
+/* Animations */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleZoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 104%;
+  }
+}
+  @keyframes fadeInHeroText {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Features Section */
+  .features {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #eee8de;
+  }
+  
+
+/* Features Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Feature Card */
+.feature-card {
+  background-color: #f5f8ff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #673131;;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #673131;;
+}
+
+.feature-card p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;/* font-family: 'Poppins', sans-serif; */
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+  
+  /* Room Preview Section */
+.room-preview {
+  padding: 4rem 0;
+}
+
+.room-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Room Content */
+.room-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-content h3 {
+  color: #673131;;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.room-description {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;/* font-family: 'Poppins', sans-serif; */
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+
+/* Room Price + Button */
+.room-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #673131;;
+  color: white;
+  padding: 0.6rem 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #ffffff;
+  margin-left: 0.5rem;
+} 
+
+.footer-espa {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.classic-footer {
+  background-color: #673131;;
+  color: white;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 1rem;
+  width: 100%;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-center {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-left p,
+.footer-right p,
+.footer-center p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #aad4ff;
+  text-decoration: none;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+
+.hidden-footer {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #673131;;
+  z-index: 99;
+}
+
+.footer-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.espa-logo-small {
+  max-width: 500px;
+  height: auto;
+  filter: grayscale(100%) contrast(1.05);
+  border-radius: 4px;
+  transition: filter 0.3s ease;
+  margin-bottom: 0.3rem;
+}
+
+.espa-logo-small:hover {
+  filter: none;
+}
+
+.espa-note {
+  font-size: 0.75rem;
+  color: #bbb;
+  font-style: italic;
+  margin: 0;
+}
+
+
+/* Contact Page */
+.contact-wrapper {
+  padding: 5rem 1.5rem;
+  background-color: #eee8de;
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+/* Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+
+.contact-form button {
+  background-color: #673131;;
+  color: white;
+  font-weight: 600;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #122a5c;
+}
+
+.info-map {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+/* Map */
+.map-box iframe {
+  width: 100%;
+  height: 385px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* --------------------------------------------------------------------------------- Rooms.html -------------------------------------------------------------------------------------------------------- */
+
+
+/* Section Background */
+.room-page {
+  padding: 5rem 1.5rem;
+  background-color: #eee8de;
+}
+
+/* Section Header */
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #673131;;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.7rem;
+    position: relative;
+  }
+  .section-title:after {
+    content: "";
+    display: block;
+    margin: 0.4rem auto 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #673131 0%, #673131 100%);
+    border-radius: 3px;
+  }
+  
+.room-intro {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* Grid */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+}
+
+/* Card Base */
+.room-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Hover Effect */
+.room-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.room-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.room-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.room-card:hover img {
+  transform: scale(1.03);
+}
+
+.room-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0f2e59;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+/* MODAL BACKDROP */
+/* MODAL OVERLAY */
+.room-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#modalDescription {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 90ch; /* Limits line length to ~60 characters */
+  margin: 0 auto;  /* Centers the text block */
+  white-space: normal; /* Ensures text wraps normally */
+}
+
+/* MODAL BOX */
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-bottom: 2rem; /* extra bottom white space */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CLOSE BUTTON */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* IMAGE SLIDER */
+.modal-slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  overflow: hidden;
+}
+
+.modal-slides img {
+  max-width: 100%;
+  width: 850px;
+  height: 560px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.modal-slides img.active {
+  display: block;
+}
+/* ARROWS */
+.modal-prev, .modal-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  font-size: 24px;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.modal-prev { left: 16px; }
+.modal-next { right: 16px; }
+
+.modal-info {
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.modal-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #673131;
+}
+
+.modal-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.book-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #673131;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: rgba(223, 175, 56, 0.95);
+}
+
+
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+.slider-nav button {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-nav button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+
+
+/* LIGHTBOX OVERLAY - Elegant & Premium */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 30, 57, 0.95); /* dark blue with opacity */
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: zoom-out;
+  transition: opacity 0.3s ease;
+}
+
+/* LIGHTBOX IMAGE */
+.lightbox-overlay img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  animation: lightboxFade 0.3s ease forwards;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes lightboxFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+.modal-details {
+  padding: 2rem;
+}
+
+.modal-details h2 {
+  font-size: 1.6rem;
+  color: #673131;;
+  margin-bottom: 1rem;
+}
+
+.modal-details p {
+  color: #555;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.modal-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.modal-details a.room-btn {
+  background: #673131;;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.modal-details a.room-btn:hover {
+  background: #ca3030;
+}
+
+
+#scroll-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: white;
+  color: #111;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+  z-index: 1000;
+  max-width: 280px;
+  font-size: 15px;
+}
+
+#scroll-widget.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#scroll-widget .contact-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#scroll-widget .contact-line svg {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+#scroll-widget a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+#scroll-widget a:hover {
+  text-decoration: underline;
+}
+
+
+.modal-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  background: #000; /* optional: makes colors pop */
+}
+
+.modal-slides img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures image fills container */
+  aspect-ratio: 3 / 2;
+}
+
+.modal-slides img.active {
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.15); /* soft vignetting */
+}
+
+
+.modal-prev, .modal-next {
+  background: rgba(255,255,255,0.8);
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.2s ease;
+}
+
+.modal-prev:hover, .modal-next:hover {
+  background: rgba(255,255,255,1);
+}
+
+
+
+/* Booking Form Wrapper */
+.booking-form {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e5e5;
+  display: none;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.booking-form form {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #222;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(17, 30, 57, 0.15);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-group label {
+
+  font-weight: 500;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+
+
+.form-group input,
+.form-group textarea, 
+.form-group textarea[placeholder]{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #673131;;
+  box-shadow: 0 0 0 2px #b7935f22;
+}
+
+input[type="checkbox"] {
+  accent-color: #6B2E2E;
+}
+label[for="policy"] {
+  color: #656c7a;
+  font-size: 0.97rem;
+}
+/* Date Fields Layout */
+.form-group.two-cols {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 100px;
+  flex-wrap: nowrap; /* 🔑 prevents wrapping */
+  align-items: flex-end; /* aligns bottoms */
+  justify-content: space-between;
+}
+
+.form-group.two-cols > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Submit Button */
+.submit-btn {
+  color: #fff;
+  align-self: center;
+  background-color: #673131;;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family: 'Playfair Display', serif; ✅ match input font */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: rgba(216, 167, 42, 0.95);
+  transform: translateY(-1px);
+}
+/* Animation for form */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* === DATE FIELD ALIGNMENT === */
+.date-cols .date-field {
+  flex: 1;
+}
+
+.date-cols input[type="date"] {
+  height: 44px;
+  font-family: 'Playfair Display', serif;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+
+@media (max-width: 600px) {
+  .form-group.two-cols {
+    flex-direction: column;
+  }
+  .room-modal .modal-info #modalDescription{
+    font-size: 0.9rem;
+  }
+  .form-group.small-group {
+    max-width: 100%;
+    margin: 1rem 0 0 0;
+    align-items: center; /* ✅ centers the input under the label */
+  }
+}
+
+
+
+/* Smaller rooms input */
+.small-group input[type="number"] {
+  text-align: center;
+
+}
+.booking-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-form textarea:focus {
+  border-color: #6B2E2E;
+  box-shadow: 0 0 0 2px rgba(17, 30, 57, 0.1);
+  outline: none;
+}
+
+/* ---- Elegant Order Summary (Modern Blue-Gray Theme) ---- */
+
+.order-summary.hotel-elegant {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #673131;
+  padding: 2.7rem 2.2rem 2.1rem 2.2rem;
+  max-width: 600px;
+  margin: 2.2rem auto 0 auto;
+  border: 1.2px solid #f1f2f4;
+  font-family: 'Playfair Display', serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: box-shadow 0.2s;
+  position: relative;
+  animation: fadeInSummary 1s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
+}
+
+@keyframes fadeInSummary {
+  from { opacity: 0; transform: translateY(25px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Main title --- */
+.order-summary.hotel-elegant h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #673131;
+  text-transform: uppercase;
+}
+
+label[for="dates"] {
+  position: absolute;
+  top: -1rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: #444;
+}
+
+.flatpickr-calendar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.15);
+  border: none;
+  background: #fff;
+}
+.flatpickr-months {
+  background: #fff;
+  color: #ca3030;
+  border-radius: 16px 16px 0 0;
+  padding: 0;
+}
+.flatpickr-current-month {
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #ca3030 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em; /* small gap between month and year */
+}
+
+/* Hide the month dropdown */
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  display: none;
+}
+
+/* Style year input to look like plain text and disable interaction */
+/* Make year look like plain text */
+.flatpickr-current-month input.cur-year {
+  border: none;
+  background: transparent;
+  pointer-events: none;
+  cursor: default;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #ca3030;
+  text-align: left;
+  width: auto;
+}
+
+
+.cur-year {
+  font-weight: 700 !important;
+  color: #ca3030;
+    pointer-events: none!important;
+}
+.arrowUp, .arrowDown {
+    display: none !important;
+}
+
+.numInputWrapper:hover {
+    background: none!important;
+}
+
+
+.flatpickr-weekdays {
+  background: #fff;
+  color: #ca3030;
+  border-bottom: 2px solid #ca3030;
+}
+span.flatpickr-weekday {
+  color: #ca3030;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+}
+
+.flatpickr-day {
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 500;
+  color: rgba(187, 151, 61, 0.95);
+  border: none;
+}
+.flatpickr-day.today:not(.selected):not(.inRange) {
+  border: 1.5px solid #ca3030;
+  background: #e3edfa;
+  color: #ca3030;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #ca3030 !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+.flatpickr-day.inRange {
+  background: #e3edfa !important;
+  color: #ca3030 !important;
+  border-radius: 6px;
+}
+.flatpickr-day:focus,
+.flatpickr-day:hover {
+  background: #faf1a4 !important;
+  color: #ca3030 !important;
+}
+
+.flatpickr-calendar.arrowTop:before, .flatpickr-calendar.arrowTop:after {
+  border-bottom-color: #fff;
+}
+
+/* Style prev/next arrows */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  font-size: 1.3em;
+  color: #ca3030;
+}
+
+
+
+.otp-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid rgba(156, 122, 35, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    max-width: 520px;
+    margin: 2rem auto;
+  }
+
+  .otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .otp-input {
+    width: 38px;
+    height: 46px;
+    font-size: 16px;
+    color: #2e2c0a;
+    text-align: center;
+    border: 1px solid #ca3030;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .otp-input:focus {
+    border-color: #393611;
+    box-shadow: 0 0 10px rgba(109, 118, 200, 0.4);
+    outline: none;
+  }
+
+  .verify-btn {
+    background-color: #393311;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .verify-btn:hover {
+    background: #ca3030;
+    transform: translateY(-1px);
+  }
+
+  .otpStatus {
+    font-size: 1rem;
+    color: #2a2a2a;
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+.phone-unified {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d4dbe1;
+  border-radius: 7px;
+  padding: 0 14px;
+  height: 45px;
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.08em;
+  gap: 0;
+}
+
+.country-code-select {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  min-width: 85px;
+  outline: none;
+  padding: 0 0 0 2px;
+  appearance: none;
+}
+
+.divider {
+  color: #a2a8b6;
+  margin: 0 10px;
+  font-size: 1.15em;
+  font-weight: 600;
+  user-select: none;
+  pointer-events: none;
+}
+
+.phone-part {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  flex: 1;
+  outline: none;
+  padding: 0 2px 0 6px;
+  min-width: 0;
+}
+
+.phone-part::placeholder {
+  color: #b8bac2;
+  opacity: 1;
+}
+
+.phone-unified:focus-within {
+  border-color: #426dff;
+  background: #e7f0fe;
+}
+
+.country-code-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Make select/phone input vertically centered in their box */
+.phone-unified select,
+.phone-unified input {
+  line-height: 1.15;
+  height: 38px;
+  background: transparent;
+  margin: 0;
+}
+
+/* Remove arrow from select for a cleaner look (optional) */
+.country-code-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%239DA6B6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.4em center;
+  padding-right: 1.4em;
+}
+
+/* Responsive: font size for phone field on mobile */
+@media (max-width: 540px) {
+  .phone-unified {
+    font-size: 0.97em;
+    padding: 0 8px;
+    height: 41px;
+  }
+  .country-code-select {
+    min-width: 60px;
+  }
+}
+.guests-selector {
+  position: relative;
+  height: 51.5px; /* Match left field height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.guests-selector label {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%); /* ✅ Center the label horizontally */
+  background-color: white;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #444;
+  z-index: 2;
+}
+
+.guest-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   border: 1px solid #ccc; 
+  border-radius: 12px; 
+  padding: 0 100px;
+  height: 100%;
+  background-color: #f9fafd; 
+}
+
+.guest-control input {
+  border: none;
+  background: transparent;
+  width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.guest-btn {
+  width: 26px;
+  height: 26px;
+  background-color: #673131;;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+
+
+.guest-toggle {
+  background: #f9fafd; /* Match other fields */;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; */;
+  font-size: 1rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+
+}
+.guest-toggle.active {
+  border: 1px solid #000 !important;
+  box-shadow: 0 0 0 2px #ece9e0, 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.room {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e2e6ea;
+}
+
+.room h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+.guests-container {
+  position: relative;
+  width: 100%;
+}
+
+.guest-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #f9fafd;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-top: 5px;
+  padding: 1rem;
+  z-index: 99;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: none;
+}
+.room {
+  padding: 0.5rem;
+}
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.guest-row button {
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.guest-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: center;
+}
+.guest-summary button {
+  background: black;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.remove-room-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 24px;           /* Bigger size */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;         /* Pushes it left inside a flex row */
+  transform: translateX(-10px); /* Nudge more to the left */
+  transition: color 0.2s ease;
+}
+
+
+
+
+
+
+
+
+.form-summary-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+  margin: 2.7rem auto 1.7rem auto;
+  font-weight: 700;
+  font-size: 1.06rem;
+  letter-spacing: 1.2px;
+  color: #183060;
+  text-transform: uppercase;
+  opacity: 0.92;
+  background: none;
+  /* For hiding/animation: */
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  pointer-events: none;
+  transition:
+    opacity 0.4s cubic-bezier(.7,0,.3,1),
+    transform 0.48s cubic-bezier(.7,0,.3,1);
+}
+
+.form-summary-bridge.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.bridge-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #673131 70%, #e4ecfa 100%);
+  box-shadow: 0 1.5px 7px rgba(183, 147, 95, 0.13);
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.75);
+  animation: none;
+  transition:
+    opacity 0.23s cubic-bezier(.61,0,.49,1),
+    transform 0.37s cubic-bezier(.65,0,.4,1);
+}
+
+/* When bridge is visible, show and animate dots */
+.form-summary-bridge.visible .bridge-dot {
+  opacity: 1;
+  transform: scale(1);
+  animation: bounceDown 0.55s cubic-bezier(.77,0,.41,1) both,
+             starFlash 2.1s 0.6s infinite alternate;
+}
+.form-summary-bridge.visible .bridge-dot:nth-child(2) {
+  animation-delay: 0.18s, 0.85s; /* stagger the bounce and flash for 2nd dot */
+}
+
+/* Keep your existing bounceDown and starFlash keyframes */
+@keyframes bounceDown {
+  0% { transform: translateY(0) scale(0.6);}
+  40% { transform: translateY(0) scale(1.05);}
+  55% { transform: translateY(6px) scale(0.98);}
+  80% { transform: translateY(-1px) scale(1.01);}
+  100% { transform: translateY(0) scale(1);}
+}
+@keyframes starFlash {
+  0%,100% { opacity: 0.92;}
+  40% { opacity: 1;}
+  50% { opacity: 0.75;}
+  60% { opacity: 1;}
+}
+
+
+.country-display {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; /* This now spaces icon, code, and arrow */
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  border-right: 1px solid #d2d7e1;
+  height: 100%;
+}
+
+/* Flag icon */
+.country-display .iconify {
+  font-size: 0.9rem;
+  margin-left: 0;
+}
+
+/* Separate dropdown arrow element */
+.dropdown-arrow {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid #555;
+  border-bottom: 1.5px solid #555;
+  transform: rotate(45deg);
+  margin-left: 0.25rem; /* Controls space from code */
+}
+
+
+/* Make the infant checkbox small and native-looking */
+.guests-container input[type="checkbox"],
+.guest-panel input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  appearance: auto;              /* keep native checkbox look */
+  -webkit-appearance: checkbox;  /* Safari */
+  vertical-align: middle;
+  accent-color: #6B2E2E;         /* your dark blue tick */
+}
+
+
+
+
+/* Checkbox sizing (you already had this, keeping it here for completeness) */
+.guest-panel input[type="checkbox"]{
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0;                  /* removes weird extra space */
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  accent-color: #6B2E2E;
+  justify-content: center;   
+  margin-right: 16.4%;
+}
+
+/* Only the guest rows */
+.guest-row{
+  /* move this value to shift the vertical split */
+  --right-col: 280px;
+
+  display: grid;
+  grid-template-columns: max-content var(--right-col);
+  gap: 12px 16px;
+  justify-content: center;   /* center the whole two-column block */
+  align-items: center;
+}
+
+/* left column = labels/text (odd children) */
+.guest-row > *:nth-child(odd){
+  grid-column: 1;
+  justify-self: end;         /* label near its control */
+  text-align: right;
+}
+
+/* right column = controls (even children) */
+.guest-row > *:nth-child(even){
+  grid-column: 2;
+  justify-self: center;      /* center each control in the fixed column */
+}
+
+
+/* mobile: stack rows */
+@media (max-width: 600px){
+  .guest-row{
+    grid-template-columns: 1fr;
+    justify-content: start;
+  }
+  .guest-row > *:nth-child(odd){ justify-self: start; text-align: left; }
+  .guest-row > *:nth-child(even){ justify-self: start; }
+  .guest-row input[type="checkbox"]{ justify-self: center; } /* keep centered if you prefer */
+}
+
+
+.modal-content { scroll-behavior: smooth; }
+.book-btn { scroll-margin-top: 24px; } /* leaves a little breathing room */
+
+
+/* 2-column rows */
+.guest-row{
+  --label-w: 160px;
+  --right-w: 280px;
+  display: grid;
+  grid-template-columns: var(--label-w) var(--right-w);
+  gap: 12px 16px;
+  align-items: center;
+}
+
+/* left labels */
+.guest-row .label{ justify-self: end; }
+
+/* right cell becomes a centered field */
+.guest-row .control{
+  justify-self: stretch;
+  display: grid;
+  place-items: center;               /* <<< single shared center axis */
+  background: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  min-height: 44px;
+  padding: 6px 10px;
+}
+
+/* === Stepper (– value +) === */
+.stepper{
+  display: grid;
+  grid-template-columns: 40px minmax(3ch,auto) 40px; /* symmetric */
+  align-items: center;
+  column-gap: 10px;
+}
+.stepper .value{
+  justify-self: center;
+  width: 3ch;                      /* fixed box, centers any digit(s) */
+  text-align: center;
+  line-height: 1;
+  /* make digits equal width so “1” doesn’t look off */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.stepper button{
+  width: 40px; height: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* === Select truly centered === */
+.select-wrap{
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;              /* centers the select text */
+}
+.select-wrap select{
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 28px;                  /* symmetric padding */
+  text-align: center;               /* Firefox */
+  text-align-last: center;          /* Chrome/Edge */
+  -moz-text-align-last: center;
+}
+/* fake arrow so it doesn't push text off-center */
+.select-wrap::after{
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 12px; height: 8px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* === Checkbox centered on that axis === */
+.guest-row input[type="checkbox"]{
+  margin: 0;                        /* remove UA left margin */
+  width: 18px; height: 18px;
+  justify-self: center;
+}
+
+/* mobile */
+@media (max-width: 754px){
+  .guest-row{ grid-template-columns: 1fr; }
+  .guest-row .label{ justify-self: start; }
+}
+
+/* the right cell */
+.guest-row .control,
+.guest-row .field {                     /* if you use a .field wrapper */
+  display: flex;
+  align-items: center;                  /* vertical center */
+  justify-content: center;              /* horizontal center */
+}
+
+/* SELECT truly centered (and its text centered) */
+.guest-row .control select {
+  display: block;
+  margin: 0 auto;
+  width: auto;                          /* don’t stretch full width */
+  min-width: 140px;                     /* optional, keeps it tidy */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;                   /* Firefox */
+  text-align-last: center;              /* Chrome/Edge */
+  -moz-text-align-last: center;
+  padding: 6px 28px 6px 28px;           /* balanced padding */
+  background: #fff;
+  border: 1px solid #d2d7e1;
+  border-radius: 8px;
+  /* fake arrow so centering stays true */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+}
+
+/* CHECKBOX centered */
+.guest-row .control input[type="checkbox"]{
+  display: block;
+  margin: 0 auto;                      /* center horizontally */
+  width: 18px; height: 18px;
+}
+
+/* one clear definition for the rows */
+.guest-row{
+  --label-w: 160px;            /* left column width */
+  --right-w: 200px;            /* right column width (shared center) */
+  display: grid;
+  grid-template-columns: var(--label-w) var(--right-w);
+  align-items: center;
+  gap: 12px 16px;
+}
+.guest-row .label{ justify-self: end; }
+
+/* the right cell becomes a centered field */
+.guest-row .control{
+  display: grid;
+  place-items: center;         /* centers select, number, checkbox on same axis */
+}
+
+/* stepper number stays visually centered */
+.stepper{
+  display: grid;
+  grid-template-columns: 40px minmax(3ch,auto) 40px;
+  align-items: center;
+  column-gap: 10px;
+}
+.stepper .value{
+  width: 3ch; text-align:center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* select truly centered (text too) */
+.select-wrap{ position: relative; width:100%; display:grid; place-items:center; }
+.select-wrap select{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  width:100%;
+  padding:6px 28px;
+  border:1px solid #d2d7e1; border-radius:8px;
+  text-align:center; text-align-last:center; -moz-text-align-last:center;
+  background:#fff;
+}
+.select-wrap::after{
+  content:""; position:absolute; right:10px; width:12px; height:8px; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:center;
+}
+
+/* REMOVE the old push-right rule */
+.guest-panel input[type="checkbox"]{ margin-right:0; }
+
+/* === Guest panel final layout (scoped) === */
+#guestPanel .guest-row{
+  display: grid;              /* kill older flex rules */
+  grid-template-columns: 125px 105px;    /* label | control (tweak as you like) */
+  align-items: center;
+}
+/* default hidden (no !important) */
+#guestPanel .infant-row { display: none; }
+#guestPanel .infant-row.is-visible { display: grid !important; }
+#guestPanel .label{
+  text-align: left;
+}
+
+#guestPanel .control{
+  justify-self: center;                  /* shared center axis for all controls */
+  display: grid;
+  place-items: center;
+  background: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  min-height: 44px;
+  padding: 6px 10px;
+}
+
+/* stepper */
+#guestPanel .control.stepper{
+  grid-template-columns: 40px minmax(3ch,auto) 40px;
+}
+#guestPanel .control.stepper .value{
+  width: 3ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* select truly centered (text + arrow) */
+#guestPanel .select-wrap{ background: transparent; border: 0; padding: 0; }
+#guestPanel .select-wrap select{
+  width: auto;
+  min-width: 140px;
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  text-align: center; text-align-last: center; -moz-text-align-last: center;
+  padding: 6px 28px;
+  border: 1px solid #d2d7e1; border-radius: 8px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat right .6rem center;
+}
+
+/* checkbox centered on the same axis */
+#guestPanel input[type="checkbox"]{
+  margin: 0 !important;
+  width: 18px; height: 18px;
+}
+
+/* neutralize old "right align odd children" rule */
+#guestPanel .guest-row > *:nth-child(odd){
+  justify-self: start !important;
+  text-align: left !important;
+}
+
+
+/* Ensure panel provides the context */
+#guestPanel { position: relative; }
+
+/* Inline, full-width banner that matches the white card design */
+.capacity-banner {
+  box-sizing: border-box;
+  width: 100%;
+  background: #ffffff;
+  color: #6B2E2E;
+  border: 1px solid #e6e8f0;        /* matches subtle card border */
+  border-radius: 12px;               /* same radius as the panel */
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px 0;                /* separates from controls below */
+  box-shadow: 0 8px 24px rgba(17,30,57,0.06);
+
+  /* entrance/exit */
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.capacity-banner.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.capacity-banner .fa-circle-info { font-size: 14px; }
+.capacity-banner .capacity-close {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #667085;
+}
+
+
+.capacity-text {
+  font-size: 14px;
+}
+
+
+/* Make the Infant checkbox bare (no framed box) */
+#guestPanel .infant-row .control {
+  background: transparent;
+  border: none;
+  padding: 0;
+  min-height: 0;
+  box-shadow: none;
+}
+#guestPanel .infant-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Make each cell a positioning context */
+.form-group.two-cols .form-floating,
+.guests-container,
+label[for="policy"] {
+  position: relative;
+}
+
+/* leave room between grid rows so hints don’t overlap the next row */
+.form-group.two-cols { row-gap: 28px; }
+
+/* inline hint: same cell, positioned below the input */
+.field-msg{
+  position: absolute;
+  left: 12px;                 /* align with input padding */
+  bottom: -18px;              /* BELOW the field (use top:-18px to put ABOVE) */
+  margin: 0;
+  font-size: .85rem;
+  line-height: 1.25;
+  color: #b42318;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  pointer-events: none;       /* clicks go to the field */
+}
+
+/* optional fade when auto-hiding */
+.field-msg.fade-out{ opacity: 0; transition: opacity .25s ease; }
+
+/* red border look – keep only one version so it matches all fields */
+.field-error, .field-error:focus {
+  border-color:#e74c3c!important;
+  box-shadow:0 0 0 3px rgba(231,76,60,.15)!important;
+}
+
+/* composite phone wrapper gets the same border */
+.selected-option.field-error{
+  border:2px solid #e74c3c!important;      /* match other inputs’ border width */
+  box-shadow:0 0 0 3px rgba(231,76,60,.15)!important;
+  border-radius:12px;
+}
+
+
+/* make the policy label the positioning context and full-width */
+label[for="policy"]{
+  position: relative;
+  display: flex;              /* keeps checkbox + text aligned */
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  padding-bottom: 20px;       /* room for the inline error below */
+}
+
+
+/* Make Turnstile wrapper get the same red border when invalid */
+#captchaWrap.field-error{
+  border: 1px solid #e74c3c !important;
+  box-shadow: 0 0 0 3px rgba(231,76,60,.15) !important;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+
+/* --- Modal Progress Layer --- */
+.room-modal .modal-progress[hidden] { display: none; }
+
+.room-modal .modal-progress {
+  position: absolute; inset: 0; 
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.75));
+  z-index: 999;
+  padding: 24px;
+}
+
+.progress-card {
+  width: min(560px, 92vw);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.15);
+  padding: 28px 24px 22px;
+  text-align: center;
+}
+
+.spinner {
+  width: 48px; height: 48px;
+  border: 4px solid rgba(0,0,0,.12);
+  border-top-color: #6B2E2E;
+  border-radius: 50%;
+  margin: 6px auto 14px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.icon { display: none; font-size: 44px; margin-bottom: 12px; }
+.modal-progress.success .icon.success { display: inline-block; color: #18a957; }
+.modal-progress.error   .icon.error   { display: inline-block; color: #c23030; }
+.modal-progress.success .spinner,
+.modal-progress.error   .spinner      { display: none; }
+
+#progressTitle { margin: 6px 0 4px; font-weight: 700; }
+#progressSubtitle { margin: 0; color: #555; }
+
+.progress-actions { margin-top: 16px; display: flex; gap: 10px; justify-content: center; }
+.room-btn.secondary { background: transparent; color: #ca3030; border: 1px solid #ca3030; }
+.room-btn.secondary:hover { background: rgba(17,30,57,.04); }
+
+/* Optional: hide the normal close "×" while busy */
+.room-modal.busy .modal-close { opacity: .35; pointer-events: none; }
+
+
+/* ---------- NAV: fonts & base ---------- */
+.nav-links a, .menu-toggle {
+  font-family:'Playfair Display', serif;
+}
+
+/* ---------- Toggle button (hidden on desktop) ---------- */
+.menu-toggle{
+  display:none;
+  margin-left:auto;
+  width:42px; height:42px;
+  border:1px solid rgba(255,255,255,0.35);
+  border-radius:10px;
+  background: transparent;
+  cursor:pointer;
+  align-items:center; justify-content:center; gap:5px; flex-direction:column;
+  transition: background .2s ease, border-color .2s ease;
+}
+.menu-toggle .bar{
+  width:20px; height:2px; background:#fff; border-radius:2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.navbar.open .menu-toggle .bar:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.navbar.open .menu-toggle .bar:nth-child(2){ opacity:0; }
+.navbar.open .menu-toggle .bar:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+.menu-toggle:hover{ background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
+
+/* ---------- Tablet tweaks ---------- */
+@media (min-width: 768px) and (max-width: 1024px){
+  .logo-img { width:56px; height:56px; }
+  .brand-name { font-size: 1.35rem; }
+  .nav-links a { font-size: .96rem; margin-left: 1.6rem; }
+}
+
+/* ---------- Mobile / small tablet: right drawer ---------- */
+@media (max-width: 700px){
+  .menu-toggle{ display:flex; }
+  .nav-content{ padding: .9rem 1rem; }
+  .logo-img{ width:52px; height:52px; }
+  .brand-name{ font-size: 1.15rem; }
+
+  .nav-links{
+    position: fixed; top:0; right:0;
+    height:100vh; width:min(320px, 86vw);
+    background: rgba(58, 45, 10, 0.98);
+    backdrop-filter: blur(6px);
+    padding: calc(18px + env(safe-area-inset-top)) 24px 24px;
+    padding-top: 88px;
+    box-shadow: -10px 0 28px rgba(0,0,0,0.22);
+    display:flex; flex-direction:column; gap: 18px;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index:1100;
+  }
+  .nav-links a{ margin:0; font-size:1.05rem; padding:10px 2px; letter-spacing:.4px; }
+  .nav-links a::after{ display:none; } /* cleaner list */
+
+  /* Page dimmer when drawer is open */
+  .navbar::after{
+    content:""; position: fixed; inset: 0;
+    background: rgba(0,0,0,.35); opacity:0; pointer-events:none;
+    transition: opacity .25s ease; z-index:1000;
+  }
+  .navbar.open::after{ opacity:1; pointer-events:auto; }
+  .navbar.open .nav-links{ transform: translateX(0); }
+}
+
+
+
+/* Footer stacks nicely on mobile */
+@media (max-width: 700px){
+  .footer-container{
+    flex-direction: column; gap: .6rem; text-align: center;
+  }
+  .footer-left, .footer-right{ text-align: center; }
+  .room-intro {font-size: 0.85rem;}
+}
+
+/* 1) Hide drawer header on desktop (prevents double logo + X) */
+.nav-links .drawer-header { display: none; }
+
+/* Keep brand in normal case everywhere */
+.brand-name { text-transform: none; }
+
+/* On desktop, do NOT show the drawer header (prevents duplicate logo/X) */
+@media (min-width: 901px){
+  #primaryNav .drawer-header{ display:none; }
+}
+
+
+/* ---------- Small-screen niceties ---------- */
+
+
+/* Safety: never allow sideways scroll */
+html, body { overflow-x: clip; }           /* or overflow-x: hidden; */
+
+/* Optional: avoid 100vw layout bugs */
+.hero-carousel,
+.hero-slide,
+.hero-filter { width: 100%; }               /* not 100vw */
+.hero-carousel { overflow: hidden; }
+img, video { max-width: 100%; height: auto; }
+
+/* Off-canvas drawer */
+@media (max-width: 700px){
+  #primaryNav{
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(85vw, 320px);
+    max-width: 100%;
+    transform: translateX(100%);              /* hidden without affecting layout */
+    transition: transform .25s ease;
+    will-change: transform;
+    overflow-y: auto;
+    /* ensure it sits over content */
+    z-index: 1000;
+  }
+
+  /* When menu is open */
+  .navbar.open #primaryNav{
+    transform: translateX(0);
+  }
+
+  /* Backdrop covers the full viewport */
+  #navBackdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+  }
+}
+
+
+/* Feature grid */
+.features .feature-grid{
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;            /* center content inside each cell */
+}
+
+/* Center each card */
+.features .feature-card{
+  width: min(100%, 360px);          /* card doesn't stretch full width */
+  margin-inline: auto;              /* horizontally center it */
+}
+
+
+
+/* Global Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    line-height: 1.6;
+    color: #111;
+    background-color: #eee8de;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  /* Containers */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #673131; /* Deep dark blue */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+/* Container and layout */
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;           /* full width of navbar */
+  max-width: none;       /* remove constraint */
+  padding: 1.2rem;       /* or use: padding: 1.2rem 0; for edge-to-edge feel */
+  margin: 0;             /* remove auto-centering */
+}
+
+/* Logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+/* Logo Image */
+.logo-img {
+  height: 65px;
+  width: 65px;
+  object-fit: cover;
+}
+
+/* Brand Text Container */
+.brand-name-block {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+/* Brand Name */
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+
+/* HERO SECTION */
+
+/* Container */
+.hero-carousel {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* Slides */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fadeCarousel 15s infinite;
+  z-index: 0;
+}
+
+.hero-slide.slide1 {
+  background-image: url('../assets-marousi/hm1.jpg');
+  animation-delay: 0s;
+}
+
+.hero-slide.slide2 {
+  background-image: url('../assets-marousi/hm2.jpg');
+  animation-delay: 5s;
+}
+
+.hero-slide.slide3 {
+  background-image: url('../assets-marousi/hm3.jpg');
+  animation-delay: 10s;
+}
+
+/* Dark blue filter overlay */
+.hero-filter {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(78, 65, 32, 0.377);
+  z-index: 1;
+}
+/* Fade animation */
+@keyframes fadeCarousel {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Overlay */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.hero-carousel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #673131;
+  z-index: 0;
+}
+
+/* Text styling */
+.hero-overlay h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; */
+  margin-bottom: 3rem;
+}
+
+
+.cta-button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* if deleted serrif*/
+  background-color: #ffffff;
+  color: #673131;;
+  font-weight: 600;
+  font-size: large;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #673131;;
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subtleZoom {
+  0% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 104%;
+  }
+}
+  @keyframes fadeInHeroText {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Features Section */
+  .features {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #673131;;
+  }
+  
+
+/* Features Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Feature Card */
+.feature-card {
+  background-color: #f5f8ff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #673131;;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #673131;;
+}
+
+.feature-card p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;/* font-family: 'Poppins', sans-serif; */
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+  
+  /* Room Preview Section */
+.room-preview {
+  padding: 4rem 0;
+}
+
+.room-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Room Content */
+.room-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-content h3 {
+  color: #673131;;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.room-description {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;/* font-family: 'Poppins', sans-serif; */
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+
+/* Room Price + Button */
+.room-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.room-price {
+  font-weight: 600;
+  color: #673131;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;;
+}
+
+.room-btn {
+  background-color: #673131;;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500; /* or 700 for bold */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;  
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.room-btn:hover {
+  background-color: #ca3030;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #673131;;
+  color: white;
+  padding: 0.6rem 0;
+  text-align: center;
+}
+
+.footer a {
+  color: #ffffff;
+  margin-left: 0.5rem;
+} 
+
+.footer-espa {
+  margin-top: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.classic-footer {
+  background-color: #673131;;
+  color: white;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.1rem 1rem;
+  width: 100%;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-center {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.footer-left p,
+.footer-right p,
+.footer-center p {
+  margin: 0;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.footer-left a,
+.footer-right a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-left a:hover,
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+
+.hidden-footer {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #673131;;
+  z-index: 99;
+}
+
+.footer-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+.espa-logo-small {
+  max-width: 500px;
+  height: auto;
+  filter: grayscale(100%) contrast(1.05);
+  border-radius: 4px;
+  transition: filter 0.3s ease;
+  margin-bottom: 0.3rem;
+}
+
+.espa-logo-small:hover {
+  filter: none;
+}
+
+.espa-note {
+  font-size: 0.75rem;
+  color: #bbb;
+  font-style: italic;
+  margin: 0;
+}
+
+
+/* Contact Page */
+.contact-wrapper {
+  padding: 5rem 1.5rem;
+  background-color: #eee8de;
+  font-family: 'Playfair Display', serif;
+}
+
+
+
+/* Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-form {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-form label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #673131;
+}
+
+
+
+.contact-form button {
+  background-color: #673131;;
+  color: white;
+  font-weight: 600;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ca3030;
+}
+
+.info-map {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Contact Info */
+.contact-details {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-details h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #673131;;
+}
+
+.contact-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem; /* spacing between items */
+  list-style: none;
+  color: #673131;;
+}
+
+.details-text {
+  color: #673131;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               Helvetica, Arial, sans-serif;
+}
+.contact-details a {
+  color: #673131;;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-details li {
+    gap: 0.1rem;
+    font-size: 0.55rem;
+  }
+}
+
+
+.emoji-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  transform: translateY(-1px); /* fix vertical alignment */
+  filter: brightness(0) saturate(100%) invert(13%) sepia(8%) saturate(4318%) hue-rotate(182deg) brightness(98%) contrast(97%);
+  color: #673131;
+}
+
+/* Map */
+.map-box iframe {
+  width: 100%;
+  height: 385px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+
+/* ============ About (responsive, elegant) ============ */
+.about-section {
+  background: #eee8de;
+  color: #2c2c2c;
+  padding-block: clamp(48px, 6vw, 96px);
+  font-family: 'Playfair Display', serif;
+}
+
+/* Title */
+.about-section .section-title {
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 clamp(28px, 4vw, 44px);
+  letter-spacing: 0.3px;
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem);
+}
+
+/* Two-column grid that collapses beautifully */
+.about-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text image";
+  gap: clamp(20px, 4vw, 56px);
+  align-items: center;
+  margin-bottom: clamp(40px, 7vw, 80px);
+}
+
+.about-block.reverse {
+  grid-template-areas: "image text";
+}
+
+/* Text column */
+.about-text {
+  grid-area: text;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               Helvetica, Arial, sans-serif;
+  font-size: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
+  line-height: 1.8;
+  max-width: 65ch;
+  margin-inline: auto;
+}
+
+/* Image column */
+.about-image {
+  grid-area: image;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  aspect-ratio: 16 / 10;        /* consistent crop on all sizes */
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+  will-change: transform;
+}
+
+.about-image img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+/* Layout on tablets/phones */
+@media (max-width: 600px) {
+  .about-block,
+  .about-block.reverse {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "image"
+      "text";
+  }
+
+  .about-text {
+    text-align: left;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+}
+
+/* Tiny phones refinements */
+@media (max-width: 480px) {
+  .about-section .section-title {
+    font-size: 1.6rem;
+  }
+  .about-text {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .about-image img {
+    transition: none;
+  }
+}
+
+
+/* --------------------------------------------------------------------------------- Rooms.html -------------------------------------------------------------------------------------------------------- */
+
+
+/* Section Background */
+.room-page {
+  padding: 5rem 1.5rem;
+  background-color: #eee8de;
+}
+
+/* Section Header */
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #673131;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.7rem;
+    position: relative;
+  }
+  .section-title:after {
+    content: "";
+    display: block;
+    margin: 0.4rem auto 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #673131 0%, #673131 100%);
+    border-radius: 3px;
+  }
+  
+.room-intro {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* Grid */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 3rem;
+}
+
+/* Card Base */
+.room-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Hover Effect */
+.room-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.room-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.room-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.room-card:hover img {
+  transform: scale(1.03);
+}
+
+.guest-badge {
+  display: inline-block;
+  font-size: 0.875rem;              /* slightly larger for clarity */
+  font-weight: 600;                 /* elegant weight */
+  color: #673131;                   /* rich navy blue */
+  background-color: #f8f9fb;        /* elegant light gray */
+  padding: 0.35rem 0.9rem;
+  border-radius: 1.5rem;
+  border: 1px solid #e0e6ed;        /* soft outline */
+  letter-spacing: 0.3px;            /* more refined look */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);  /* minimal depth */
+  text-transform: capitalize;
+  font-weight: 600;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; */
+}
+
+
+
+.room-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0f2e59;
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+/* MODAL BACKDROP */
+/* MODAL OVERLAY */
+.room-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+#modalDescription {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 90ch; /* Limits line length to ~60 characters */
+  margin: 0 auto;  /* Centers the text block */
+  white-space: normal; /* Ensures text wraps normally */
+}
+
+/* MODAL BOX */
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-bottom: 2rem; /* extra bottom white space */
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* CLOSE BUTTON */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+/* IMAGE SLIDER */
+.modal-slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 560px;
+  overflow: hidden;
+}
+
+.modal-slides img {
+  max-width: 100%;
+  width: 850px;
+  height: 560px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+.modal-slides img.active {
+  display: block;
+}
+/* ARROWS */
+.modal-prev, .modal-next {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  font-size: 24px;
+  padding: 0px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.modal-prev { left: 16px; }
+.modal-next { right: 16px; }
+
+.modal-info {
+  padding: 2rem 2rem 2.5rem;
+  text-align: center;
+}
+
+.modal-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #673131;
+}
+
+.modal-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+#modalPrice {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  color: #673131;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.book-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #673131;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #ca3030;
+}
+
+
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 1rem;
+  z-index: 2;
+}
+
+.slider-nav button {
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.slider-nav button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+
+
+/* LIGHTBOX OVERLAY - Elegant & Premium */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(167, 138, 66, 0.582); /* dark blue with opacity */
+  backdrop-filter: blur(4px);
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  cursor: zoom-out;
+  transition: opacity 0.3s ease;
+}
+
+/* LIGHTBOX IMAGE */
+.lightbox-overlay img {
+  max-width: 75%;
+  max-height: 75%;
+  object-fit: contain;
+  animation: lightboxFade 0.3s ease forwards;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes lightboxFade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+
+.modal-details {
+  padding: 2rem;
+}
+
+.modal-details h2 {
+  font-size: 1.6rem;
+  color: #673131;;
+  margin-bottom: 1rem;
+}
+
+.modal-details p {
+  color: #555;
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.modal-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.modal-details a.room-btn {
+  background: #673131;;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.modal-details a.room-btn:hover {
+  background: #ca3030;
+  cursor: pointer;
+}
+
+
+#scroll-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: white;
+  color: #111;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid #eee;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform: translateY(20px);
+  z-index: 1000;
+  max-width: 280px;
+  font-size: 15px;
+}
+
+#scroll-widget.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#scroll-widget .contact-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#scroll-widget .contact-line svg {
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+#scroll-widget a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+#scroll-widget a:hover {
+  text-decoration: underline;
+}
+
+
+.modal-slider {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  background: #000; /* optional: makes colors pop */
+}
+
+.modal-slides img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures image fills container */
+  aspect-ratio: 3 / 2;
+}
+
+.modal-slides img.active {
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.15); /* soft vignetting */
+}
+
+
+.modal-prev, .modal-next {
+  background: rgba(255,255,255,0.8);
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.2s ease;
+}
+
+.modal-prev:hover, .modal-next:hover {
+  background: rgba(255,255,255,1);
+}
+
+
+
+/* Booking Form Wrapper */
+.booking-form {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e5e5;
+  display: none;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.booking-form form {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #222;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(17, 30, 57, 0.15);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-group label {
+
+  font-weight: 500;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+
+
+.form-group input,
+.form-group textarea, 
+.form-group textarea[placeholder]{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  font-size: 1.05rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #673131;;
+  box-shadow: 0 0 0 2px #b7935f22;
+}
+
+input[type="checkbox"] {
+  accent-color: #6B2E2E;
+}
+/* Date Fields Layout */
+.form-group.two-cols {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 100px;
+  flex-wrap: nowrap; /* 🔑 prevents wrapping */
+  align-items: flex-end; /* aligns bottoms */
+  justify-content: space-between;
+}
+
+.form-group.two-cols > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Submit Button */
+.submit-btn {
+  color: #fff;
+  align-self: center;
+  background-color: #673131;;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family: 'Playfair Display', serif; ✅ match input font */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ca3030;
+  transform: translateY(-1px);
+}
+
+/* Animation for form */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* === DATE FIELD ALIGNMENT === */
+.date-cols .date-field {
+  flex: 1;
+}
+
+.date-cols input[type="date"] {
+  height: 44px;
+  font-family: 'Playfair Display', serif;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+
+@media (max-width: 600px) {
+  .form-group.two-cols {
+    flex-direction: column;
+  }
+
+  .form-group.small-group {
+    max-width: 100%;
+    margin: 1rem 0 0 0;
+    align-items: center; /* ✅ centers the input under the label */
+  }
+}
+
+
+
+/* Smaller rooms input */
+.small-group input[type="number"] {
+  text-align: center;
+
+}
+.booking-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-form textarea:focus {
+  border-color: #6B2E2E;
+  box-shadow: 0 0 0 2px rgba(17, 30, 57, 0.1);
+  outline: none;
+}
+
+/* ---- Elegant Order Summary (Modern Blue-Gray Theme) ---- */
+
+.order-summary.hotel-elegant {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px #673131;
+  padding: 2.7rem 2.2rem 2.1rem 2.2rem;
+  max-width: 600px;
+  margin: 2.2rem auto 0 auto;
+  border: 1.2px solid #f1f2f4;
+  font-family: 'Playfair Display', serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: box-shadow 0.2s;
+  position: relative;
+  animation: fadeInSummary 1s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
+}
+
+@keyframes fadeInSummary {
+  from { opacity: 0; transform: translateY(25px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* --- Main title --- */
+.order-summary.hotel-elegant h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  letter-spacing: 0.06em;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #673131;
+  text-transform: uppercase;
+}
+
+/* --- Section details --- */
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.57rem;
+  font-size: 1.09rem;
+  color: #464b5e;
+}
+
+.summary-details > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.21rem 0;
+  border-bottom: 1px dashed #cdd5e6;
+  font-weight: 500;
+  background: transparent;
+  min-height: 34px;
+}
+
+.summary-details > div:last-child {
+  border-bottom: none;
+}
+
+/* ---- Icon & label left side ---- */
+.summary-details > div > span:first-child {
+  display: flex;
+  align-items: center;
+  min-width: 146px;
+  font-weight: 700;
+  color: #673131;
+  gap: 0.2em;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05em;
+}
+
+/* ---- Price alignment (right side) ---- */
+.summary-details > div > span:last-child {
+  text-align: right;
+  flex: 1;
+  color: #5e5e5e;
+  font-weight: 500;
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---- Total Price Special Card ---- */
+.summary-details > div.total {
+  background: #f7f9fc;
+  border-radius: 13px;
+  border: 1.5px solid #e3e7f2;
+  font-size: 1.18rem;
+  font-weight: 800;
+  box-shadow: 0 3px 16px rgba(48, 59, 100, 0.06);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.1rem;
+  padding: 1.09rem 1.2rem 1.09rem 3.3rem;
+  color: #673131;
+}
+
+.summary-details > div.total .icon {
+  position: absolute;
+  left: 1.18rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #223157 !important;
+  font-size: 1.18em !important;
+  margin: 0;
+}
+
+/* ---- Note box below summary ---- */
+.summary-note {
+  font-size: 0.97rem;
+  color: #6d7691;
+  margin-top: 10px;
+  background: #f4f7fb;
+  border-radius: 7px;
+  display: flex;
+  border-left: 4px solid #673131;
+  box-shadow: 0 1px 7px rgba(40,60,120,0.03);
+}
+.summary-note span {
+  flex: 1;
+  display: block !important;
+  text-align: left !important;
+}
+
+
+.summary-note .fa-circle-info {
+  color: #223157 !important;
+  font-size: 1.05em !important;
+}
+
+.summary-note strong {
+  color: #673131;
+  font-weight: 700;
+}
+
+/* ---- Responsive for mobile ---- */
+@media (max-width: 700px) {
+  .order-summary.hotel-elegant {
+    padding: 1.1rem 0.4rem 1.2rem 0.4rem;
+    max-width: 98vw;
+  }
+  .order-summary.hotel-elegant h2 {
+    font-size: 1.14rem;
+  }
+  .summary-details > div > span:first-child { min-width: 104px; }
+}
+
+
+
+
+/* ---- Normalize and blue the icons ---- */
+.order-summary.hotel-elegant .icon,
+.order-summary.hotel-elegant i.fa-solid {
+  color: #673131 !important;
+  font-size: 1.18em !important;
+  width: 1.35em;
+  height: 1.35em;
+  min-width: 1.35em;
+  min-height: 1.35em;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.34em;
+  vertical-align: middle;
+  /* Extra smooth for perfect align: */
+  line-height: 1;
+}
+
+
+
+
+.order-summary.hotel-elegant .summary-details > div {
+  align-items: center;                 /* center both cells on the row */
+}
+
+
+/* Left cell: keep inline-flex, center icon + label on the same axis */
+.order-summary.hotel-elegant .summary-details > div > span:first-child{
+  display: inline-flex;            /* keep */
+  align-items: center;             /* vertical centering */
+  gap: .5rem;                      /* space between icon and text */
+  min-width: 146px;                /* your original width */
+  line-height: 1.1;                /* tidy text box */
+}
+
+/* Icon: same square box everywhere, no baseline jump */
+.order-summary.hotel-elegant .summary-details > div > span:first-child .icon,
+.order-summary.hotel-elegant .summary-details > div > span:first-child i.fa-solid{
+  display: inline-flex;            /* center the glyph inside */
+  align-items: center;
+  justify-content: center;
+  width: 1.25em;
+  height: 1.25em;
+  line-height: 1;                  /* kills baseline offset */
+  margin: 0 !important;            /* use gap above instead */
+  font-size: 1.15em;               /* (optional) slight visual balance */
+}
+
+/* Make sure the whole row keeps things centered */
+.order-summary.hotel-elegant .summary-details > div{
+  display: flex;                   /* your current layout */
+  align-items: center;             /* vertical centering for both cells */
+  justify-content: space-between;
+}
+
+
+
+
+label[for="dates"] {
+  position: absolute;
+  top: -1rem;
+  left: 0.75rem;
+  font-size: 0.75rem;
+  color: #444;
+}
+
+.flatpickr-calendar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.15);
+  border: none;
+  background: #fff;
+}
+.flatpickr-months {
+  background: #fff;
+  color: #ca3030;
+  border-radius: 16px 16px 0 0;
+  padding: 0;
+}
+.flatpickr-current-month {
+  font-weight: 300;
+  font-size: 1.2em;
+  color: #ca3030 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em; /* small gap between month and year */
+}
+
+/* Hide the month dropdown */
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  display: none;
+}
+
+/* Style year input to look like plain text and disable interaction */
+/* Make year look like plain text */
+.flatpickr-current-month input.cur-year {
+  border: none;
+  background: transparent;
+  pointer-events: none;
+  cursor: default;
+  font-weight: 600;
+  font-size: 1.2em;
+  color: #0b3a6a;
+  text-align: left;
+  width: auto;
+}
+
+
+.cur-year {
+  font-weight: 700 !important;
+  color: #0b3a6a;
+    pointer-events: none!important;
+}
+.arrowUp, .arrowDown {
+    display: none !important;
+}
+
+.numInputWrapper:hover {
+    background: none!important;
+}
+
+
+.flatpickr-weekdays {
+  background: #fff;
+  color: #ca3030;
+  border-bottom: 2px solid #ca3030;
+}
+span.flatpickr-weekday {
+  color: #ca3030;
+  font-weight: bold;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+}
+
+.flatpickr-day {
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+  font-weight: 500;
+  color: rgba(155, 127, 56, 0.95);
+  border: none;
+}
+.flatpickr-day.today:not(.selected):not(.inRange) {
+  border: 1.5px solid #ca3030;
+  background: #e3edfa;
+  color: #ca3030;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #ca3030 !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+.flatpickr-day.inRange {
+  background: #e3edfa !important;
+  color: #ca3030 !important;
+  border-radius: 6px;
+}
+.flatpickr-day:focus,
+.flatpickr-day:hover {
+  background: #e6d36d !important;
+  color: #ca3030 !important;
+}
+
+.flatpickr-calendar.arrowTop:before, .flatpickr-calendar.arrowTop:after {
+  border-bottom-color: #fff;
+}
+
+/* Style prev/next arrows */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+  font-size: 1.3em;
+  color: #ca3030;
+}
+
+
+
+.otp-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #6B2E2E;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    max-width: 520px;
+    margin: 2rem auto;
+  }
+
+  .otp-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #6B2E2E;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+
+  .otp-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .otp-input {
+    width: 38px;
+    height: 46px;
+    font-size: 16px;
+    color: #0a132e;
+    text-align: center;
+    border: 1px solid #223c72;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .otp-input:focus {
+    border-color: #ca3030;
+    box-shadow: 0 0 10px rgba(200, 186, 109, 0.4);
+    outline: none;
+  }
+
+  .verify-btn {
+    background-color: #6B2E2E;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .verify-btn:hover {
+    background: #ca3030;
+    transform: translateY(-1px);
+  }
+
+  .otpStatus {
+    font-size: 1rem;
+    color: #2a2a2a;
+    margin-top: 0.75rem;
+    text-align: center;
+  }
+
+.phone-unified {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #d4dbe1;
+  border-radius: 7px;
+  padding: 0 14px;
+  height: 45px;
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.08em;
+  gap: 0;
+}
+
+.country-code-select {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  min-width: 85px;
+  outline: none;
+  padding: 0 0 0 2px;
+  appearance: none;
+}
+
+.divider {
+  color: #a2a8b6;
+  margin: 0 10px;
+  font-size: 1.15em;
+  font-weight: 600;
+  user-select: none;
+  pointer-events: none;
+}
+
+.phone-part {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  flex: 1;
+  outline: none;
+  padding: 0 2px 0 6px;
+  min-width: 0;
+}
+
+.phone-part::placeholder {
+  color: #b8bac2;
+  opacity: 1;
+}
+
+.phone-unified:focus-within {
+  border-color: #426dff;
+  background: #e7f0fe;
+}
+
+.country-code-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Make select/phone input vertically centered in their box */
+.phone-unified select,
+.phone-unified input {
+  line-height: 1.15;
+  height: 38px;
+  background: transparent;
+  margin: 0;
+}
+
+/* Remove arrow from select for a cleaner look (optional) */
+.country-code-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%239DA6B6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.4em center;
+  padding-right: 1.4em;
+}
+
+/* Responsive: font size for phone field on mobile */
+@media (max-width: 540px) {
+  .phone-unified {
+    font-size: 0.97em;
+    padding: 0 8px;
+    height: 41px;
+  }
+  .country-code-select {
+    min-width: 60px;
+  }
+}
+.guests-selector {
+  position: relative;
+  height: 51.5px; /* Match left field height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.guests-selector label {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%); /* ✅ Center the label horizontally */
+  background-color: white;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #444;
+  z-index: 2;
+}
+
+.guest-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+   border: 1px solid #ccc; 
+  border-radius: 12px; 
+  padding: 0 100px;
+  height: 100%;
+  background-color: #f9fafd; 
+}
+
+.guest-control input {
+  border: none;
+  background: transparent;
+  width: 40px;
+  text-align: center;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.guest-btn {
+  width: 26px;
+  height: 26px;
+  background-color: #673131;;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+
+
+
+.form-floating {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-floating input {
+  width: 100%;
+  padding: 0.8rem 0.75rem; /* equal vertical padding */
+  font-size: 1rem;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  outline: none;
+  box-sizing: border-box;
+  text-align: left; /* text aligned left */
+}
+
+.form-floating input::placeholder {
+  color: #999;
+  opacity: 1; /* show it clearly */
+  line-height: 1.5; /* match input text line height */
+}
+
+
+.form-floating label {
+  position: absolute;
+  top: 1rem;
+  left: 0.75rem;
+  color: #A9A9A9;
+  background: #f9fafd;
+  padding: 0 0.25rem;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.form-floating input:focus + label,
+.form-floating input:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  left: 0.6rem;
+  font-size: 0.75rem;
+  color: #444;
+}
+
+
+.guest-toggle {
+  background: #f9fafd; /* Match other fields */;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; */;
+  font-size: 1rem;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+
+}
+.guest-toggle.active {
+  border: 1px solid #000 !important;
+  box-shadow: 0 0 0 2px #ece9e0, 0 2px 8px 0 rgba(0,0,0,0.08);
+}
+.room {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e2e6ea;
+}
+
+.room h4 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+.guests-container {
+  position: relative;
+  width: 100%;
+}
+
+.guest-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #f9fafd;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-top: 5px;
+  padding: 1rem;
+  z-index: 99;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  display: none;
+}
+.room {
+  padding: 0.5rem;
+}
+.guest-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+.guest-row button {
+  width: 32px;
+  height: 32px;
+  font-weight: bold;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.guest-summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: center;
+}
+.guest-summary button {
+  background: black;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.remove-room-btn {
+  background: none;
+  border: none;
+  color: #000;
+  font-size: 24px;           /* Bigger size */
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;         /* Pushes it left inside a flex row */
+  transform: translateX(-10px); /* Nudge more to the left */
+  transition: color 0.2s ease;
+}
+
+
+
+
+
+
+
+
+.form-summary-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.3rem;
+  margin: 2.7rem auto 1.7rem auto;
+  font-weight: 700;
+  font-size: 1.06rem;
+  letter-spacing: 1.2px;
+  color: #183060;
+  text-transform: uppercase;
+  opacity: 0.92;
+  background: none;
+  /* For hiding/animation: */
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  pointer-events: none;
+  transition:
+    opacity 0.4s cubic-bezier(.7,0,.3,1),
+    transform 0.48s cubic-bezier(.7,0,.3,1);
+}
+
+.form-summary-bridge.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.bridge-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: linear-gradient(120deg, #673131 70%, #e4ecfa 100%);
+  box-shadow: 0 1.5px 7px rgba(183, 147, 95, 0.13);
+  display: inline-block;
+  opacity: 0;
+  transform: scale(0.75);
+  animation: none;
+  transition:
+    opacity 0.23s cubic-bezier(.61,0,.49,1),
+    transform 0.37s cubic-bezier(.65,0,.4,1);
+}
+
+/* When bridge is visible, show and animate dots */
+.form-summary-bridge.visible .bridge-dot {
+  opacity: 1;
+  transform: scale(1);
+  animation: bounceDown 0.55s cubic-bezier(.77,0,.41,1) both,
+             starFlash 2.1s 0.6s infinite alternate;
+}
+.form-summary-bridge.visible .bridge-dot:nth-child(2) {
+  animation-delay: 0.18s, 0.85s; /* stagger the bounce and flash for 2nd dot */
+}
+
+/* Keep your existing bounceDown and starFlash keyframes */
+@keyframes bounceDown {
+  0% { transform: translateY(0) scale(0.6);}
+  40% { transform: translateY(0) scale(1.05);}
+  55% { transform: translateY(6px) scale(0.98);}
+  80% { transform: translateY(-1px) scale(1.01);}
+  100% { transform: translateY(0) scale(1);}
+}
+@keyframes starFlash {
+  0%,100% { opacity: 0.92;}
+  40% { opacity: 1;}
+  50% { opacity: 0.75;}
+  60% { opacity: 1;}
+}
+
+
+.country-display {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem; /* This now spaces icon, code, and arrow */
+  padding: 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  cursor: pointer;
+  border-right: 1px solid #d2d7e1;
+  height: 100%;
+}
+
+/* Flag icon */
+.country-display .iconify {
+  font-size: 0.9rem;
+  margin-left: 0;
+}
+
+/* Separate dropdown arrow element */
+.dropdown-arrow {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1.5px solid #555;
+  border-bottom: 1.5px solid #555;
+  transform: rotate(45deg);
+  margin-left: 0.25rem; /* Controls space from code */
+}
+
+
+/* Make the infant checkbox small and native-looking */
+.guests-container input[type="checkbox"],
+.guest-panel input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  appearance: auto;              /* keep native checkbox look */
+  -webkit-appearance: checkbox;  /* Safari */
+  vertical-align: middle;
+  accent-color: #6B2E2E;         /* your dark blue tick */
+}
+
+
+
+
+/* Checkbox sizing (you already had this, keeping it here for completeness) */
+.guest-panel input[type="checkbox"]{
+  width: 18px !important;
+  height: 18px !important;
+  margin: 0;                  /* removes weird extra space */
+  appearance: auto;
+  -webkit-appearance: checkbox;
+  accent-color: #6B2E2E;
+  justify-content: center;   
+  margin-right: 16.4%;
+}
+
+/* Only the guest rows */
+.guest-row{
+  /* move this value to shift the vertical split */
+  --right-col: 280px;
+
+  display: grid;
+  grid-template-columns: max-content var(--right-col);
+  gap: 12px 16px;
+  justify-content: center;   /* center the whole two-column block */
+  align-items: center;
+}
+
+/* left column = labels/text (odd children) */
+.guest-row > *:nth-child(odd){
+  grid-column: 1;
+  justify-self: end;         /* label near its control */
+  text-align: right;
+}
+
+/* right column = controls (even children) */
+.guest-row > *:nth-child(even){
+  grid-column: 2;
+  justify-self: center;      /* center each control in the fixed column */
+}
+
+
+/* mobile: stack rows */
+@media (max-width: 600px){
+  .guest-row{
+    grid-template-columns: 1fr;
+    justify-content: start;
+  }
+  .guest-row > *:nth-child(odd){ justify-self: start; text-align: left; }
+  .guest-row > *:nth-child(even){ justify-self: start; }
+  .guest-row input[type="checkbox"]{ justify-self: center; } /* keep centered if you prefer */
+}
+
+
+.modal-content { scroll-behavior: smooth; }
+.book-btn { scroll-margin-top: 24px; } /* leaves a little breathing room */
+
+
+/* 2-column rows */
+.guest-row{
+  --label-w: 160px;
+  --right-w: 280px;
+  display: grid;
+  grid-template-columns: var(--label-w) var(--right-w);
+  gap: 12px 16px;
+  align-items: center;
+}
+
+/* left labels */
+.guest-row .label{ justify-self: end; }
+
+/* right cell becomes a centered field */
+.guest-row .control{
+  justify-self: stretch;
+  display: grid;
+  place-items: center;               /* <<< single shared center axis */
+  background: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  min-height: 44px;
+  padding: 6px 10px;
+}
+
+/* === Stepper (– value +) === */
+.stepper{
+  display: grid;
+  grid-template-columns: 40px minmax(3ch,auto) 40px; /* symmetric */
+  align-items: center;
+  column-gap: 10px;
+}
+.stepper .value{
+  justify-self: center;
+  width: 3ch;                      /* fixed box, centers any digit(s) */
+  text-align: center;
+  line-height: 1;
+  /* make digits equal width so “1” doesn’t look off */
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.stepper button{
+  width: 40px; height: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* === Select truly centered === */
+.select-wrap{
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;              /* centers the select text */
+}
+.select-wrap select{
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 28px;                  /* symmetric padding */
+  text-align: center;               /* Firefox */
+  text-align-last: center;          /* Chrome/Edge */
+  -moz-text-align-last: center;
+}
+/* fake arrow so it doesn't push text off-center */
+.select-wrap::after{
+  content: "";
+  position: absolute;
+  right: 10px;
+  width: 12px; height: 8px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* === Checkbox centered on that axis === */
+.guest-row input[type="checkbox"]{
+  margin: 0;                        /* remove UA left margin */
+  width: 18px; height: 18px;
+  justify-self: center;
+}
+
+/* mobile */
+@media (max-width: 754px){
+  .guest-row{ grid-template-columns: 1fr; }
+  .guest-row .label{ justify-self: start; }
+}
+
+/* the right cell */
+.guest-row .control,
+.guest-row .field {                     /* if you use a .field wrapper */
+  display: flex;
+  align-items: center;                  /* vertical center */
+  justify-content: center;              /* horizontal center */
+}
+
+/* SELECT truly centered (and its text centered) */
+.guest-row .control select {
+  display: block;
+  margin: 0 auto;
+  width: auto;                          /* don’t stretch full width */
+  min-width: 140px;                     /* optional, keeps it tidy */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;                   /* Firefox */
+  text-align-last: center;              /* Chrome/Edge */
+  -moz-text-align-last: center;
+  padding: 6px 28px 6px 28px;           /* balanced padding */
+  background: #fff;
+  border: 1px solid #d2d7e1;
+  border-radius: 8px;
+  /* fake arrow so centering stays true */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right .6rem center;
+}
+
+/* CHECKBOX centered */
+.guest-row .control input[type="checkbox"]{
+  display: block;
+  margin: 0 auto;                      /* center horizontally */
+  width: 18px; height: 18px;
+}
+
+/* one clear definition for the rows */
+.guest-row{
+  --label-w: 160px;            /* left column width */
+  --right-w: 200px;            /* right column width (shared center) */
+  display: grid;
+  grid-template-columns: var(--label-w) var(--right-w);
+  align-items: center;
+  gap: 12px 16px;
+}
+.guest-row .label{ justify-self: end; }
+
+/* the right cell becomes a centered field */
+.guest-row .control{
+  display: grid;
+  place-items: center;         /* centers select, number, checkbox on same axis */
+}
+
+/* stepper number stays visually centered */
+.stepper{
+  display: grid;
+  grid-template-columns: 40px minmax(3ch,auto) 40px;
+  align-items: center;
+  column-gap: 10px;
+}
+.stepper .value{
+  width: 3ch; text-align:center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* select truly centered (text too) */
+.select-wrap{ position: relative; width:100%; display:grid; place-items:center; }
+.select-wrap select{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  width:100%;
+  padding:6px 28px;
+  border:1px solid #d2d7e1; border-radius:8px;
+  text-align:center; text-align-last:center; -moz-text-align-last:center;
+  background:#fff;
+}
+.select-wrap::after{
+  content:""; position:absolute; right:10px; width:12px; height:8px; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:center;
+}
+
+/* checkbox centered */
+.infant-checkbox{ margin:0; width:18px; height:18px; }
+
+/* REMOVE the old push-right rule */
+.guest-panel input[type="checkbox"]{ margin-right:0; }
+
+/* === Guest panel final layout (scoped) === */
+#guestPanel .guest-row{
+  display: grid;              /* kill older flex rules */
+  grid-template-columns: 125px 105px;    /* label | control (tweak as you like) */
+  align-items: center;
+}
+/* default hidden (no !important) */
+#guestPanel .infant-row { display: none; }
+#guestPanel .infant-row.is-visible { display: grid !important; }
+#guestPanel .label{
+  text-align: left;
+}
+
+#guestPanel .control{
+  justify-self: center;                  /* shared center axis for all controls */
+  display: grid;
+  place-items: center;
+  background: #f9fafd;
+  border: 1px solid #d2d7e1;
+  border-radius: 12px;
+  min-height: 44px;
+  padding: 6px 10px;
+}
+
+/* stepper */
+#guestPanel .control.stepper{
+  grid-template-columns: 40px minmax(3ch,auto) 40px;
+}
+#guestPanel .control.stepper .value{
+  width: 3ch;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* select truly centered (text + arrow) */
+#guestPanel .select-wrap{ background: transparent; border: 0; padding: 0; }
+#guestPanel .select-wrap select{
+  width: auto;
+  min-width: 140px;
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  text-align: center; text-align-last: center; -moz-text-align-last: center;
+  padding: 6px 28px;
+  border: 1px solid #d2d7e1; border-radius: 8px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239DA6B6' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat right .6rem center;
+}
+
+/* checkbox centered on the same axis */
+#guestPanel input[type="checkbox"]{
+  margin: 0 !important;
+  width: 18px; height: 18px;
+}
+
+/* neutralize old "right align odd children" rule */
+#guestPanel .guest-row > *:nth-child(odd){
+  justify-self: start !important;
+  text-align: left !important;
+}
+
+
+/* Ensure panel provides the context */
+#guestPanel { position: relative; }
+
+/* Inline, full-width banner that matches the white card design */
+.capacity-banner {
+  box-sizing: border-box;
+  width: 100%;
+  background: #ffffff;
+  color: #6B2E2E;
+  border: 1px solid #e6e8f0;        /* matches subtle card border */
+  border-radius: 12px;               /* same radius as the panel */
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px 0;                /* separates from controls below */
+  box-shadow: 0 8px 24px rgba(17,30,57,0.06);
+
+  /* entrance/exit */
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.capacity-banner.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.capacity-banner .fa-circle-info { font-size: 14px; }
+.capacity-banner .capacity-close {
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #667085;
+}
+
+
+.capacity-text {
+  font-size: 14px;
+}
+
+label[for="guestToggle"] { pointer-events: none; }
+
+/* Make the Infant checkbox bare (no framed box) */
+#guestPanel .infant-row .control {
+  background: transparent;
+  border: none;
+  padding: 0;
+  min-height: 0;
+  box-shadow: none;
+}
+#guestPanel .infant-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Make each cell a positioning context */
+.form-group.two-cols .form-floating,
+.guests-container,
+label[for="policy"] {
+  position: relative;
+}
+
+/* leave room between grid rows so hints don’t overlap the next row */
+.form-group.two-cols { row-gap: 28px; }
+
+/* inline hint: same cell, positioned below the input */
+.field-msg{
+  position: absolute;
+  left: 12px;                 /* align with input padding */
+  bottom: -18px;              /* BELOW the field (use top:-18px to put ABOVE) */
+  margin: 0;
+  font-size: .85rem;
+  line-height: 1.25;
+  color: #b42318;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  pointer-events: none;       /* clicks go to the field */
+}
+
+/* optional fade when auto-hiding */
+.field-msg.fade-out{ opacity: 0; transition: opacity .25s ease; }
+
+/* red border look – keep only one version so it matches all fields */
+.field-error, .field-error:focus {
+  border-color:#e74c3c!important;
+  box-shadow:0 0 0 3px rgba(231,76,60,.15)!important;
+}
+
+/* composite phone wrapper gets the same border */
+.selected-option.field-error{
+  border:2px solid #e74c3c!important;      /* match other inputs’ border width */
+  box-shadow:0 0 0 3px rgba(231,76,60,.15)!important;
+  border-radius:12px;
+}
+
+
+/* make the policy label the positioning context and full-width */
+label[for="policy"]{
+  position: relative;
+  align-items: center;
+  gap: .5rem;
+  width: 100%;
+  padding-bottom: 20px;       /* room for the inline error below */
+  display: block;
+}
+
+
+
+/* center the policy error under the label */
+label[for="policy"] .field-msg{
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -3px;              /* tweak if you want tighter/looser */
+  text-align: center;
+  justify-content: center;
+}
+
+/* Make Turnstile wrapper get the same red border when invalid */
+#captchaWrap.field-error{
+  border: 1px solid #e74c3c !important;
+  box-shadow: 0 0 0 3px rgba(231,76,60,.15) !important;
+  border-radius: 12px;
+  padding: 6px;
+}
+
+
+/* --- Modal Progress Layer --- */
+.room-modal .modal-progress[hidden] { display: none; }
+
+.room-modal .modal-progress {
+  position: absolute; inset: 0; 
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.75));
+  z-index: 999;
+  padding: 24px;
+}
+
+.progress-card {
+  width: min(560px, 92vw);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.15);
+  padding: 28px 24px 22px;
+  text-align: center;
+}
+
+.spinner {
+  width: 48px; height: 48px;
+  border: 4px solid rgba(0,0,0,.12);
+  border-top-color: #6B2E2E;
+  border-radius: 50%;
+  margin: 6px auto 14px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.icon { display: none; font-size: 44px; margin-bottom: 12px; }
+.modal-progress.success .icon.success { display: inline-block; color: #18a957; }
+.modal-progress.error   .icon.error   { display: inline-block; color: #c23030; }
+.modal-progress.success .spinner,
+.modal-progress.error   .spinner      { display: none; }
+
+#progressTitle { margin: 6px 0 4px; font-weight: 700; }
+#progressSubtitle { margin: 0; color: #555; }
+
+.progress-actions { margin-top: 16px; display: flex; gap: 10px; justify-content: center; }
+.room-btn.secondary { background: transparent; color: #673131; border: none }
+.room-btn.secondary:hover { background: #ca3030; }
+
+/* Optional: hide the normal close "×" while busy */
+.room-modal.busy .modal-close { opacity: .35; pointer-events: none; }
+
+
+/* ---------- NAV: fonts & base ---------- */
+.nav-links a, .menu-toggle {
+  font-family:'Playfair Display', serif;
+}
+
+/* ---------- Toggle button (hidden on desktop) ---------- */
+.menu-toggle{
+  display:none;
+  margin-left:auto;
+  width:42px; height:42px;
+  border:1px solid rgba(255,255,255,0.35);
+  border-radius:10px;
+  background: transparent;
+  cursor:pointer;
+  align-items:center; justify-content:center; gap:5px; flex-direction:column;
+  transition: background .2s ease, border-color .2s ease;
+}
+.menu-toggle .bar{
+  width:20px; height:2px; background:#fff; border-radius:2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.navbar.open .menu-toggle .bar:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+.navbar.open .menu-toggle .bar:nth-child(2){ opacity:0; }
+.navbar.open .menu-toggle .bar:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+.menu-toggle:hover{ background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.55); }
+
+/* ---------- Tablet tweaks ---------- */
+@media (min-width: 768px) and (max-width: 1024px){
+  .logo-img { width:56px; height:56px; }
+  .brand-name { font-size: 1.35rem; }
+  .nav-links a { font-size: .96rem; margin-left: 1.6rem; }
+}
+
+/* ---------- Mobile / small tablet: right drawer ---------- */
+@media (max-width: 700px){
+  .menu-toggle{ display:flex; }
+  .nav-content{ padding: .9rem 1rem; }
+  .logo-img{ width:52px; height:52px; }
+  .brand-name{ font-size: 1.15rem; }
+
+  .nav-links{
+    position: fixed; top:0; right:0;
+    height:100vh; width:min(320px, 86vw);
+    background: rgba(10,26,58,0.98);
+    backdrop-filter: blur(6px);
+    padding: calc(18px + env(safe-area-inset-top)) 24px 24px;
+    padding-top: 88px;
+    box-shadow: -10px 0 28px rgba(0,0,0,0.22);
+    display:flex; flex-direction:column; gap: 18px;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    z-index:1100;
+  }
+  .nav-links a{ margin:0; font-size:1.05rem; padding:10px 2px; letter-spacing:.4px; }
+  .nav-links a::after{ display:none; } /* cleaner list */
+
+  /* Page dimmer when drawer is open */
+  .navbar::after{
+    content:""; position: fixed; inset: 0;
+    background: rgba(0,0,0,.35); opacity:0; pointer-events:none;
+    transition: opacity .25s ease; z-index:1000;
+  }
+  .navbar.open::after{ opacity:1; pointer-events:auto; }
+  .navbar.open .nav-links{ transform: translateX(0); }
+}
+
+
+
+/* Footer stacks nicely on mobile */
+@media (max-width: 700px){
+  .footer-container{
+    flex-direction: column; gap: .6rem; text-align: center;
+  }
+  .footer-left, .footer-right{ text-align: center; }
+  .room-intro {font-size: 0.85rem;}
+}
+
+/* 1) Hide drawer header on desktop (prevents double logo + X) */
+.nav-links .drawer-header { display: none; }
+
+/* Keep brand in normal case everywhere */
+.brand-name { text-transform: none; }
+
+/* MOBILE DRAWER: hidden by default, shown only when .navbar.open */
+@media (max-width: 700px){
+  /* the drawer */
+  #primaryNav.nav-links{
+    position: fixed;
+    top: 0; right: 0;
+    width: min(320px, 86vw);
+    height: 100vh;
+    padding: 88px 24px 24px;      /* leaves room for the drawer header */
+    background: #673131;
+    backdrop-filter: blur(6px);
+    box-shadow: -10px 0 28px rgba(0,0,0,.22);
+    z-index: 1100;
+
+    /* hidden by default */
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform .28s ease, opacity .25s ease, visibility 0s linear .28s;
+  }
+  .navbar.open #primaryNav{
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: transform .28s ease, opacity .25s ease;
+  }
+
+  /* header inside the drawer (logo + X) */
+  #primaryNav .drawer-header{
+    display: flex; align-items: center; justify-content: space-between;
+    position: absolute; inset: 0 0 auto 0; height: 72px;
+    padding: calc(12px + env(safe-area-inset-top)) 18px 12px 18px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .drawer-close{
+    width:40px; height:40px; border-radius:10px;
+    background:transparent; color:#fff; font-size:26px; line-height:1;
+    border:1px solid rgba(255,255,255,.35); cursor:pointer;
+    display:grid; place-items:center;
+  }
+
+  /* backdrop that closes on tap */
+  .drawer-backdrop{
+    position: fixed; inset: 0; z-index: 1050;
+    background: rgba(0,0,0,.38);
+
+    /* hidden by default */
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity .25s ease, visibility 0s linear .25s;
+  }
+  .navbar.open .drawer-backdrop{
+    opacity: 1; visibility: visible; pointer-events: auto;
+  }
+
+  /* normal case (no caps) for menu items in the drawer */
+  #primaryNav a{
+    text-transform: none !important;
+    letter-spacing: .04em;
+    font-weight: 600;
+    padding: 12px 2px;
+    color: #fff;
+    display:block;
+  }
+
+  /* keep brand normal case too */
+  #primaryNav .brand-name{ text-transform:none !important; }
+}
+
+/* On desktop, do NOT show the drawer header (prevents duplicate logo/X) */
+@media (min-width: 901px){
+  #primaryNav .drawer-header{ display:none; }
+}
+
+
+/* ---------- Small-screen niceties ---------- */
+@media (max-width: 900px){
+  .hero-carousel{ height: 70vh; }
+  .hero-overlay h1{ font-size: 2rem; }
+  .section-title{font-size: 2rem;}
+  .features .section-title {font-size: 2rem;}
+  .hero-overlay p{ font-size: 1.1rem; margin-bottom: 2rem; }
+}
+/* Features & rooms spacing on small screens */
+@media (max-width: 800px){
+  .features{ padding: 3rem 0; }
+  .feature-grid{ gap: 1.25rem;}
+  .feature-card {width: 80%; align-items: center; text-align: center;}
+  .room-grid{ gap: 1.5rem; }
+}
+@media (max-width: 520px){
+  .hero-carousel{ height: 62vh; }
+  .hero-overlay h1{ font-size: 1.7rem; }
+  .section-title { font-size: 1.7rem; }
+  .features .section-title {font-size: 1.7rem;}
+  .hero-overlay p{ font-size: 1rem; }
+  .cta-button{ padding:.5rem 0.9rem; font-size: 0.8rem; }
+}
+
+@media (max-width: 450px){
+  .hero-overlay h1{ font-size: 1.4rem; }
+  .section-title { font-size: 1.4rem; }
+  .features .section-title {font-size: 1.4rem;}
+}
+
+
+
+html, body { overflow-x: clip; }        
+
+/* Off-canvas drawer */
+@media (max-width: 700px){
+  #primaryNav{
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(85vw, 320px);
+    max-width: 100%;
+    transform: translateX(100%);              /* hidden without affecting layout */
+    transition: transform .25s ease;
+    will-change: transform;
+    overflow-y: auto;
+    /* ensure it sits over content */
+    z-index: 1000;
+  }
+
+  /* When menu is open */
+  .navbar.open #primaryNav{
+    transform: translateX(0);
+  }
+
+  /* Backdrop covers the full viewport */
+  #navBackdrop{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+  }
+}
+
+
+/* Feature grid */
+.features .feature-grid{
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;            /* center content inside each cell */
+}
+
+/* Center each card */
+.features .feature-card{
+  width: min(100%, 360px);          /* card doesn't stretch full width */
+  margin-inline: auto;              /* horizontally center it */
+}
+
+
+@media (max-width: 700px){
+
+  /* Drawer header layout */
+  #primaryNav .drawer-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+  }
+
+  /* Put logo and text side-by-side */
+  #primaryNav .drawer-header .logo-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 10px;                 /* space between logo and text */
+    text-decoration: none;
+  }
+
+  /* Logo size */
+  #primaryNav .drawer-header .logo-img{
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Keep the brand text on one line */
+  #primaryNav .drawer-header .brand-name{
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  /* Close button stays on the right */
+  #primaryNav .drawer-close{
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .footer {
+    padding: 6px 10px;                 /* small vertical padding */
+    font-size: 12px;                    /* small text */
+    line-height: 1.2;                   /* tight line height */
+  }
+
+  /* one row: left | center | right */
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;                   /* keep the whole bar slim */
+    width: 100%;
+  }
+
+  /* ensure each cell is a single, compact line */
+  .footer-left p,
+  .footer-center p,
+  .footer-right p {
+    margin: 0;
+    white-space: nowrap;                /* no wrapping */
+    overflow: hidden;                   /* don’t let it grow tall */
+    text-overflow: ellipsis;            /* truncate if too long */
+    font-size: 12px;
+  }
+
+  /* icons smaller, tighter spacing */
+  .footer i {
+    font-size: 12px;
+    margin-right: 6px;
+    opacity: .9;
+  }
+
+  /* links look subtle */
+  .footer a {
+    color: #ffffff;
+  }
+
+  /* hide any extra mobile-only blocks you don’t want (action bars, extra lines) */
+  .footer-actions,
+  .footer-address,
+  .footer-copy {
+    display: none !important;
+  }
+}
+
+
+@media (max-width: 550px) {
+   .footer-left p,
+  .footer-center p,
+  .footer-right p {
+    font-size: 8px;
+  }
+}
+
+/* --- Active state inside the mobile drawer --- */
+@media (max-width: 700px){
+  /* keep links positioned for pseudo-elements */
+  #primaryNav a{ position: relative; }
+
+  /* bring the underline back ONLY for the active link */
+  #primaryNav a.active::after,
+  #primaryNav a[aria-current="page"]::after{
+    content:"";
+    position:absolute;
+    left: 0;
+    right: 0;          /* full width */
+    bottom: 6px;       /* sits inside the link */
+    height: 2px;
+    background:#ee7d7d;
+    display:block;     /* overrides the global 'display:none' */
+  }
+
+  /* optional: subtle highlight so it's easier to spot */
+  #primaryNav a.active,
+  #primaryNav a[aria-current="page"]{
+    color:#aad4ff;
+    background: rgba(255,255,255,.06);
+    border-radius: 10px;
+  }
+}
+
+
+/* mobile drawer: active underline + pill ONLY on menu items */
+/* Mobile drawer: active link = short underline bar (no pill) */
+@media (max-width: 700px){
+  /* base */
+  #primaryNav > a{
+    position: relative;
+    padding: 12px 2px;
+  }
+
+  /* active state */
+  #primaryNav > a.active{
+    color: #fff;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  /* the underline bar under the text */
+  #primaryNav > a.active::after{
+    content: "";
+    display: block !important;      /* override any earlier display:none */
+    width: 56px;                    
+    height: 3px;
+    margin-left: 7px;
+    margin-top: 8px;                /* space below the word */
+    border-radius: 2px;
+    background: #ffffff;
+  }
+
+  /* never mark the logo in the drawer header as active */
+  #primaryNav .drawer-header a.active,
+  #primaryNav .drawer-header a.active::after{
+    display: none !important;
+    background: none !important;
+  }
+}
+/* ===== Prevent footer from covering content (≤400px) ===== */
+@media (max-width: 400px){
+  :root{ --footer-h: 44px; } /* visible height of your footer bar */
+
+  /* Reserve space at the bottom of the page for the fixed footer */
+  body{
+    padding-bottom: calc(var(--footer-h) + env(safe-area-inset-bottom));
+  }
+
+  /* Make the footer a consistent height + respect iOS safe area */
+  .footer,
+  .hidden-footer,
+  .footer.footer-visible{
+    min-height: var(--footer-h);
+    padding: 6px 8px;
+    padding-bottom: max(6px, env(safe-area-inset-bottom));
+  }
+
+  /* Small extra breathing room for the last section/cards */
+  .room-preview{ margin-bottom: 12px; }
+  .room-grid{ padding-bottom: 8px; }
+  .room-card:last-child{ margin-bottom: 8px; }
+}
+
+/* --- 3) Hide the long address on very small widths, keep copyright --- */
+@media (max-width: 390px){
+  .footer-center p:first-child{ display: none; } /* the address line */
+  :root{ --footer-h: 46px; } /* footer gets shorter without the address */
+}
+
+
+/* ---------- Gutters so cards never touch the screen edges ---------- */
+:root{
+  --footer-h: 52px;         /* real footer height on mobile */
+  --footer-gap: 14px;       /* breathing room above it */
+  --page-gutter: clamp(14px, 4vw, 24px);
+}
+.container{ padding-inline: var(--page-gutter); }
+
+/* Reserve space so the fixed footer never covers the last card */
+body{ padding-bottom: calc(var(--footer-h) + var(--footer-gap)); }
+.room-preview{ margin-bottom: var(--footer-gap); }
+
+/* ---------- Room grid always fits ---------- */
+@media (min-width: 635px){
+  .room-preview .room-grid{
+    grid-template-columns: repeat(2, minmax(0,1fr)); /* tablets+ */
+  }
+}
+
+/* Card can’t overflow horizontally */
+.room-card{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Inner padding scales with width */
+.room-content{ padding: clamp(14px, 4vw, 20px); }
+
+/* Price + button stay inside even on tiny screens */
+.room-details{ gap: 12px; flex-wrap: wrap; }
+.room-btn{ white-space: nowrap; }
+
+/* Images scale nicely on small phones (never force 350px height) */
+@media (max-width: 480px){
+  .room-card img{
+    height: auto;            /* override fixed 350px */
+    aspect-ratio: 4 / 3;     /* consistent crop, no jumpy layout */
+    object-fit: cover;
+  }
+}
+
+/* Footer compact on tiny widths and hide long address */
+@media (max-width: 420px){
+
+}
+
+
+/* ====== globals / spacing ====== */
+:root{
+  --footer-h: 56px;               /* actual height of your fixed footer */
+  --footer-gap: 16px;              /* breathing room above it */
+  --page-gutter: clamp(14px, 4vw, 24px);
+}
+
+/* containers keep safe side gutters */
+.container{ padding-inline: var(--page-gutter); }
+
+/* reserve space so the fixed footer never covers content */
+body,
+.room-page{ 
+  padding-bottom: calc(var(--footer-h) + var(--footer-gap));
+}
+
+/* also add a little gap below the last card */
+.room-page .room-grid{ margin-bottom: var(--footer-gap); }
+
+/* ====== cards always fit ====== */
+.room-page .room-grid{
+  display: grid;
+  gap: clamp(16px, 3.5vw, 24px);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.room-card{
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;                 /* keeps image/content inside */
+}
+
+/* image scales—no fixed pixel height */
+.room-card > img{
+  width: 100%;
+  height: auto;                      /* override any previous fixed height */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* tidy title/badge row and prevent overflow */
+.room-title{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* content paddings scale with width */
+.room-content{ padding: clamp(14px, 4vw, 20px); }
+
+/* price + button never wrap awkwardly or overflow */
+.room-details{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.room-price{ min-width: 0; }
+.room-btn{ flex: 0 0 auto; white-space: nowrap; }
+
+/* ====== footer polish ====== */
+@media (max-width: 400px){
+  /* hide the long address on small screens */
+  .footer-center p:first-child{ display: none; }
+  /* footer is shorter now, so update the reserved space */
+  :root{ --footer-h: 48px; }
+}
+
+
+@media (max-width: 600px){
+  .booking-form form .form-group.two-cols{
+    grid-template-columns: 1fr;              /* 2 → 1 */
+    row-gap: 16px;
+  }
+}
+/* =========================
+   BOOKING FORM – RESPONSIVE FIX
+   paste after all other form rules
+   ========================= */
+
+/* Use a grid for the 2-up rows (safer than flex here) */
+.booking-form form .form-group.two-cols{
+  display: grid !important;                 /* override earlier flex */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;                             /* allow lines to grow naturally */
+  height: auto !important;                   /* kill fixed 100px height */
+  align-items: start;
+  flex-wrap: initial !important;             /* neutralize old rule */
+}
+
+/* Inputs inside each column should stretch properly */
+.booking-form form .form-group.two-cols > .form-floating,
+.booking-form form .form-group.two-cols > .guests-container{
+  min-width: 0;                              /* prevents overflow of long content */
+  width: 100%;
+  
+}
+
+/* Phone/guest/date composites behave like normal fields */
+.booking-form form .selected-option,
+.booking-form form .guest-toggle{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ≤600px: collapse to one column */
+@media (max-width: 600px){
+  .booking-form form .form-group.two-cols{
+    grid-template-columns: 1fr;              /* 2 → 1 */
+    row-gap: 16px;
+  }
+}
+
+/* Make the modal and slider scale on small screens */
+.room-modal .modal-content{
+  width: min(900px, 94vw);                    /* no sideways scroll */
+}
+
+
+.room-modal .modal-slides img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ensure the form card itself fits narrow viewports */
+.booking-form form{
+  width: min(700px, 94vw);
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+
+/* Space inside each 2-column row (between the two lines) */
+.booking-form form .form-group.two-cols{
+  row-gap: 20px;           /* was ~0–16px; increase for more space */
+  column-gap: 16px;        /* optional, horizontal gap */
+}
+
+/* Space between one form row and the next block (e.g., textarea) */
+.booking-form form .form-group{
+  margin-bottom: 18px;     /* adds vertical spacing between “lines” */
+}
+
+
+/* Booking form rows – apply directly to your form ID */
+#bookingFormHTML .form-group.two-cols{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  column-gap: 1rem;
+  row-gap: 1rem;
+  height: auto !important;        /* undo the 100px */
+  align-items: start;
+  flex-wrap: initial !important;  /* neutralize old rule */
+}
+
+#bookingFormHTML .form-group.two-cols > .form-floating,
+#bookingFormHTML .form-group.two-cols > .guests-container{
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 600px){
+  #bookingFormHTML .form-group.two-cols{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Overlay padding variable so widths always fit inside it */
+.room-modal{
+  --overlay-pad: clamp(8px, 3vw, 16px);
+  padding: var(--overlay-pad);
+}
+
+/* The modal box must fit inside overlay padding */
+.room-modal .modal-content{
+  width: min(900px, calc(100vw - 2 * var(--overlay-pad)));
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+
+  /* clip children so rounded corners stay clean */
+  overflow: hidden;            /* keeps inner white blocks from "bleeding" */
+  overflow-y: auto;            /* vertical scroll still allowed */
+}
+
+
+
+/* (If you keep the old rule elsewhere, neutralize it) */
+.booking-form form{
+  width: 100% !important;      /* instead of width: min(700px, 94vw) */
+}
+
+
+@media (max-width: 380px) {
+  #captchaWrap{width:100%}
+  #cfCaptcha{display:block;width:100%}
+
+}
+
+
+
+.captcha-wrap{
+  display:inline-block;                  /* so it sizes to content */
+  overflow:hidden;                       /* hide the unscaled area */
+  margin: .5rem 0;                       /* your spacing */
+}
+#captchaScale{
+  will-change: transform;                /* smoother scaling */
+}
+
+/* Optional: center it in your form row */
+.captcha-wrap{ margin-left:auto; margin-right:auto; }
+
+
+/* Fill the screen better on very small phones */
+@media (max-width: 430px) {
+  /* shrink the overlay padding so the white card can grow */
+  .room-modal { --overlay-pad: 6px; padding: var(--overlay-pad); }
+
+  /* make the modal box as wide as the viewport minus the tiny padding */
+  .room-modal .modal-content {
+    width: calc(100vw - (var(--overlay-pad) * 2));
+    max-width: none;
+    margin: 0 auto;
+    border-radius: 16px;
+  }
+
+  /* let the booking form use the full modal width */
+  .booking-form form {
+    max-width: none;     /* remove 700px cap */
+    width: 100%;
+    padding: 13px;       /* tighter inner padding on tiny screens */
+    border-radius: 16px;
+  }
+
+  /* the section above the form also has big side padding */
+  .modal-info { padding: 16px; }
+
+  .guest-badge { font-size: 0.7rem; }
+  .room-card .room-description{
+    font-size: 0.9rem;
+  }
+
+
+  .flatpickr-calendar.open{
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    max-width: 360px !important;
+    box-sizing: border-box;
+  }
+  .room-modal .modal-info #modalDescription{
+    font-size: 0.8rem;
+  }
+  .room-modal .modal-info #modalPrice{
+    font-size: 1rem;
+  }
+  .room-modal .modal-info #modalTitle{
+    font-size: 1.5rem;
+  }
+  .room-btn{
+    font-size: 0.9rem;
+  }
+
+  .form-floating input {
+    width: 100%;
+    padding: 0.65rem 0.6rem; /* equal vertical padding */
+    font-size: 0.9rem;
+  }
+  
+  .form-floating label {
+    font-size: 0.9rem;
+    position: absolute;
+    top: 0.75rem;
+    left: 0.65rem;
+    color: #A9A9A9;
+  }
+  .form-group #message{
+    font-size: 0.9rem;
+  }
+
+  
+}
+
+
+@media (max-width: 430px){
+  .policy #privacy-policy{
+    font-size: 0.8rem;
+  }
+  .policy input[type="checkbox"]{ width:12px; height:12px; border-radius:3px; }
+}
+
+
+
+
+/* iPhone 14 family & other small phones */
+@media (max-width: 430px) {
+
+  /* Guests cell (the pill) */
+  .guests-container .guest-toggle{
+    font-size: .95rem;
+    padding: .55rem .7rem;   /* less padding */
+    min-height: 40px;        /* shorter */
+    border-radius: 10px;
+  }
+
+
+
+  /* Country code/flag size */
+  .country-display strong{ font-size: .8rem; }
+  .country-display .iconify{ width: 13px; height: 10px; }
+
+}
+
+
+/* Phone selector: padding-based sizing */
+@media (max-width: 430px) {
+  /* Outer pill */
+  .form-floating .select-box .selected-option{
+    min-height: 0 !important;     
+    height: auto !important;        
+    padding-block: .35rem;          
+    padding-inline: .3rem;         
+    border-radius: 9px;
+    display: flex; align-items: center; gap: 6px;
+    box-sizing: border-box;
+  }
+
+  /* The tel input itself */
+  .form-floating .select-box .selected-option input[type="tel"]{
+    min-height: 0 !important;       /* key override */
+    height: auto !important;        /* no fixed height */
+    padding-block: .45rem;          
+    padding-inline: .4rem;
+    line-height: 1.1;
+    border: 0 !important;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    font-size: .9rem;
+  }
+
+  /* Tweak code/flag so they don't force extra height */
+  .form-floating .select-box .country-display{ gap:4px; }
+  .form-floating .select-box .country-display .iconify{ width:16px; height:11px; }
+  .form-floating .select-box .country-display strong{ font-size:.85rem; }
+}
+
+/* =========================================
+   ORDER SUMMARY — phones (≤ 500px width)
+   ========================================= */
+/* === ORDER SUMMARY: phones (<=500px) — final override === */
+@media (max-width: 500px){
+  .order-summary.hotel-elegant{
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+  
+
+  /* rows use compact two-column grid */
+  .order-summary.hotel-elegant .summary-details > div:not(.total):not(.summary-note){
+    display: grid !important;                
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e6eaf2;
+    min-height: 0 !important;                
+  }
+
+  /* left cell (icon + label) — remove desktop min-width */
+  .order-summary.hotel-elegant .summary-details > div > span:first-child{
+    min-width: 0 !important;
+    display: inline-flex;
+      grid-template-columns: 1.25em auto  !important;  /* fixed icon box + fluid label */
+ 
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+
+  /* icon box smaller so it doesn’t create a big gutter */
+  .order-summary.hotel-elegant .icon,
+  .order-summary.hotel-elegant i.fa-solid{
+    width: 1.1em !important;
+    height: 1.1em !important;
+    font-size: 1.05em !important;
+    margin-right: 0 !important;
+  }
+
+  /* right cell (value) */
+  .order-summary.hotel-elegant .summary-details > div > span:last-child{
+    font-size: .98rem;
+    white-space: nowrap;                       /* keep dates on one line */
+  }
+
+  /* total card */
+  .order-summary.hotel-elegant .total{
+    font-size: 1rem;
+
+  }
+  .order-summary.hotel-elegant .summary-details
+  > div:not(.total):not(.summary-note){
+    display: flex !important;      /* stay inline-flex layout */
+    align-items: center;
+    gap: 12px;
+  }
+  .order-summary.hotel-elegant .summary-details > div > span:first-child{
+    min-width: 0;                  /* allow shrink on small screens */
+    gap: .45rem;
+  }
+  .order-summary.hotel-elegant .summary-details > div > span:last-child{
+    margin-left: auto;             /* values stay on the right */
+    white-space: nowrap;
+  }
+
+}
+/* ≤380px: shrink fonts in the order summary */
+@media (max-width: 400px){
+  .order-summary.hotel-elegant h2{
+    font-size: 1.2rem;           /* title smaller */
+    letter-spacing: .04em;
+  }
+
+  /* base text size for rows (both label & value inherit) */
+  .order-summary.hotel-elegant .summary-details{
+    font-size: .94rem;
+    line-height: 1.35;
+  }
+
+  /* optional: nudge label/value sizes separately */
+  .order-summary.hotel-elegant .summary-details > div > span:first-child{
+    font-size: .98em;
+  }
+  .order-summary.hotel-elegant .summary-details > div > span:last-child{
+    font-size: .96em;
+    white-space: nowrap;
+  }
+
+  /* icons scale with the text; make them a touch smaller too */
+  .order-summary.hotel-elegant .icon,
+  .order-summary.hotel-elegant i.fa-solid{
+    font-size: 1em !important;
+    width: 1.1em; height: 1.1em;
+  }
+
+  /* total bar & note */
+  .order-summary.hotel-elegant .total{
+    font-size: 1rem;
+  }
+
+}
+
+/* Extra-small phones */
+@media (max-width: 360px){
+  .guests-container .guest-toggle{
+    font-size: .9rem;
+    padding: .45rem .6rem;
+    min-height: 36px;
+    border-radius: 8px;
+  }
+}
+@media (max-width: 350px){
+  /* base text size for rows (both label & value inherit) */
+  .order-summary.hotel-elegant .summary-details{
+    font-size: .9rem;
+    line-height: 1.35;
+  }
+
+  /* optional: nudge label/value sizes separately */
+  .order-summary.hotel-elegant .summary-details > div > span:first-child{
+    font-size: .9em;
+  }
+  .order-summary.hotel-elegant .summary-details > div > span:last-child{
+    font-size: .9em;
+    white-space: nowrap;
+  }
+
+  /* icons scale with the text; make them a touch smaller too */
+  .order-summary.hotel-elegant .icon,
+  .order-summary.hotel-elegant i.fa-solid{
+    font-size: 0.9em !important;
+    width: 1em; height: 1em;
+  }
+
+  /* total bar & note */
+  .order-summary.hotel-elegant .total{
+    font-size: 0.9rem;
+  }
+
+}
+
+@media (max-width: 500px){
+  .order-summary.hotel-elegant .summary-note{
+    display: flex;
+    line-height: 1.35;
+  
+  }
+
+
+  .order-summary.hotel-elegant .summary-note span{
+    font-size: .60rem !important;     /* text size actually changes */
+    white-space: normal !important;    /* allow wrapping (undoes your :last-child rule) */
+    word-break: break-word;            /* safety on tiny screens */
+  } 
+
+  .order-summary.hotel-elegant .summary-note .fa-circle-info {
+    font-size: 0.8em !important;
+  }
+
+}
+
+
+/* ===== Small phones (≤430px) — make the guest panel fit nicely ===== */
+@media (max-width:430px){
+
+  /* scale text a touch and keep the card inside the viewport */
+  #roomModal{ font-size: .95rem; }
+  #guestPanel{
+    left: 0; right: 0;
+    max-width: calc(100vw - 24px);
+    margin-inline: auto;
+    padding: 12px;
+  }
+
+  #guestPanel .infant-row .control {
+    margin-right: 25px;
+  }
+  #guestPanel .room{ padding: 10px; }
+  #guestPanel .room h4{ font-size: .95rem; }
+
+  /* compact two-column layout: label | control */
+  #guestPanel .guest-row{
+    grid-template-columns: 1fr 130px !important;
+    gap: 10px !important;
+    font-size: 0.9rem;
+  }
+
+
+
+  /* controls smaller */
+  #guestPanel .control{ min-height: 36px; padding: 4px 8px; }
+
+  /* steppers stay horizontal (no vertical stacking) */
+  #guestPanel .control.stepper{
+    display: grid !important;
+    grid-template-columns: 30px minmax(2ch,auto) 30px !important;
+    column-gap: 8px;
+  }
+  #guestPanel .control.stepper button{ width: 30px; height: 30px; }
+  #guestPanel .control.stepper .value{ width: 2.5ch; }
+
+  /* select fits the right column and centers text */
+  #guestPanel .select-wrap{ width: 100%; }
+  #guestPanel .select-wrap select{
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 6px 24px;
+    text-align: center;
+    text-align-last: center;      /* Chrome/Edge */
+    -moz-text-align-last: center; /* Firefox */
+  }
+
+  /* summary row + buttons tighter */
+  #guestPanel .guest-summary{ gap: 8px; flex-wrap: wrap; }
+  #guestPanel #updateGuests{ padding: 6px 10px; }
+  #addRoom{ font-size: .85rem; }
+  .guest-toggle{ font-size: .85rem; padding: .55rem .7rem; min-height: 40px; }
+}
+
+/* ultra-narrow phones */
+@media (max-width:360px){
+  #guestPanel .guest-row{ grid-template-columns: 1fr 118px !important; }
+  #guestPanel .control.stepper{
+    grid-template-columns: 28px minmax(2ch,auto) 28px !important;
+  }
+    #guestPanel .infant-row .control {
+    margin-right: 20px;
+  }
+}
+
+
+
+/* Center the guest panel under the pill on tablets (716px case) */
+@media (min-width: 601px) and (max-width: 724px){
+  .guests-container .guest-panel{
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%);
+    width: min(320px, calc(100vw - 32px));
+    margin-top: 8px;
+    padding: 14px;
+    box-sizing: border-box;
+  }
+
+  .guests-container .guest-panel .guest-row{
+    display: grid !important;
+    grid-template-columns: 160px 200px;
+    gap: 12px 16px !important;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+
+  .guests-container .guest-panel .control{
+    min-height: 40px;
+    padding: 6px 10px;
+    display: grid;
+    place-items: center;
+    background: #f9fafd;
+    border: 1px solid #d2d7e1;
+    border-radius: 12px;
+  }
+
+  .guests-container .guest-panel .control.stepper{
+    grid-template-columns: 34px minmax(2.5ch,auto) 34px;
+    column-gap: 8px;
+  }
+  .guests-container .guest-panel .control.stepper button{ width:34px; height:34px; }
+  .guests-container .guest-panel .control.stepper .value{ width:3ch; text-align:center; }
+
+  .guests-container .guest-panel .select-wrap{ width:100%; }
+  .guests-container .guest-panel .select-wrap select{
+    width:100% !important; min-width:0 !important;
+    padding:6px 28px; text-align:center; text-align-last:center; -moz-text-align-last:center;
+  }
+
+  .guests-container .guest-panel .guest-row .infant-row { display: none !important; }
+  #guestPanel .guest-row{ 
+    font-size: 0.9rem;
+  }
+  .field-msg{ white-space: nowrap; overflow-x: auto; font-size: 0.7rem;} 
+}
+
+/* ===== Ultra-elegant ACTIVE state for the mobile drawer (≤700px) ===== */
+/* Put this at the VERY END of your CSS to fully override earlier rules */
+@media (max-width: 700px){
+  :root{
+    --drawer-accent-1: #ffff;     /* soft ice blue */
+    --drawer-accent-2: #9ec9ff;     /* primary accent */
+    --drawer-accent-3: #6aa9ff;     /* deeper accent */
+    --drawer-text:     #eef6ff;     /* active text */
+    --drawer-glass:    rgba(255,255,255,.08);
+    --drawer-stroke:   rgba(255,255,255,.16);
+    --drawer-glow:     rgba(158,201,255,.35);
+  }
+
+  /* wipe old markers/underlines/triangles */
+  #primaryNav > a.active::before,
+  #primaryNav > a.active::after,
+  #primaryNav > a[aria-current="page"]::before,
+  #primaryNav > a[aria-current="page"]::after{
+    content:none !important;
+    display:none !important;
+  }
+
+  /* Base link sizing inside the drawer */
+  #primaryNav > a{
+    position: relative;
+    display: block;
+    border-radius: 14px;
+    padding: 14px 14px 14px 56px; /* space for fancy marker on the left */
+    letter-spacing: .02em;
+    transition: background .25s ease, color .25s ease, transform .12s ease;
+  }
+
+  /* ✨ Fancy glassy active pill with animated sheen */
+  .navbar.open #primaryNav > a.active,
+  .navbar.open #primaryNav > a[aria-current="page"]{
+    color: var(--drawer-text) !important;
+    background:
+      radial-gradient(90px 60px at 0% 50%, rgba(173,212,255,.22), transparent 70%),
+      linear-gradient(135deg, rgba(255,255,255,.09), rgba(255,255,255,.03)) !important;
+    border: 1px solid var(--drawer-stroke) !important;
+    box-shadow:
+      0 10px 28px rgba(0,0,0,.28),
+      inset 0 0 0 1px rgba(255,255,255,.12),
+      0 0 0 2px var(--drawer-glow);
+    backdrop-filter: saturate(145%) blur(6px);
+  }
+
+  /* Left shimmering accent bar */
+  .navbar.open #primaryNav > a.active::before,
+  .navbar.open #primaryNav > a[aria-current="page"]::before{
+    content:"";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    bottom: 10px;
+    width: 6px;
+    border-radius: 6px;
+    background: linear-gradient(
+      180deg,
+      var(--drawer-accent-1) 0%,
+      var(--drawer-accent-2) 40%,
+      var(--drawer-accent-3) 100%
+    );
+    filter: drop-shadow(0 0 6px var(--drawer-glow));
+    overflow: hidden;
+    isolation: isolate;
+  }
+  /* animated sparkle running down the bar */
+  .navbar.open #primaryNav > a.active::after,
+  .navbar.open #primaryNav > a[aria-current="page"]::after{
+    content:"";
+    position:absolute;
+    left: 12px;
+    top: 10px;
+    width: 6px;
+    height: 22px;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #ffffff, rgba(255,255,255,0));
+    mix-blend-mode: screen;
+    animation: drawerSpark 2.4s linear infinite;
+  }
+
+  /* Glowing pearl dot next to the label */
+  .navbar.open #primaryNav > a.active span,
+  .navbar.open #primaryNav > a[aria-current="page"] span{
+    position: relative;
+  }
+  .navbar.open #primaryNav > a.active span::before,
+  .navbar.open #primaryNav > a[aria-current="page"] span::before{
+    content:"";
+    position:absolute;
+    left:-28px; top:50%;
+    width:9px; height:9px;
+    transform: translateY(-50%);
+    border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #fff, var(--drawer-accent-2) 65%);
+    box-shadow:
+      0 0 0 3px rgba(173,212,255,.28),
+      0 0 0 7px rgba(173,212,255,.12),
+      0 2px 10px rgba(0,0,0,.35);
+    animation: pearlPulse 2.8s ease-in-out infinite;
+  }
+
+  /* subtle press feedback */
+  .navbar.open #primaryNav > a:active{ transform: translateY(1px); }
+
+  /* keep header logo link clean */
+  #primaryNav .drawer-header a.active,
+  #primaryNav .drawer-header a[aria-current="page"]{
+    background:none !important;
+    border:0 !important;
+    box-shadow:none !important;
+    color:inherit !important;
+  }
+
+  /* focus accessibility */
+  #primaryNav > a:focus-visible{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(158,201,255,.25), inset 0 0 0 1px rgba(255,255,255,.18);
+  }
+}
+
+/* === Animations (gentle) === */
+@keyframes drawerSpark{
+  0%   { transform: translateY(0);     opacity:.95; }
+  80%  { transform: translateY(calc(100% - 22px)); opacity:.6; }
+  100% { transform: translateY(calc(100% - 22px)); opacity:0; }
+}
+@keyframes pearlPulse{
+  0%,100% { transform: translateY(-50%) scale(1);   box-shadow:
+              0 0 0 3px rgba(173,212,255,.26),
+              0 0 0 7px rgba(173,212,255,.10),
+              0 2px 10px rgba(0,0,0,.32); }
+  50%     { transform: translateY(-50%) scale(1.08); box-shadow:
+              0 0 0 4px rgba(173,212,255,.34),
+              0 0 0 9px rgba(173,212,255,.16),
+              0 6px 18px rgba(0,0,0,.34); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  #primaryNav > a,
+  #primaryNav > a::before,
+  #primaryNav > a::after{ transition: none !important; animation: none !important; }
+}
+
+
+
+@media (max-width: 600px){
+  /* make the whole policy label a block so children can take full width */
+  label[for="policy"]{ 
+    display:block;
+  }
+
+  /* the red error bubble under the checkbox/text */
+  label[for="policy"] .field-msg{
+    display:block;                         /* take full row */
+
+    white-space: nowrap;                   /* keep it on one line */
+    line-height: 1.25;
+    font-size: 0.82rem;                    /* tweak as needed */
+    text-align: left; 
+  }
+}
+@media (max-width: 420px){
+  /* every injected error */
+  .field-msg{
+    display: flex;
+    align-items: flex-start;
+    gap: .45rem;
+    font-size: clamp(.66rem, 3.2vw, .78rem);
+    line-height: 1.25;
+    padding: .45rem .6rem;
+     margin-top:50px !important;
+    max-width: 100%;
+    white-space: normal;         
+    word-break: break-word;
+  }
+
+
+  label[for="policy"]{ display:block; }
+  .guests-container .field-msg,
+  #captchaWrap .field-msg,
+  .select-box .field-msg{         
+    margin-left: 0;
+  }
+
+  .booking-form form .field-msg{
+    bottom: -28px !important;  
+  }
+
+  label[for="policy"] .field-msg{
+    bottom: -10px !important;
+  }
+}
+/* —— Premium mobile footer (≤430px): Email | Phone —— */
+@media (max-width: 430px){
+
+  /* hide address & copyright */
+  .footer-center{ display:none !important; }
+
+  /* luxe bar: deep gradient, soft edge & glow */
+  .footer{
+    padding: 0 !important;
+    background:
+      radial-gradient(60% 120% at 50% -20%, rgba(255,255,255,.06), transparent 60%),
+      linear-gradient(180deg, #673131 0%, #673131 100%) !important;
+    border-top: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 -10px 28px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+    backdrop-filter: saturate(140%) blur(6px);
+  }
+
+  /* two equal halves */
+  .footer-container{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* neutralize inner spacing & old icons */
+  .footer-left p, .footer-right p{ margin:0; }
+  .footer-left i,  .footer-right i{ display:none !important; }
+
+  /* identical “pills” */
+  .footer-left a,
+  .footer-right a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: clamp(48px, 12vw, 56px);
+    padding: 0 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7rem;
+    letter-spacing: .2px;
+    color: #eef4ff !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+  }
+
+  /* perfect symmetry divider */
+  .footer-left{ border-right: 1px solid rgba(255,255,255,.14); }
+
+  /* elegant interactions */
+  .footer-left a:hover, .footer-right a:hover{
+    background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  }
+  .footer-left a:active, .footer-right a:active{
+    background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+  }
+  .footer-left a:focus-visible, .footer-right a:focus-visible{
+    outline: none;
+    box-shadow: inset 0 0 0 2px rgba(173,212,255,.55);
+    border-radius: 8px;
+  }
+
+  /* icons inside the clickable area (FA6/FA5; graceful fallback) */
+  .footer-left a::before,
+  .footer-right a::before{
+    font-family: "Font Awesome 6 Free","Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1em;
+    opacity: .95;
+  }
+  .footer-left a::before{ content: "\f0e0"; } /* envelope */
+  .footer-right a::before{ content: "\f095"; } /* phone */
+
+  /* iOS safe-area padding */
+  .footer-left a, .footer-right a{
+    padding-bottom: calc(env(safe-area-inset-bottom) / 2);
+  }
+}
+
+
+/* ensure the close button can position against the card */
+.room-modal .modal-content{
+  position: relative;            /* important */
+}
+
+/* big, floating X button in the top-right */
+.room-modal .modal-close{
+  position: absolute;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;              
+  cursor: pointer;
+  z-index: 5;                    /* above arrows/images */
+  opacity: .95;
+  transition: transform .12s ease, opacity .2s ease, box-shadow .2s ease;
+}
+
+.room-modal .modal-close:hover{
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+/* a touch smaller on phones */
+@media (max-width: 480px){
+  .room-modal .modal-close{
+    top: 8px; right: 8px;
+    width: 36px; height: 36px;
+    font-size: 22px;
+  }
+}
+
+
+/* remove the gray/white button box */
+.room-modal .modal-close{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+
+  /* keep it clickable & visible */
+  top: 10px; right: 10px;
+  width: 42px; height: 42px;
+  position: absolute;
+  display: grid; place-items: center;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+}
+
+.room-modal .modal-close:hover,
+.room-modal .modal-close:active,
+.room-modal .modal-close:focus{
+  background: transparent;   /* ensure no hover bg returns */
+  box-shadow: none;
+}
+
+/* if any pseudo-elements were adding a plate */
+.room-modal .modal-close::before,
+.room-modal .modal-close::after{
+  content: none !important;
+}
+@media (max-width: 360px){
+  .room-page .room-grid{
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+}
+
+/* --- Modal slider: show full photo (no cropping) --- */
+.room-modal .modal-slides{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto !important;                 /* kill fixed 560px */
+  max-height: calc(100vh - 200px);         /* fit viewport; leave room for text */
+  background: #673131;;                         /* nice letterbox for tall/wide pics */
+  overflow: hidden;
+}
+
+/* images scale to fit the box completely */
+.room-modal .modal-slides img{
+  display: none;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+}
+.room-modal .modal-slides img.active{ display:block; }
+
+/* keep arrows centered over the flexible height */
+.room-modal .modal-prev,
+.room-modal .modal-next{
+  top: 50%;
+  transform: translateY(-50%);
+  color: #673131;;
+}
+/* a touch more room on tiny phones */
+@media (max-width: 480px){
+  .room-modal .modal-slides{ max-height: calc(100vh - 150px); }
+}
+
+
+
+/* Button spinner */
+#send-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+#send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #673131;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Success/error messages */
+.form-message {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.form-message.success {
+  background: #e6f9f0;
+  color: #0a8754;
+  border: 1px solid #0a8754;
+}
+
+.form-message.error {
+  background: #fdecea;
+  color: #b91c1c;
+  border: 1px solid #b91c1c;
+}
+
+
+.guest-row {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; */
+}
+
+.room-type-select{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; */
+}
+
+#addRoom {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+#dates:not(:placeholder-shown),
+input#dates.flatpickr-input:not(:placeholder-shown),
+input[name="dates"].flatpickr-input:not(:placeholder-shown) {
+  color: #6b7280 !important;           
+  -webkit-text-fill-color: #6b7280;  
+}
+#dates::placeholder {
+  color: #9ca3af;
+}
+
+/* Hide placeholder when typing or when field is focused */
+.form-floating input:focus::placeholder,
+.form-floating input:not(:placeholder-shown)::placeholder {
+  opacity: 0;                 /* or: color: transparent; */
+}
+
+/* Cross-browser (optional) */
+.form-floating input:focus::-webkit-input-placeholder,
+.form-floating input:not(:placeholder-shown)::-webkit-input-placeholder { opacity: 0; }
+.form-floating input:focus::-moz-placeholder,
+.form-floating input:not(:placeholder-shown)::-moz-placeholder { opacity: 0; }
+.form-floating input:focus:-ms-input-placeholder,
+.form-floating input:not(:placeholder-shown):-ms-input-placeholder { opacity: 0; }
+.form-floating input:focus::-ms-input-placeholder,
+.form-floating input:not(:placeholder-shown)::-ms-input-placeholder { opacity: 0; }
+
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  accent-color: #800020 !important;
+}

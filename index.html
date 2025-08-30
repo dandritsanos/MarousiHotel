@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+
+  <title>Hotel Maroussi</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap&subset=latin,greek" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <link rel="icon" type="image/png" href="assets/images/LOGO2.png" />
+
+
+</head>
+<body>
+  <header class="navbar">
+  <div class="container nav-content">
+    <a href="index.html" class="logo-wrapper">
+      <img src="assets/images/LOGO3.png" alt="Maroussi Hotel Logo" class="logo-img" />
+      <span class="brand-name">Hotel Maroussi</span>
+    </a>
+
+    <!-- Mobile/Tablet toggle -->
+    <button class="menu-toggle" aria-label="Open menu"
+            aria-controls="primaryNav" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <!-- Primary nav -->
+    <nav id="primaryNav" class="nav-links" aria-hidden="true" role="dialog" aria-label="Main menu">
+  <!-- drawer header -->
+  <div class="drawer-header">
+    <a href="index.html" class="logo-wrapper">
+      <img src="assets/images/LOGO3.png" alt="Hotel maroussi Logo" class="logo-img" />
+      <span class="brand-name">Hotel Marousi</span>
+    </a>
+    <button class="drawer-close" aria-label="Close menu">×</button>
+  </div>
+
+  <!-- links -->
+  <a href="index.html" class="active">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+</nav>
+<div class="drawer-backdrop" id="navBackdrop" hidden></div>
+  </div>
+
+  
+  </header>
+  
+  
+  
+      
+
+  <section class="hero-carousel">
+    <div class="hero-slide slide1"></div>
+    <div class="hero-slide slide2"></div>
+    <div class="hero-slide slide3"></div>
+    <div class="hero-filter"></div>
+  
+    <div class="hero-overlay">
+      <h1>Welcome to Hotel Maroussi</h1>
+      <p>Maroussi, Athens — Comfort, style, and convenience in one place.</p>
+      <a href="rooms.html" class="cta-button">Explore Our Rooms</a>
+    </div>
+  </section>
+  
+
+  <section class="features container">
+    <h2 class="section-title">Why Choose Hotel Maroussi</h2>
+    <div class="feature-grid">
+      <div class="feature-card" data-aos="fade-up">
+        <i class="fas fa-map-marker-alt feature-icon"></i>
+        <h3>Prime Location</h3>
+        <p>Situated in Marousi region, just 300 metres from Neratziotissa metro and train station and within 500 metres from The Mall shopping centre.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-bed feature-icon"></i>
+        <h3>Modern Comfort</h3>
+        <p>Stylishly furnished rooms with TVs, fast Wi-Fi, and plush beds to ensure a restful stay.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-star feature-icon"></i>
+        <h3>Exceptional Service</h3>
+        <p>Our welcoming team is available 24/7 to assist you with bookings, recommendations, and personalized support.</p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="room-preview container">
+    <h2 class="section-title">Featured Rooms</h2>
+    <div class="room-grid">
+      <!-- Room 1 -->
+      <a href="rooms.html" class="room-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets-marousi/economy2.jpg" alt="Economy Room" loading="lazy" />
+        <div class="room-content">
+          <h3>Economy Room</h3>
+          <p class="room-description">Located on the ground floor, this tastefully decorated room has air conditioning, a TV with cable channels and free Wi-Fi. It opens to a window or terrace.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <span class="room-btn">View Details</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Room 2 -->
+      <a href="rooms.html" class="room-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="assets-marousi/standard.jpg" alt="Standard Room" loading="lazy" />
+        <div class="room-content">
+          <h3>Standard Room</h3>
+          <p class="room-description">Opening out to a balcony, this tastefully decorated room has air conditioning, an LCD TV with cable channels and free Wi-Fi. It is located on an upper floor.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <span class="room-btn">View Details</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Room 3 -->
+      <a href="rooms.html" class="room-card" data-aos="fade-up">
+        <img src="assets-marousi/deluxe.jpg" alt="Deluxe Room" loading="lazy" />
+        <div class="room-content">
+          <h3>Deluxe Room</h3>
+          <p class="room-description">Featuring a modern bathroom with spa bath, this tastefully decorated room has air conditioning, an LCD TV with cable channels and free Wi-Fi. It opens to a private balcony.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <span class="room-btn">View Details</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer hidden-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>
+        <i class="fas fa-envelope" style="margin-right: 5px;"></i>
+        <a href="contact.html">info@lightskyhotels.gr</a>
+      </p>
+    </div>
+    <div class="footer-center">
+      <p><a href="https://maps.app.goo.gl/qbPpfM9KXKvKtNpm8" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        Olympias 10, Maroussi, Athens, 15124, Greece
+      </a></p>
+      <p>&copy; 2025 Hotel Maroussi </p>
+    </div>
+    <div class="footer-right">
+      <p>
+        <i class="fas fa-phone" style="margin-right: 5px;"></i>
+        <a href="tel:+302106198338">+30 210 619 8338</a>
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- AOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- Flatpickr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="js/main3.js"></script>
+<script>
+</script>
+
+
+
+
+</body>
+</html>

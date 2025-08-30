@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Rooms | Hotel Maroussi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap&subset=latin,greek" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/codestyle.css" />
+  <link rel="icon" type="image/png" href="assets/images/LOGO2.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
+  <meta name="description" content="Explore elegant and affordable rooms at Alfa Hotel in Nikaia, Athens. Book your stay now.">
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+   <header class="navbar">
+  <div class="container nav-content">
+    <a href="index.html" class="logo-wrapper">
+      <img src="assets/images/LOGO3.png" alt="Hotel Maroussi Logo" class="logo-img" />
+      <span class="brand-name">Hotel Maroussi</span>
+    </a>
+
+    <!-- Mobile/Tablet toggle -->
+    <button class="menu-toggle" aria-label="Open menu"
+            aria-controls="primaryNav" aria-expanded="false">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+
+    <!-- Primary nav -->
+    <nav id="primaryNav" class="nav-links" aria-hidden="true" role="dialog" aria-label="Main menu">
+  <!-- drawer header -->
+  <div class="drawer-header">
+    <a href="index.html" class="logo-wrapper">
+      <img src="assets/images/LOGO3.png" alt="Alfa Hotel Logo" class="logo-img" />
+      <span class="brand-name">Hotel Maroussi</span>
+    </a>
+    <button class="drawer-close" aria-label="Close menu">×</button>
+  </div>
+
+  <!-- links -->
+  <a href="index.html" class="active">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="contact.html">Contact</a>
+  <a href="about.html">About</a>
+</nav>
+<div class="drawer-backdrop" id="navBackdrop" hidden></div>
+  </div>
+
+  
+  </header>
+  <!-- Rooms Section -->
+  <section class="room-page container">
+    <h1 class="section-title">Our Rooms</h1>
+    <p class="room-intro">Discover the perfect blend of comfort and elegance in our curated room collection, tailored for all travelers in the heart of Marousi, Athens.</p>
+  
+    <div class="room-grid">
+
+            <!-- Room 1 -->
+      <div class="room-card" data-aos="fade-up" data-aos-delay="200"
+           data-title="Economy Room" data-roomtypes='["Economy Room","Standard Room","Deluxe Room"]'
+           data-description="Our Standard Rooms offer a warm, inviting ambiance with cozy lighting and classic decor. Each room features a comfortable double bed with soft linens, bedside tables, and elegant lighting fixtures that create a relaxing atmosphere. The private bathroom is equipped with a modern shower, fresh towels, and essential toiletries. Whether you're traveling for business or leisure, this room provides all the essentials for a pleasant and restful stay."
+            data-images='["assets-marousi/ec3.jpg", "assets-marousi/ec1.jpg","assets-marousi/ec6.jpg","assets-marousi/ec2.jpg","assets-marousi/ec4.jpg","assets-marousi/ec5.jpg"]'
+           data-price="Price on request"
+           data-prices='{"1":62,"2":67}'>
+        <img src="assets-marousi/economy2.jpg" alt="Economy Room" loading="lazy" />
+        <div class="room-content">
+          <h3 class="room-title">
+            Economy Room
+            <span class="guest-badge">Up to 2 guests</span>
+          </h3>
+          <p class="room-description">Located on the ground floor, this tastefully decorated room has air conditioning, a TV with cable channels and free Wi-Fi. It opens to a window or terrace.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <button class="room-btn">Booking Request</button>
+          </div>
+        </div>
+      </div>
+
+            <!-- Room 2 -->
+      <div class="room-card" data-aos="fade-up" data-aos-delay="200"
+           data-title="Standard Room" data-roomtypes='["Standard Room","Economy Room","Deluxe Room"]'
+           data-description="Our Standard Rooms offer a warm, inviting ambiance with cozy lighting and classic decor. Each room features a comfortable double bed with soft linens, bedside tables, and elegant lighting fixtures that create a relaxing atmosphere. The private bathroom is equipped with a modern shower, fresh towels, and essential toiletries. Whether you're traveling for business or leisure, this room provides all the essentials for a pleasant and restful stay."
+            data-images='["assets-marousi/st1.jpg", "assets-marousi/st2.jpg", "assets-marousi/st3.jpg", "assets-marousi/st4.png", "assets-marousi/st5.jpg"]'
+           data-price="Price on request"
+           data-prices='{"1":62,"2":67}'>
+        <img src="assets-marousi/standard.jpg" alt="Standard Room" loading="lazy" />
+        <div class="room-content">
+          <h3 class="room-title">
+            Standard Room
+            <span class="guest-badge">Up to 2 guests</span>
+          </h3>
+          <p class="room-description">Opening out to a balcony, this tastefully decorated room has air conditioning, an LCD TV with cable channels and free Wi-Fi. It is located on an upper floor.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <button class="room-btn">Booking Request</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room3 -->
+      <div class="room-card" data-title="Deluxe Room"  data-roomtypes='["Deluxe Room","Economy Room","Standard Room"]' data-description="Spacious Deluxe Room featuring a plush queen-size bed, elegant furnishings, rich velvet drapes, and classic decor. 
+       Includes vintage-style seating area, flat-screen TV, and a luxurious bathroom with a high-pressure hydromassage shower cabin." 
+        data-images='["assets-marousi/de2.jpg", "assets-marousi/de1.jpg", "assets-marousi/de3.jpg", "assets-marousi/de4.jpg", "assets-marousi/de5.jpg"]' 
+        data-price="Price on request"
+        data-prices='{"1":67,"2":72,"3":76}' >        
+        <img src="assets-marousi/deluxe.jpg" alt="Deluxe Room" loading="lazy" />
+        <div class="room-content">
+          <h3 class="room-title">
+            Deluxe Room
+            <span class="guest-badge">Up to 3 guests</span>
+          </h3>
+          <p class="room-description">Featuring a modern bathroom with spa bath, this tastefully decorated room has air conditioning, an LCD TV with cable channels and free Wi-Fi. It opens to a private balcony.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <button class="room-btn">Booking Request</button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+      
+      <!-- Modal Structure -->
+      <div id="roomModal" class="room-modal">
+        <div class="modal-content">
+          <button type="button"
+                  class="modal-close"
+                  aria-label="Close dialog">
+            &times;
+          </button>
+      
+          <div class="modal-slider">
+            <button class="modal-prev">&#10094;</button>
+            <div class="modal-slides"></div>
+            <button class="modal-next">&#10095;</button>
+          </div>
+      
+          <div class="modal-info">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDescription"></p>
+            <br>
+            <span id="modalPrice"></span>
+            <a href="#" class="room-btn book-btn">Booking Request</a>
+            <!-- Booking Form (Initially Hidden) -->
+            <div id="bookingForm" class="booking-form">
+              <form id="bookingFormHTML" novalidate>
+                <h1 class="section-title">Booking Request Form</h1>
+
+                <input type="hidden" id="roomType" name="roomType" />
+                <input type="hidden" id="roomPrice" name="roomPrice" />
+
+                <div class="form-group two-cols">
+                  <div class="form-floating">
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="off" required/>
+                    <label for="firstName">First Name</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" autocomplete="off" required/>
+                    <label for="lastName">Last Name</label>
+                  </div>
+                </div> 
+              
+                <!-- Email + Phone Side by Side -->
+                <div class="form-group two-cols">
+                  <div class="form-floating">
+                    <input type="email" id="email" name="email" placeholder="Email" autocomplete="off" required/>
+                    <label for="email">Email</label>
+                  </div>
+              
+                  <div class="form-floating">
+                    <div class="select-box">
+                      <div class="selected-option">
+                        <div class="country-display">
+                          <span class="iconify" data-icon="flag:gr-4x3"></span>
+                          <strong>+30</strong>
+                        </div>
+                        <input type="tel" id="phone" name="tel" placeholder="Phone Number" required />
+                      </div>
+
+                      <div class="options">
+                        <input type="text" class="search-box" placeholder="Search Country Name">
+                        <ol></ol>
+                      </div>
+                    </div>
+                    <!-- Hidden input to store selected country code for JS -->
+                    <input type="hidden" id="countryCode" name="countryCode" value="+30" />
+                  </div>
+                </div>
+
+                <!-- Check-in + Check-out Side by Side -->
+                <div class="form-group two-cols">
+                  <!-- Date Picker -->
+                  <div class="form-floating">
+                    <input type="text" id="dates" name="dates" class="booking-range" placeholder="Check-in — Check-out" readonly required style="text-align: center;">
+                    <label for="dates" style="top: -0.6rem; left: 0.6rem; font-size: 0.75rem; color: #444;">Dates</label>
+                  </div>
+
+                  <input type="hidden" id="checkin" name="checkin">
+                  <input type="hidden" id="checkout" name="checkout">
+                  <input type="hidden" id="nights" name="nights">
+
+                  <!-- Guest Selector -->
+                  <div class="form-floating guests-container" style="max-width: 100%; position: relative;">
+                    <input type="hidden" id="guests" name="guests" />
+                    <label for="guestToggle" style="top: -0.6rem; left: 0.6rem; font-size: 0.75rem; color: #444;">Guests</label>
+                    <div id="guestToggle" class="guest-toggle">
+                      Room 1 | 1 Adult, 0 Children
+                    </div>
+
+                    <div id="guestPanel" class="guest-panel" style="display:none; position: absolute; top: 100%; left: 0; right: 0; background:#f9fafd; border:1px solid #ddd; border-radius:12px; margin-top: 5px; padding:1rem; z-index:99;">
+                      <div id="roomsContainer">
+                        <!-- Room 1 -->
+                        <div class="room room-block" data-room="1" id="room-1" style="padding: 0.5rem;">
+                          <div style="position: relative; text-align: center; margin-bottom: 0.5rem;">
+                            <h4 class="guest-toggle-room-title" style="margin: 0; font-weight: 600; font-size: 1rem;">Room 1</h4>
+                          </div>
+                          <div class="guest-row">
+                            <span class="label">Room Type</span>
+                            <div class="control select-wrap">
+                              <select class="room-type-select" data-room="1" id="room-type-1">
+                                <option value="Economy Room" selected>Economy</option>
+                                <option value="Standard Room">Standard</option>
+                                <option value="Deluxe Room">Deluxe</option>
+                              </select>
+                            </div>
+                          </div>
+                          
+                          <div class="guest-row">
+                            <span class="label">Adults (18+)</span>
+                            <div class="control stepper">
+                              <button type="button" class="minus" data-room="1" data-type="adults">–</button>
+                              <span id="adults-1" class="value">1</span>
+                              <button type="button" class="plus" data-room="1" data-type="adults">+</button>
+                            </div>
+                          </div>
+
+                          <div class="guest-row">
+                            <span class="label">Children</span>
+                            <div class="control stepper">
+                              <button type="button" class="minus" data-room="1" data-type="children">–</button>
+                              <span id="children-1" class="value">0</span>
+                              <button type="button" class="plus" data-room="1" data-type="children">+</button>
+                            </div>
+                          </div>
+
+                          <div class="guest-row infant-row">
+                            <span class="label">Infant (under 2)</span>
+                            <div class="control">
+                              <input type="checkbox" class="infant-checkbox" data-room="1" aria-label="Infant (under 2)">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; color: #e8003a; font-weight: bold;">+ Add Another Room</button>
+                      
+                      <div class="guest-summary" style="display:flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                        <span id="summaryText">Room 1 | 1 Adult, 0 Children</span>
+                        <button type="button" id="updateGuests" style="background: #673131; color: white; padding: 6px 12px; border-radius: 6px; border: none;">Update</button>
+                      </div>
+
+                      <input type="hidden" id="guestsText" name="guestsText">
+                      <input type="hidden" id="infants" name="infants">
+                      <input type="hidden" id="roomBreakdown" name="roomBreakdown">
+
+                    </div>
+                  </div>
+                </div>
+
+      
+                <div class="form-group">
+                  <label for="message" style="top: -0.6rem; left: 0.6rem; font-size: 0.75rem; color: #444;"></label>
+                  <textarea id="message" name="message" rows="4" placeholder="Let us know if you have any special requests or preferences..."></textarea>
+                  <span id="wordCount" style="font-size: 0.8rem; color: gray;"></span>
+                </div>
+              
+                <label for="policy" class="policy">
+                  <input type="checkbox" id="policy" required>
+                  <span id="privacy-policy">
+                    I accept the <a href="privacy-policy.html" target="_blank"><u>Privacy Policy</u></a>.
+                  </span>
+                </label>
+                <div id="captchaWrap" class="captcha-wrap">
+                  <div id="captchaScale">
+                    <div id="cfCaptcha"></div>
+                  </div>
+                </div>
+
+                <input type="hidden" id="captchaToken" name="captchaToken">
+              </form>
+
+              <div class="form-summary-bridge" id="formSummaryBridge">
+                <span class="bridge-dot"></span>
+                <span class="bridge-dot"></span>
+              </div>
+
+              <div id="orderSummary" class="order-summary hotel-elegant" style="display: none;">
+                <h2>Your REQUEST</h2>
+                <div class="summary-details">
+                  <div>
+                    <span><i class="fa-solid fa-bed icon"></i>Room Type:</span>
+                    <span id="osRoom">-</span>
+                  </div>
+                  <div>
+                    <span><i class="fa-solid fa-user-friends icon"></i>Guests:</span>
+                    <span id="osGuests">-</span>
+                  </div>
+                  <div><span><i class="fa-solid fa-calendar-day icon"></i> Check-in:</span><span id="osCheckin">-</span></div>
+                  <div><span><i class="fa-solid fa-calendar-check icon"></i> Check-out:</span><span id="osCheckout">-</span></div>
+                  <div><span><i class="fa-solid fa-moon icon"></i> Nights:</span><span id="osNights">-</span></div>
+                  <!-- <div>
+                    <span><i class="fa-solid fa-euro-sign icon"></i> Price per Night:</span><span id="osPrice">-</span>
+                  </div>
+                  <div class="total">
+                    <span><i class="fa-solid fa-coins icon"></i><span id="osTotal">-</span></span>
+                  </div>
+                  <div class="summary-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>
+                      Price includes <strong>13% Tax</strong> and <strong>Charges (€2 per night)</strong>
+                    </span>
+                  </div> -->
+                </div>
+              </div>
+
+
+              <br>
+              <div id="stepActions">
+                <button type="submit" id="submitBtn" class="room-btn submit-btn" form="bookingFormHTML" style="display:none;">Submit Request</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Progress / Result Pane -->
+        <div id="modalProgress" class="modal-progress" hidden aria-live="polite" aria-busy="false">
+          <div class="progress-card">
+            <div class="spinner" aria-hidden="true"></div>
+            <i class="fa-solid fa-circle-check icon success" aria-hidden="true"></i>
+            <i class="fa-solid fa-triangle-exclamation icon error" aria-hidden="true"></i>
+            <h3 id="progressTitle">Sending your request…</h3>
+            <p id="progressSubtitle">Please wait a moment.</p>
+
+            <div class="progress-actions">
+              <button id="progressClose" class="room-btn" hidden>Close</button>
+              <button id="progressAgain" class="room-btn secondary" hidden>Make another request</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="lightboxOverlay" class="lightbox-overlay">
+        <img id="lightboxImage" src="" alt="Room Fullscreen Preview" />
+      </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer hidden-footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>
+        <i class="fas fa-envelope" style="margin-right: 5px;"></i>
+        <a href="contact.html">info@lightskyhotels.gr</a>
+      </p>
+    </div>
+    <div class="footer-center">
+      <p><a href="https://maps.app.goo.gl/qbPpfM9KXKvKtNpm8" 
+        target="_blank" 
+        rel="noopener noreferrer">
+        Olympias 10, Maroussi, Athens, 15124, Greece
+      </a></p>
+      <p>&copy; 2025 Hotel Maroussi </p>
+    </div>
+    <div class="footer-right">
+      <p>
+        <i class="fas fa-phone" style="margin-right: 5px;"></i>
+        <a href="tel:+302106198338">+30 210 619 8338</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="js/main3.js"></script>
+  <!-- <script src="js/countrycodescript.js"></script> -->
+
+</body>
+</html>
