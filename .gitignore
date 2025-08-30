@@ -17,3 +17,11 @@ pnpm-lock.yaml
 logs
 *.log
 coverage/
+
+service-account.json
+
+service-account.json
+
+service-account.json
+
+.env
