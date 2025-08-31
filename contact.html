@@ -139,16 +139,15 @@
   const form = document.getElementById("contact-form");
   const sendBtn = document.getElementById("send-btn");
   const btnText = sendBtn.querySelector(".btn-text");
-  const spinner = sendBtn.querySelector(".spinner");
+
   const formMessage = document.getElementById("form-message");
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    // disable button + show spinner
+    // disable button
     sendBtn.disabled = true;
     btnText.textContent = "Sending...";
-    spinner.hidden = false;
     formMessage.hidden = true; // hide old message
 
     const formData = new FormData(this);

@@ -1528,42 +1528,8 @@ window.onCaptchaError = () => {
   document.getElementById('captchaWrap')?.classList.add('field-error');
 };
 
-// ---- Turnstile render ----
+
 let captchaRendered = false;
-let captchaSize = null;
-
-function readInlineSiteKey() {
-  const viaMeta = document.querySelector('meta[name="turnstile-sitekey"]')?.content;
-  if (viaMeta) return viaMeta;
-
-  const viaData = document.getElementById('cfCaptcha')?.dataset?.sitekey;
-  if (viaData) return viaData;
-
-  
-  if (typeof window.__TURNSTILE_SITE_KEY === 'string' && window.__TURNSTILE_SITE_KEY) {
-    return window.__TURNSTILE_SITE_KEY;
-  }
-
-  return '';
-}
-
-async function fetchProdSiteKey() {
-  try {
-    const res = await fetch('/config/turnstile', { headers: { 'Accept': 'application/json' } });
-    if (res.ok) {
-      const j = await res.json();
-      if (j?.siteKey) return j.siteKey;
-    }
-  } catch (_) {}
-  return '';
-}
-
-async function getProdSiteKey() {
-  return (
-    readInlineSiteKey() ||
-    (await fetchProdSiteKey())
-  );
-}
 
 function waitForTurnstileReady(cb) {
   if (window.turnstile && typeof window.turnstile.render === 'function') return cb();
@@ -1575,44 +1541,33 @@ function waitForTurnstileReady(cb) {
   }, 50);
 }
 
-async function renderCaptcha(force = false) {
+let captchaSize = null;
+
+
+function renderCaptcha(force = false) {
   if (location.protocol === 'file:') return;
 
   const hostIsLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
-  const TEST_KEY = '1x00000000000000000000AA';
-  const PROD_KEY = hostIsLocal ? '' : (await getProdSiteKey());
-  const sitekey  = hostIsLocal ? TEST_KEY : PROD_KEY;
+  const sitekey = hostIsLocal ? '1x00000000000000000000AA'
+                              : '0x4AAAAAABq8XFOiXb9xe4hHOUdgRmwTeH0';
 
   const el = document.getElementById('cfCaptcha');
   if (!el) return;
 
   const desired = 'flexible';
-
-  // If already rendered with same size and not forced, skip
+  // keep current render if size didn't change
   if (!force && captchaRendered && captchaSize === desired && el.querySelector('iframe')) return;
 
-  // Re-render: clear container + token
+  // re-render (also clears any previous token)
   el.innerHTML = '';
   const tokenEl = document.getElementById('captchaToken');
   if (tokenEl) tokenEl.value = '';
-
-  // In production, we require a site key
-  if (!hostIsLocal && !sitekey) {
-    console.error('[Turnstile] Missing production site key—captcha not rendered.');
-    // Optional UX: show a field error so users know why they can’t submit
-    const tok = document.getElementById('captchaToken');
-    if (tok && typeof setFieldError === 'function') {
-      setFieldError(tok, 'Verification unavailable. Please try again later.');
-      document.getElementById('captchaWrap')?.classList.add('field-error');
-    }
-    return;
-  }
 
   waitForTurnstileReady(() => {
     window.turnstile.render('#cfCaptcha', {
       sitekey,
       theme: 'auto',
-      size: desired,
+      size: desired, 
       callback: window.onCaptchaVerified,
       'expired-callback': window.onCaptchaExpired,
       'error-callback': window.onCaptchaError
@@ -1621,7 +1576,6 @@ async function renderCaptcha(force = false) {
     captchaSize = desired;
   });
 }
-
 
 // re-render if the breakpoint flips (e.g., rotate phone)
 window.matchMedia('(max-width: 420px)').addEventListener('change', () => renderCaptcha(true));
