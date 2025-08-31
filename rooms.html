@@ -284,12 +284,17 @@
                     I accept the <a href="privacy-policy.html" target="_blank"><u>Privacy Policy</u></a>.
                   </span>
                 </label>
-                <div id="cfCaptcha"
-                  class="cf-turnstile"
-                  data-sitekey="0x4AAAAAABq8XNGMW6Fk1s3b"
-                  data-size="flexible"
-                  data-theme="auto"></div>
-              <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+                <div id="captchaWrap" class="captcha-wrap">
+                  <div class="cf-turnstile"
+                      data-sitekey="0x4AAAAAABq8XNGMW6Fk1s3b"   
+                      data-size="flexible"
+                      data-theme="auto"
+                      data-callback="onCaptchaVerified"
+                      data-expired-callback="onCaptchaExpired"
+                      data-appearance="always" >
+                  </div>
+                </div>
+                <input type="hidden" id="captchaToken" name="captchaToken">
               </form>
 
               <div class="form-summary-bridge" id="formSummaryBridge">
@@ -387,6 +392,10 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="js/main3.js"></script>
   <!-- <script src="js/countrycodescript.js"></script> -->
+   <script>
+  window.onCaptchaVerified = t => document.getElementById('captchaToken').value = t;
+  window.onCaptchaExpired  = () => document.getElementById('captchaToken').value = '';
+</script>
 
 </body>
 </html>

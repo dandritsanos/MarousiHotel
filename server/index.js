@@ -42,12 +42,36 @@ const transporter = nodemailer.createTransport({
   tls: { rejectUnauthorized: false }
 });
 
+
+app.set('trust proxy', true); // get real client IP behind a proxy/CDN
+
+async function verifyTurnstile(token, req) {
+  if (!token) return { ok: false };
+
+  const secret = process.env.TURNSTILE_SECRET_KEY; // put this in your .env
+  const ip =
+    req.headers['cf-connecting-ip'] ||
+    (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
+    req.ip;
+
+  const resp = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ secret, response: token, remoteip: ip })
+  }).then(r => r.json());
+
+  return { ok: !!resp.success, resp };
+}
+
 /* --------------------------- Utilities ---------------------------- */
 const escapeHtml = (s = '') =>
   String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 /* ------------- Booking email endpoint (no ICS file) --------------- */
 app.post('/send', async (req, res) => {
+  const token = req.body.captchaToken || req.body['cf-turnstile-response'];
+  const v = await verifyTurnstile(token, req);
+  if (!v.ok) return res.status(403).json({ message: 'Verification failed.' });
   const {
     roomType, name, email, phone,
     checkin, checkout,
