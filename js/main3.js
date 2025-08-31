@@ -517,7 +517,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         bookingForm.style.display = "block";
         bookingBtn.textContent = "Cancel Booking Request";
-        renderCaptcha(); 
         bookingForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
@@ -1521,56 +1520,6 @@ window.onCaptchaExpired = () => {
   document.getElementById('captchaWrap')?.classList.add('field-error');
 };
 
-let captchaRendered = false;
-
-function waitForTurnstileReady(cb) {
-  if (window.turnstile && typeof window.turnstile.render === 'function') return cb();
-  const iv = setInterval(() => {
-    if (window.turnstile && typeof window.turnstile.render === 'function') {
-      clearInterval(iv);
-      cb();
-    }
-  }, 50);
-}
-
-let captchaSize = null;
-
-
-function renderCaptcha(force = false) {
-  if (location.protocol === 'file:') return;
-
-  const hostIsLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
-  const sitekey = hostIsLocal ? '1x00000000000000000000AA'
-                              : '0x4AAAAAABq8XFOiXb9xe4hHOUdgRmwTeH0';
-
-  const el = document.getElementById('cfCaptcha');
-  if (!el) return;
-
-  const desired = 'flexible';
-  // keep current render if size didn't change
-  if (!force && captchaRendered && captchaSize === desired && el.querySelector('iframe')) return;
-
-  // re-render (also clears any previous token)
-  el.innerHTML = '';
-  const tokenEl = document.getElementById('captchaToken');
-  if (tokenEl) tokenEl.value = '';
-
-  waitForTurnstileReady(() => {
-    window.turnstile.render('#cfCaptcha', {
-      sitekey,
-      theme: 'auto',
-      size: desired, 
-      callback: window.onCaptchaVerified,
-      'expired-callback': window.onCaptchaExpired,
-      'error-callback': window.onCaptchaError
-    });
-    captchaRendered = true;
-    captchaSize = desired;
-  });
-}
-
-// re-render if the breakpoint flips (e.g., rotate phone)
-window.matchMedia('(max-width: 420px)').addEventListener('change', () => renderCaptcha(true));
 
 
 // ---- Progress pane refs & helpers ----

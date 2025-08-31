@@ -285,11 +285,14 @@
                   </span>
                 </label>
                 <div id="captchaWrap" class="captcha-wrap">
-                  <div id="captchaScale">
-                    <div id="cfCaptcha"></div>
+                  <div class="cf-turnstile"
+                      data-sitekey="1x00000000000000000000AA"   
+                      data-size="flexible"
+                      data-theme="auto"
+                      data-callback="onCaptchaVerified"
+                      data-expired-callback="onCaptchaExpired">
                   </div>
                 </div>
-                <div id="cfCaptcha" data-sitekey="1x00000000000000000000AA"></div>
                 <input type="hidden" id="captchaToken" name="captchaToken">
               </form>
 
