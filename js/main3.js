@@ -1521,14 +1521,6 @@ window.onCaptchaExpired = () => {
   document.getElementById('captchaWrap')?.classList.add('field-error');
 };
 
-window.onCaptchaError = () => {
-  const el = document.getElementById('captchaToken');
-  el.value = '';
-  setFieldError(el, 'Verification temporarily unavailable. Please retry.');
-  document.getElementById('captchaWrap')?.classList.add('field-error');
-};
-
-
 let captchaRendered = false;
 
 function waitForTurnstileReady(cb) {
