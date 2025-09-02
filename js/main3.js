@@ -101,7 +101,7 @@ let maxGuestsAllowed = 1;
 let slideImages = [];
 let currentSlideIndex = 0;
 // removed: isPhoneVerified
-let allowedRoomTypes = ["Economy Room", "Deluxe Room", "Standard Room"];
+let allowedRoomTypes = ["Economy Room", "Deluxe Room", "Single Room", "Double Room"];
 let nextRoomId = 2;
 let rooms = [{ id: 1, adults: 1, children: 0, type: "Deluxe Room", infantUnder2: false }];
 
@@ -286,8 +286,6 @@ function updateOrderSummary() {
   let guestsText = `${totalAdults} Adult${totalAdults !== 1 ? 's' : ''}`;
   if (totalChildren > 0) guestsText += `, ${totalChildren} Child${totalChildren !== 1 ? 'ren' : ''}`;
   if (infants > 0)       guestsText += ` (${infants} Infant${infants > 1 ? 's' : ''})`;
-
-  // Room types summary (e.g., "Deluxe Room x2, Standard Room")
   const roomTypes = roomTypeSummary(rooms);
 
   // Visible summary
@@ -409,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modalTitle.textContent = card.dataset.title;
       modalDescription.textContent = card.dataset.description;
       modalPrice.textContent = card.dataset.price;
-      allowedRoomTypes = JSON.parse(card.dataset.roomtypes || '["Economy Room", "Deluxe Room", "Standard Room"]');
+      allowedRoomTypes = JSON.parse(card.dataset.roomtypes || '["Economy Room", "Deluxe Room", "Single Room", "Double Room"]');
       resetRoomSelectionToDefault();
       document.getElementById('roomType').value = card.dataset.title;
       currentPrices = JSON.parse(card.dataset.prices || "{}");
@@ -835,8 +833,9 @@ function addRoomHandler() {
 // ---- Capacity rules + toast helpers ----
 const ROOM_CAPACITY = {
   "Economy Room": { maxTotal: 2, maxChildren: 1, msg: "Economy Room max capacity is 2 Guests." },
-  "Standard Room": { maxTotal: 2, maxChildren: 1, msg: "Standard Room max capacity is 2 Guests." },
-  "Deluxe Room":   { maxTotal: 3, maxChildren: 2, msg: "Deluxe Room max capacity is 3 Guests." }
+  "Single Room": { maxTotal: 1, maxChildren: 0, msg: "Single Room max capacity is 1 Guest." },
+  "Deluxe Room":   { maxTotal: 3, maxChildren: 2, msg: "Deluxe Room max capacity is 3 Guests." },
+  "Double Room": { maxTotal: 2, maxChildren: 1, msg: "Double Room max capacity is 2 Guests." },
 };
 
 const capacityToastTimers = {};

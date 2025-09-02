@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/codestyle.css" />
-  <link rel="icon" type="image/png" href="assets/images/LOGO2.png" />
+  <link rel="icon" type="image/png" href="assets-marousi/logo.png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/airbnb.css">
   <meta name="description" content="Explore elegant and affordable rooms at Alfa Hotel in Nikaia, Athens. Book your stay now.">
   <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
@@ -21,7 +21,7 @@
    <header class="navbar">
   <div class="container nav-content">
     <a href="index.html" class="logo-wrapper">
-      <img src="assets/images/LOGO3.png" alt="Hotel Maroussi Logo" class="logo-img" />
+      <img src="assets-marousi/logo.png" alt="Hotel Maroussi Logo" class="logo-img" />
       <span class="brand-name">Hotel Maroussi</span>
     </a>
 
@@ -36,7 +36,7 @@
   <!-- drawer header -->
   <div class="drawer-header">
     <a href="index.html" class="logo-wrapper">
-      <img src="assets/images/LOGO3.png" alt="Alfa Hotel Logo" class="logo-img" />
+      <img src="assets-marousi/logo.png" alt="Alfa Hotel Logo" class="logo-img" />
       <span class="brand-name">Hotel Maroussi</span>
     </a>
     <button class="drawer-close" aria-label="Close menu">×</button>
@@ -54,26 +54,26 @@
   
   </header>
   <!-- Rooms Section -->
-  <section class="room-page container">
+  <section class="room-preview container"> <!--room-page container-->
     <h1 class="section-title">Our Rooms</h1>
-    <p class="room-intro">Discover the perfect blend of comfort and elegance in our curated room collection, tailored for all travelers in the heart of Maroussi, Athens.</p>
+    <p class="room-intro">Thoughtfully designed rooms for rest, work, and ease. Choose the room that suits your stay.</p>
   
     <div class="room-grid">
 
             <!-- Room 1 -->
       <div class="room-card" data-aos="fade-up" data-aos-delay="200"
-           data-title="Economy Room" data-roomtypes='["Economy Room","Standard Room","Deluxe Room"]'
-           data-description="Our Standard Rooms offer a warm, inviting ambiance with cozy lighting and classic decor. Each room features a comfortable double bed with soft linens, bedside tables, and elegant lighting fixtures that create a relaxing atmosphere. The private bathroom is equipped with a modern shower, fresh towels, and essential toiletries. Whether you're traveling for business or leisure, this room provides all the essentials for a pleasant and restful stay."
-            data-images='["assets-marousi/ec3.jpg", "assets-marousi/ec1.jpg","assets-marousi/ec6.jpg","assets-marousi/ec2.jpg","assets-marousi/ec4.jpg","assets-marousi/ec5.jpg"]'
-           data-price="Price on request"
+           data-title="Single Rooms" data-roomtypes='["Single Room","Double Room","Economy Room","Deluxe Room"]'
+           data-description="Ideal for solo travelers. A private, quiet space with all essentials for work or relaxation."
+           data-images='["assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2285.jpg", "assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2289.jpg"]'
            data-prices='{"1":62,"2":67}'>
-        <img src="assets-marousi/economy2.jpg" alt="Economy Room" loading="lazy" />
+        <img src="assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2285.jpg" alt="Single Room" loading="lazy" />
         <div class="room-content">
           <h3 class="room-title">
-            Economy Room
-            <span class="guest-badge">Up to 2 guests</span>
+            Single Rooms
+            <span class="guest-badge">Up to 1 guest</span>
           </h3>
-          <p class="room-description">Located on the ground floor, this tastefully decorated room has air conditioning, a TV with cable channels and free Wi-Fi. It opens to a window or terrace.</p>
+          <p class="room-description">Ideal for solo travelers. A private, quiet space with all essentials for work or relaxation.</p>
+          <br>
           <div class="room-details">
             <span class="room-price">Price on request</span>
             <button class="room-btn">Booking Request</button>
@@ -83,18 +83,18 @@
 
             <!-- Room 2 -->
       <div class="room-card" data-aos="fade-up" data-aos-delay="200"
-           data-title="Standard Room" data-roomtypes='["Standard Room","Economy Room","Deluxe Room"]'
-           data-description="Our Standard Rooms offer a warm, inviting ambiance with cozy lighting and classic decor. Each room features a comfortable double bed with soft linens, bedside tables, and elegant lighting fixtures that create a relaxing atmosphere. The private bathroom is equipped with a modern shower, fresh towels, and essential toiletries. Whether you're traveling for business or leisure, this room provides all the essentials for a pleasant and restful stay."
+           data-title="Double Rooms" data-roomtypes='["Double Room","Single Room","Economy Room","Deluxe Room"]'
+           data-description="Bright and inviting, designed for couples or two guests seeking comfort and calm. All rooms feature a private balcony, some spacious with front views, others quieter at the back."
             data-images='["assets-marousi/st1.jpg", "assets-marousi/st2.jpg", "assets-marousi/st3.jpg", "assets-marousi/st4.png", "assets-marousi/st5.jpg"]'
            data-price="Price on request"
            data-prices='{"1":62,"2":67}'>
-        <img src="assets-marousi/standard.jpg" alt="Standard Room" loading="lazy" />
+        <img src="assets-marousi/double.jpg" alt="Double Room" loading="lazy" />
         <div class="room-content">
           <h3 class="room-title">
-            Standard Room
+            Double Rooms
             <span class="guest-badge">Up to 2 guests</span>
           </h3>
-          <p class="room-description">Opening out to a balcony, this tastefully decorated room has air conditioning, an LCD TV with cable channels and free Wi-Fi. It is located on an upper floor.</p>
+          <p class="room-description">Bright and inviting, designed for couples or two guests seeking comfort and calm. All rooms feature a private balcony, some spacious with front views, others quieter at the back.</p>
           <div class="room-details">
             <span class="room-price">Price on request</span>
             <button class="room-btn">Booking Request</button>
@@ -102,19 +102,42 @@
         </div>
       </div>
 
+
+
       <!-- Room3 -->
-      <div class="room-card" data-title="Deluxe Room"  data-roomtypes='["Deluxe Room","Economy Room","Standard Room"]' data-description="Spacious Deluxe Room featuring a plush queen-size bed, elegant furnishings, rich velvet drapes, and classic decor. 
-       Includes vintage-style seating area, flat-screen TV, and a luxurious bathroom with a high-pressure hydromassage shower cabin." 
+      <div class="room-card" data-title="Deluxe Rooms"  data-roomtypes='["Deluxe Room","Single Room","Double Room","Economy Room"]' 
+        data-description="Spacious rooms over 25 sqm with generous balconies. Refined design, extra comfort, and thoughtful details make it ideal for up to three guests." 
         data-images='["assets-marousi/de2.jpg", "assets-marousi/de1.jpg", "assets-marousi/de3.jpg", "assets-marousi/de4.jpg", "assets-marousi/de5.jpg"]' 
         data-price="Price on request"
         data-prices='{"1":67,"2":72,"3":76}' >        
         <img src="assets-marousi/deluxe.jpg" alt="Deluxe Room" loading="lazy" />
         <div class="room-content">
           <h3 class="room-title">
-            Deluxe Room
+            Deluxe Rooms
             <span class="guest-badge">Up to 3 guests</span>
           </h3>
-          <p class="room-description">Featuring a modern bathroom with spa bath, this tastefully decorated room has air conditioning, an LCD TV with cable channels and free Wi-Fi. It opens to a private balcony.</p>
+          <p class="room-description">Spacious rooms over 25 sqm with generous balconies. Refined design, extra comfort, and thoughtful details make it ideal for up to three guests.</p>
+          <div class="room-details">
+            <span class="room-price">Price on request</span>
+            <button class="room-btn">Booking Request</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="room-card" data-aos="fade-up" data-aos-delay="200"
+           data-title="Economy Rooms" data-roomtypes='["Economy Room","Single Room","Double Room","Deluxe Room"]'
+           data-description="A smart choice for a short stay. Recently renovated rooms with clean design, simple comfort, and all essentials for rest and ease."
+            data-images='["assets-marousi/ec3.jpg", "assets-marousi/ec1.jpg","assets-marousi/ec6.jpg","assets-marousi/ec2.jpg","assets-marousi/ec4.jpg","assets-marousi/ec5.jpg"]'
+           data-price="Price on request"
+           data-prices='{"1":62,"2":67}'>
+        <img src="assets-marousi/economy2.jpg" alt="Economy Room" loading="lazy" />
+        <div class="room-content">
+          <h3 class="room-title">
+            Economy Rooms
+            <span class="guest-badge">Up to 2 guests</span>
+          </h3>
+          <p class="room-description">A smart choice for a short stay. Recently renovated rooms with clean design, simple comfort, and all essentials for rest and ease.</p>
+          <br>
           <div class="room-details">
             <span class="room-price">Price on request</span>
             <button class="room-btn">Booking Request</button>

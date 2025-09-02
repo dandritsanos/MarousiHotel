@@ -22,9 +22,9 @@ app.get('/', (req, res) => {
 });
 
 /* ------------------ Inline logo for email header ------------------ */
-const logoPath = path.join(publicDir, 'assets', 'images', 'LOGO3.png');
+const logoPath = path.join(publicDir, 'assets-marousi', 'logo.png');
 const inlineLogo = {
-  filename: 'LOGO3.png',
+  filename: 'logo.png',
   path: logoPath,
   cid: 'alfa-logo' // use <img src="cid:alfa-logo">
 };
@@ -161,11 +161,11 @@ app.post('/send', async (req, res) => {
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
         <tr>
           <td align="center" style="padding:16px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="container" style="max-width:680px;width:100%;background:#ffffff;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,0.07);overflow:hidden;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="container" style="max-width:680px;width:100%;background:#fff;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,0.07);overflow:hidden;">
 
               <!-- Header -->
               <tr>
-                <td style="background:#800020;color:#fff;padding:22px 24px;">
+                <td style="background:#673131;color:#000;padding:22px 24px;">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="vertical-align:middle;">
@@ -183,7 +183,7 @@ app.post('/send', async (req, res) => {
               <!-- Body -->
               <tr>
                 <td class="px-24" style="padding:28px 24px 8px;">
-                  <div style="font-family: Georgia, 'Times New Roman', serif; font-size:26px; color:#800020; font-weight:700; line-height:1.25; margin:0 0 10px;">
+                  <div style="font-family: Georgia, 'Times New Roman', serif; font-size:26px; color:#673131; font-weight:700; line-height:1.25; margin:0 0 10px;">
                     Booking Request
                   </div>
                   <div style="font-size:13px; color:#6b7280; letter-spacing:.4px; text-transform:uppercase; margin-bottom:16px;">
@@ -221,7 +221,7 @@ app.post('/send', async (req, res) => {
 
                   ${rowsHtml ? `
                     <div style="margin:22px 0 10px;">
-                      <div style="font-weight:700;margin:0 0 8px;color:#800020;">Rooms</div>
+                      <div style="font-weight:700;margin:0 0 8px;color:#673131;">Rooms</div>
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;">
                         <thead>
                           <tr style="background:#f3f5fb;">
@@ -263,14 +263,14 @@ app.post('/send', async (req, res) => {
                     <tr>
                       <td align="left" style="padding:0;">
                         <a href="mailto:${escapeHtml(process.env.EMAIL_TO || process.env.EMAIL_USER || '')}"
-                          style="display:inline-block;background:#800020;color:#fff;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
+                          style="display:inline-block;background:#673131;color:#000;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
                           Reply with changes
                         </a>
                       </td>
                       <td style="width:10px;">&nbsp;</td>
                       <td align="left" style="padding:0;">
                         <a href="tel:+302106198338"
-                          style="display:inline-block;background:#eef2ff;color:#800020;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
+                          style="display:inline-block;background:#eef2ff;color:#673131;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
                           Call reception
                         </a>
                       </td>
@@ -381,11 +381,11 @@ app.post('/contact', async (req, res) => {
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
         <tr>
           <td align="center" style="padding:16px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="container" style="max-width:680px;width:100%;background:#ffffff;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,0.07);overflow:hidden;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="container" style="max-width:680px;width:100%;background:#fff;border-radius:16px;box-shadow:0 10px 28px rgba(0,0,0,0.07);overflow:hidden;">
 
               <!-- Header -->
               <tr>
-                <td style="background:#800020;color:#fff;padding:22px 24px;">
+                <td style="background:#673131;color:#000;padding:22px 24px;">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="vertical-align:middle;">
@@ -403,7 +403,7 @@ app.post('/contact', async (req, res) => {
               <!-- Body -->
               <tr>
                 <td style="padding:28px 24px 18px;font-family: Georgia, 'Times New Roman', serif;">
-                  <div style="font-size:26px;color:#800020;font-weight:700;margin:0 0 12px;">We received your message</div>
+                  <div style="font-size:26px;color:#673131;font-weight:700;margin:0 0 12px;">We received your message</div>
                   <div style="font-size:13px;color:#6b7280;letter-spacing:.4px;text-transform:uppercase;margin-bottom:16px;">
                     Reference: ${requestId}
                   </div>
