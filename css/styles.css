@@ -56,7 +56,7 @@
 
 /* Brand Name */
 .brand-name {
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1.6rem;
   font-weight: 600;
   color: white;
@@ -158,7 +158,7 @@
 .hero-filter {
   position: absolute;
   inset: 0;
-  background-color: #673131;
+  background-color: #dd8787;
   z-index: 1;
 }
 /* Fade animation */
@@ -188,7 +188,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #673131;
+  background-color: #dd8787;
   z-index: 0;
 }
 
@@ -268,14 +268,14 @@
 
 .feature-icon {
   font-size: 2.5rem;
-  color: #673131;;
+  color: #dd8787;;
   margin-bottom: 1rem;
 }
 
 .feature-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
-  color: #673131;;
+  color: #dd8787;;
 }
 
 .feature-card p {
@@ -306,7 +306,7 @@
 }
 
 .room-content h3 {
-  color: #673131;;
+  color: #dd8787;;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -331,7 +331,7 @@
 
 /* Footer */
 .footer {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   padding: 0.6rem 0;
   text-align: center;
@@ -350,10 +350,10 @@
   align-items: center;
 }
 .classic-footer {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   padding: 2rem 1rem 1rem;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
 }
 
 .footer-container {
@@ -404,7 +404,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #673131;;
+  background-color: #dd8787;;
   z-index: 99;
 }
 
@@ -439,7 +439,7 @@
 .contact-wrapper {
   padding: 5rem 1.5rem;
   background-color: #eee8de;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
 }
 
 
@@ -464,7 +464,7 @@
 
 
 .contact-form button {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   font-weight: 600;
   padding: 0.9rem;
@@ -508,10 +508,10 @@
   /* Section Title */
   .section-title {
     text-align: center;
-    font-family: 'Playfair Display', serif;
+    font-family:  'Playfair Display', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #673131;;
+    color: #dd8787;;
     letter-spacing: 1.5px;
     margin-bottom: 1.7rem;
     position: relative;
@@ -522,7 +522,7 @@
     margin: 0.4rem auto 0;
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #673131 0%, #673131 100%);
+    background: linear-gradient(90deg, #dd8787 0%, #dd8787 100%);
     border-radius: 3px;
   }
   
@@ -583,7 +583,7 @@
   align-items: center;
   color: #0f2e59;
   font-size: 1.2rem;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   margin-bottom: 0.5rem;
 }
 
@@ -707,7 +707,7 @@
 .modal-info h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #673131;
+  color: #dd8787;
 }
 
 .modal-info p {
@@ -720,7 +720,7 @@
 .book-btn {
   display: inline-block;
   padding: 0.6rem 1.5rem;
-  background-color: #673131;
+  background-color: #dd8787;
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -808,7 +808,7 @@
 
 .modal-details h2 {
   font-size: 1.6rem;
-  color: #673131;;
+  color: #dd8787;;
   margin-bottom: 1rem;
 }
 
@@ -830,7 +830,7 @@
 }
 
 .modal-details a.room-btn {
-  background: #673131;;
+  background: #dd8787;;
   color: white;
   padding: 0.7rem 1.4rem;
   border-radius: 6px;
@@ -935,7 +935,7 @@
 }
 
 .booking-form form {
-  font-family: 'Inter', sans-serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1rem;
   color: #222;
   background: #fff;
@@ -976,7 +976,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #673131;;
+  border-color: #dd8787;;
   box-shadow: 0 0 0 2px #b7935f22;
 }
 
@@ -1009,12 +1009,12 @@ label[for="policy"] {
 .submit-btn {
   color: #fff;
   align-self: center;
-  background-color: #673131;;
+  background-color: #dd8787;;
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family: 'Playfair Display', serif; ✅ match input font */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:  'Playfair Display', serif; ✅ match input font */
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -1038,7 +1038,7 @@ label[for="policy"] {
 
 .date-cols input[type="date"] {
   height: 44px;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -1074,7 +1074,7 @@ label[for="policy"] {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   resize: vertical;
   min-height: 120px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1091,12 +1091,12 @@ label[for="policy"] {
 .order-summary.hotel-elegant {
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 8px 32px #673131;
+  box-shadow: 0 8px 32px #dd8787;
   padding: 2.7rem 2.2rem 2.1rem 2.2rem;
   max-width: 600px;
   margin: 2.2rem auto 0 auto;
   border: 1.2px solid #f1f2f4;
-  font-family: 'Playfair Display', serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Cinzel", serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: box-shadow 0.2s;
   position: relative;
   animation: fadeInSummary 1s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
@@ -1109,14 +1109,14 @@ label[for="policy"] {
 
 /* --- Main title --- */
 .order-summary.hotel-elegant h2 {
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1.65rem;
   letter-spacing: 0.06em;
   font-weight: 800;
   text-align: center;
   margin-top: 0;
   margin-bottom: 2rem;
-  color: #673131;
+  color: #dd8787;
   text-transform: uppercase;
 }
 
@@ -1439,7 +1439,7 @@ span.flatpickr-weekday {
 .guest-btn {
   width: 26px;
   height: 26px;
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   border: none;
   border-radius: 50%;
@@ -1589,7 +1589,7 @@ span.flatpickr-weekday {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: linear-gradient(120deg, #673131 70%, #e4ecfa 100%);
+  background: linear-gradient(120deg, #dd8787 70%, #e4ecfa 100%);
   box-shadow: 0 1.5px 7px rgba(183, 147, 95, 0.13);
   display: inline-block;
   opacity: 0;
@@ -2143,7 +2143,7 @@ label[for="policy"]{
 
 /* ---------- NAV: fonts & base ---------- */
 .nav-links a, .menu-toggle {
-  font-family:'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 /* ---------- Toggle button (hidden on desktop) ---------- */
@@ -2325,7 +2325,7 @@ img, video { max-width: 100%; height: auto; }
   position: sticky;
   top: 0;
   width: 100%;
-  background: #673131; /* Deep dark blue */
+  background: #dd8787; /* Deep dark blue */
   backdrop-filter: blur(8px);
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
   z-index: 1000;
@@ -2366,7 +2366,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Brand Name */
 .brand-name {
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1.6rem;
   font-weight: 600;
   color: white;
@@ -2443,7 +2443,7 @@ img, video { max-width: 100%; height: auto; }
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #673131;
+  background-color: #dd8787;
   z-index: 0;
 }
 
@@ -2465,7 +2465,7 @@ img, video { max-width: 100%; height: auto; }
 .cta-button {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* if deleted serrif*/
   background-color: #ffffff;
-  color: #673131;;
+  color: #dd8787;;
   font-weight: 600;
   font-size: large;
   padding: 0.8rem 1.5rem;
@@ -2475,7 +2475,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .cta-button:hover {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: #fff;
 }
 
@@ -2519,7 +2519,7 @@ img, video { max-width: 100%; height: auto; }
   .features h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #673131;;
+    color: #dd8787;;
   }
   
 
@@ -2547,14 +2547,14 @@ img, video { max-width: 100%; height: auto; }
 
 .feature-icon {
   font-size: 2.5rem;
-  color: #673131;;
+  color: #dd8787;;
   margin-bottom: 1rem;
 }
 
 .feature-card h3 {
   font-size: 1.2rem;
   margin-bottom: 0.75rem;
-  color: #673131;;
+  color: #dd8787;;
 }
 
 .feature-card p {
@@ -2585,7 +2585,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .room-content h3 {
-  color: #673131;;
+  color: #dd8787;;
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -2609,12 +2609,12 @@ img, video { max-width: 100%; height: auto; }
 
 .room-price {
   font-weight: 600;
-  color: #673131;
+  color: #dd8787;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;;
 }
 
 .room-btn {
-  background-color: #673131;;
+  background-color: #dd8787;;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500; /* or 700 for bold */
   color: white;
@@ -2633,7 +2633,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Footer */
 .footer {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   padding: 0.6rem 0;
   text-align: center;
@@ -2652,10 +2652,10 @@ img, video { max-width: 100%; height: auto; }
   align-items: center;
 }
 .classic-footer {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   padding: 2rem 1rem 1rem;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
 }
 
 .footer-container {
@@ -2706,7 +2706,7 @@ img, video { max-width: 100%; height: auto; }
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #673131;;
+  background-color: #dd8787;;
   z-index: 99;
 }
 
@@ -2741,7 +2741,7 @@ img, video { max-width: 100%; height: auto; }
 .contact-wrapper {
   padding: 5rem 1.5rem;
   background-color: #eee8de;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
 }
 
 
@@ -2768,13 +2768,13 @@ img, video { max-width: 100%; height: auto; }
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   font-size: 1rem;
-  color: #673131;
+  color: #dd8787;
 }
 
 
 
 .contact-form button {
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   font-weight: 600;
   padding: 0.9rem;
@@ -2804,10 +2804,10 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .contact-details h2 {
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #673131;;
+  color: #dd8787;;
 }
 
 .contact-details ul {
@@ -2823,16 +2823,16 @@ img, video { max-width: 100%; height: auto; }
   font-size: 0.95rem;
   margin-bottom: 0.5rem; /* spacing between items */
   list-style: none;
-  color: #673131;;
+  color: #dd8787;;
 }
 
 .details-text {
-  color: #673131;
+  color: #dd8787;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
                Helvetica, Arial, sans-serif;
 }
 .contact-details a {
-  color: #673131;;
+  color: #dd8787;;
   text-decoration: none;
 }
 
@@ -2876,7 +2876,7 @@ img, video { max-width: 100%; height: auto; }
   background: #eee8de;
   color: #2c2c2c;
   padding-block: clamp(48px, 6vw, 96px);
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
 }
 
 /* Title */
@@ -2990,10 +2990,10 @@ img, video { max-width: 100%; height: auto; }
   /* Section Title */
   .section-title {
     text-align: center;
-    font-family: 'Playfair Display', serif;
+    font-family:  'Playfair Display', serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #673131;
+    color: #dd8787;
     letter-spacing: 1.5px;
     margin-bottom: 1.7rem;
     position: relative;
@@ -3004,7 +3004,7 @@ img, video { max-width: 100%; height: auto; }
     margin: 0.4rem auto 0;
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, #673131 0%, #673131 100%);
+    background: linear-gradient(90deg, #dd8787 0%, #dd8787 100%);
     border-radius: 3px;
   }
   
@@ -3063,7 +3063,7 @@ img, video { max-width: 100%; height: auto; }
   display: inline-block;
   font-size: 0.875rem;              /* slightly larger for clarity */
   font-weight: 600;                 /* elegant weight */
-  color: #673131;                   /* rich navy blue */
+  color: #dd8787;                   /* rich navy blue */
   background-color: #f8f9fb;        /* elegant light gray */
   padding: 0.35rem 0.9rem;
   border-radius: 1.5rem;
@@ -3083,7 +3083,7 @@ img, video { max-width: 100%; height: auto; }
   align-items: center;
   color: #0f2e59;
   font-size: 1.2rem;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   margin-bottom: 0.5rem;
 }
 
@@ -3209,7 +3209,7 @@ img, video { max-width: 100%; height: auto; }
 .modal-info h3 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
-  color: #673131;
+  color: #dd8787;
 }
 
 .modal-info p {
@@ -3222,7 +3222,7 @@ img, video { max-width: 100%; height: auto; }
 #modalPrice {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  color: #673131;
+  color: #dd8787;
   font-size: 1.1rem;
   display: block;
   margin-bottom: 1.5rem;
@@ -3231,7 +3231,7 @@ img, video { max-width: 100%; height: auto; }
 .book-btn {
   display: inline-block;
   padding: 0.6rem 1.5rem;
-  background-color: #673131;
+  background-color: #dd8787;
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -3319,7 +3319,7 @@ img, video { max-width: 100%; height: auto; }
 
 .modal-details h2 {
   font-size: 1.6rem;
-  color: #673131;;
+  color: #dd8787;;
   margin-bottom: 1rem;
 }
 
@@ -3341,7 +3341,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .modal-details a.room-btn {
-  background: #673131;;
+  background: #dd8787;;
   color: white;
   padding: 0.7rem 1.4rem;
   border-radius: 6px;
@@ -3447,7 +3447,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .booking-form form {
-  font-family: 'Inter', sans-serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1rem;
   color: #222;
   background: #fff;
@@ -3488,7 +3488,7 @@ img, video { max-width: 100%; height: auto; }
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #673131;;
+  border-color: #dd8787;;
   box-shadow: 0 0 0 2px #b7935f22;
 }
 
@@ -3517,12 +3517,12 @@ input[type="checkbox"] {
 .submit-btn {
   color: #fff;
   align-self: center;
-  background-color: #673131;;
+  background-color: #dd8787;;
   border: none;
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family: 'Playfair Display', serif; ✅ match input font */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:  'Playfair Display', serif; ✅ match input font */
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -3547,7 +3547,7 @@ input[type="checkbox"] {
 
 .date-cols input[type="date"] {
   height: 44px;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -3581,7 +3581,7 @@ input[type="checkbox"] {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   resize: vertical;
   min-height: 120px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -3598,12 +3598,12 @@ input[type="checkbox"] {
 .order-summary.hotel-elegant {
   background: #fff;
   border-radius: 24px;
-  box-shadow: 0 8px 32px #673131;
+  box-shadow: 0 8px 32px #dd8787;
   padding: 2.7rem 2.2rem 2.1rem 2.2rem;
   max-width: 600px;
   margin: 2.2rem auto 0 auto;
   border: 1.2px solid #f1f2f4;
-  font-family: 'Playfair Display', serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Cinzel", serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: box-shadow 0.2s;
   position: relative;
   animation: fadeInSummary 1s cubic-bezier(0.39, 0.58, 0.57, 1) forwards;
@@ -3616,14 +3616,14 @@ input[type="checkbox"] {
 
 /* --- Main title --- */
 .order-summary.hotel-elegant h2 {
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1.65rem;
   letter-spacing: 0.06em;
   font-weight: 800;
   text-align: center;
   margin-top: 0;
   margin-bottom: 2rem;
-  color: #673131;
+  color: #dd8787;
   text-transform: uppercase;
 }
 
@@ -3657,9 +3657,9 @@ input[type="checkbox"] {
   align-items: center;
   min-width: 146px;
   font-weight: 700;
-  color: #673131;
+  color: #dd8787;
   gap: 0.2em;
-  font-family: 'Playfair Display', serif;
+  font-family:  'Playfair Display', serif;
   font-size: 1.05em;
 }
 
@@ -3686,7 +3686,7 @@ input[type="checkbox"] {
   margin-top: 1.5rem;
   margin-bottom: 1.1rem;
   padding: 1.09rem 1.2rem 1.09rem 3.3rem;
-  color: #673131;
+  color: #dd8787;
 }
 
 .summary-details > div.total .icon {
@@ -3707,7 +3707,7 @@ input[type="checkbox"] {
   background: #f4f7fb;
   border-radius: 7px;
   display: flex;
-  border-left: 4px solid #673131;
+  border-left: 4px solid #dd8787;
   box-shadow: 0 1px 7px rgba(40,60,120,0.03);
 }
 .summary-note span {
@@ -3723,7 +3723,7 @@ input[type="checkbox"] {
 }
 
 .summary-note strong {
-  color: #673131;
+  color: #dd8787;
   font-weight: 700;
 }
 
@@ -3745,7 +3745,7 @@ input[type="checkbox"] {
 /* ---- Normalize and blue the icons ---- */
 .order-summary.hotel-elegant .icon,
 .order-summary.hotel-elegant i.fa-solid {
-  color: #673131 !important;
+  color: #dd8787 !important;
   font-size: 1.18em !important;
   width: 1.35em;
   height: 1.35em;
@@ -3936,7 +3936,7 @@ span.flatpickr-weekday {
   }
 
   .otp-heading {
-    font-family: 'Playfair Display', serif;
+    font-family:  'Playfair Display', serif;
     font-size: 1.75rem;
     font-weight: 700;
     color: #6B2E2E;
@@ -4128,7 +4128,7 @@ span.flatpickr-weekday {
 .guest-btn {
   width: 26px;
   height: 26px;
-  background-color: #673131;;
+  background-color: #dd8787;;
   color: white;
   border: none;
   border-radius: 50%;
@@ -4322,7 +4322,7 @@ span.flatpickr-weekday {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: linear-gradient(120deg, #673131 70%, #e4ecfa 100%);
+  background: linear-gradient(120deg, #dd8787 70%, #e4ecfa 100%);
   box-shadow: 0 1.5px 7px rgba(183, 147, 95, 0.13);
   display: inline-block;
   opacity: 0;
@@ -4881,7 +4881,7 @@ label[for="policy"] .field-msg{
 #progressSubtitle { margin: 0; color: #555; }
 
 .progress-actions { margin-top: 16px; display: flex; gap: 10px; justify-content: center; }
-.room-btn.secondary { background: transparent; color: #673131; border: none }
+.room-btn.secondary { background: transparent; color: #dd8787; border: none }
 .room-btn.secondary:hover { background: #ca3030; }
 
 /* Optional: hide the normal close "×" while busy */
@@ -4890,7 +4890,7 @@ label[for="policy"] .field-msg{
 
 /* ---------- NAV: fonts & base ---------- */
 .nav-links a, .menu-toggle {
-  font-family:'Playfair Display', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 /* ---------- Toggle button (hidden on desktop) ---------- */
@@ -4980,7 +4980,7 @@ label[for="policy"] .field-msg{
     width: min(320px, 86vw);
     height: 100vh;
     padding: 88px 24px 24px;      /* leaves room for the drawer header */
-    background: #673131;
+    background: #dd8787;
     backdrop-filter: blur(6px);
     box-shadow: -10px 0 28px rgba(0,0,0,.22);
     z-index: 1100;
@@ -6198,7 +6198,7 @@ body,
     padding: 0 !important;
     background:
       radial-gradient(60% 120% at 50% -20%, rgba(255,255,255,.06), transparent 60%),
-      linear-gradient(180deg, #673131 0%, #673131 100%) !important;
+      linear-gradient(180deg, #dd8787 0%, #dd8787 100%) !important;
     border-top: 1px solid rgba(255,255,255,.14);
     box-shadow: 0 -10px 28px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
     backdrop-filter: saturate(140%) blur(6px);
@@ -6227,7 +6227,7 @@ body,
     gap: 10px;
     height: clamp(48px, 12vw, 56px);
     padding: 0 12px;
-    font-family: 'Playfair Display', serif;
+    font-family:  'Playfair Display', serif;
     font-size: 0.7rem;
     letter-spacing: .2px;
     text-decoration: none !important;
@@ -6369,7 +6369,7 @@ body,
   justify-content: center;
   height: auto !important;                 /* kill fixed 560px */
   max-height: calc(100vh - 200px);         /* fit viewport; leave room for text */
-  background: #673131;;                         /* nice letterbox for tall/wide pics */
+  background: #dd8787;;                         /* nice letterbox for tall/wide pics */
   overflow: hidden;
 }
 
@@ -6389,7 +6389,7 @@ body,
 .room-modal .modal-next{
   top: 50%;
   transform: translateY(-50%);
-  color: #673131;;
+  color: #dd8787;;
 }
 /* a touch more room on tiny phones */
 @media (max-width: 480px){
@@ -6547,7 +6547,7 @@ input[type="checkbox"] {
   margin-top: .15rem;
   margin-bottom: .9rem;
   font-weight: 600;
-  color: #673131;
+  color: #dd8787;
   font-size: 1rem;                /* sits between h3 and body text */
 }
 
@@ -6575,7 +6575,7 @@ input[type="checkbox"] {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #673131;           /* small warm dot */
+  background: #dd8787;           /* small warm dot */
   box-shadow: 0 0 0 2px #f5f8ff; /* blends with card bg */
 }
 
@@ -6590,7 +6590,7 @@ input[type="checkbox"] {
   margin-top: 1.75rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-  color:#673131;
+  color:#dd8787;
   font-weight:600;
   letter-spacing:.2px;
 }
@@ -6605,7 +6605,7 @@ input[type="checkbox"] {
   border:1px solid rgba(103,49,49,.28);
   border-radius:999px;
   background: linear-gradient(180deg,#fff, #f7f3ee);
-  color:#673131;
+  color:#dd8787;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-weight:600;
   text-decoration:none;
@@ -6618,7 +6618,7 @@ input[type="checkbox"] {
 .brand-badge:hover{
   transform: translateY(-1px);
   box-shadow: 0 6px 18px rgba(103,49,49,.16);
-  border-color:#673131;
+  border-color:#dd8787;
   background:#fff;
 }
 .brand-badge:hover .arrow{ transform: translate(2px,-2px); opacity:1; }
