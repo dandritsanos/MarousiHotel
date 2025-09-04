@@ -56,12 +56,13 @@
 
 /* Brand Name */
 .brand-name {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1.6rem;
   font-weight: 600;
   color: white;
   letter-spacing: 0.5px;
 }
+
 
 
 /* Navigation Links */
@@ -353,7 +354,7 @@
   background-color: #c47676;;
   color: white;
   padding: 2rem 1rem 1rem;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
 }
 
 .footer-container {
@@ -439,7 +440,7 @@
 .contact-wrapper {
   padding: 5rem 1.5rem;
   background-color: #eee8de;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
 }
 
 
@@ -508,7 +509,7 @@
   /* Section Title */
   .section-title {
     text-align: center;
-    font-family:  'Playfair Display', serif;
+    font-family:    "The Seasons", "Times New Roman", serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #c47676;;
@@ -583,7 +584,7 @@
   align-items: center;
   color: #0f2e59;
   font-size: 1.2rem;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   margin-bottom: 0.5rem;
 }
 
@@ -935,7 +936,7 @@
 }
 
 .booking-form form {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1rem;
   color: #222;
   background: #fff;
@@ -1014,7 +1015,7 @@ label[for="policy"] {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:  'Playfair Display', serif; ✅ match input font */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:    "The Seasons", "Times New Roman", serif; ✅ match input font */
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -1038,7 +1039,7 @@ label[for="policy"] {
 
 .date-cols input[type="date"] {
   height: 44px;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -1074,7 +1075,7 @@ label[for="policy"] {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   resize: vertical;
   min-height: 120px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1109,7 +1110,7 @@ label[for="policy"] {
 
 /* --- Main title --- */
 .order-summary.hotel-elegant h2 {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1.65rem;
   letter-spacing: 0.06em;
   font-weight: 800;
@@ -2143,7 +2144,7 @@ label[for="policy"]{
 
 /* ---------- NAV: fonts & base ---------- */
 .nav-links a, .menu-toggle {
-  font-family: 'Playfair Display', serif;
+  font-family:   "The Seasons", "Times New Roman", serif;
 }
 
 /* ---------- Toggle button (hidden on desktop) ---------- */
@@ -2366,7 +2367,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Brand Name */
 .brand-name {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1.6rem;
   font-weight: 600;
   color: white;
@@ -2395,7 +2396,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .hero-slide.slide1 {
-  background-image: url('../assets-marousi/hm1.jpg');
+  background-image: url('../assets-marousi/carousel1.jpg');
   animation-delay: 0s;
 }
 
@@ -2655,7 +2656,7 @@ img, video { max-width: 100%; height: auto; }
   background-color: #c47676;;
   color: white;
   padding: 2rem 1rem 1rem;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
 }
 
 .footer-container {
@@ -2741,7 +2742,7 @@ img, video { max-width: 100%; height: auto; }
 .contact-wrapper {
   padding: 5rem 1.5rem;
   background-color: #eee8de;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
 }
 
 
@@ -2804,7 +2805,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .contact-details h2 {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: #c47676;;
@@ -2876,7 +2877,7 @@ img, video { max-width: 100%; height: auto; }
   background: #eee8de;
   color: #2c2c2c;
   padding-block: clamp(48px, 6vw, 96px);
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
 }
 
 /* Title */
@@ -2990,7 +2991,7 @@ img, video { max-width: 100%; height: auto; }
   /* Section Title */
   .section-title {
     text-align: center;
-    font-family:  'Playfair Display', serif;
+    font-family:    "The Seasons", "Times New Roman", serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #c47676;
@@ -3083,7 +3084,7 @@ img, video { max-width: 100%; height: auto; }
   align-items: center;
   color: #0f2e59;
   font-size: 1.2rem;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   margin-bottom: 0.5rem;
 }
 
@@ -3447,7 +3448,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .booking-form form {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1rem;
   color: #222;
   background: #fff;
@@ -3522,7 +3523,7 @@ input[type="checkbox"] {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:  'Playfair Display', serif; ✅ match input font */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:    "The Seasons", "Times New Roman", serif; ✅ match input font */
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -3547,7 +3548,7 @@ input[type="checkbox"] {
 
 .date-cols input[type="date"] {
   height: 44px;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -3581,7 +3582,7 @@ input[type="checkbox"] {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   resize: vertical;
   min-height: 120px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -3616,7 +3617,7 @@ input[type="checkbox"] {
 
 /* --- Main title --- */
 .order-summary.hotel-elegant h2 {
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1.65rem;
   letter-spacing: 0.06em;
   font-weight: 800;
@@ -3659,7 +3660,7 @@ input[type="checkbox"] {
   font-weight: 700;
   color: #c47676;
   gap: 0.2em;
-  font-family:  'Playfair Display', serif;
+  font-family:    "The Seasons", "Times New Roman", serif;
   font-size: 1.05em;
 }
 
@@ -3936,7 +3937,7 @@ span.flatpickr-weekday {
   }
 
   .otp-heading {
-    font-family:  'Playfair Display', serif;
+    font-family:    "The Seasons", "Times New Roman", serif;
     font-size: 1.75rem;
     font-weight: 700;
     color: #6B2E2E;
@@ -4890,7 +4891,7 @@ label[for="policy"] .field-msg{
 
 /* ---------- NAV: fonts & base ---------- */
 .nav-links a, .menu-toggle {
-  font-family: 'Playfair Display', serif;
+  font-family:   "The Seasons", "Times New Roman", serif;
 }
 
 /* ---------- Toggle button (hidden on desktop) ---------- */
@@ -6227,7 +6228,7 @@ body,
     gap: 10px;
     height: clamp(48px, 12vw, 56px);
     padding: 0 12px;
-    font-family:  'Playfair Display', serif;
+    font-family:    "The Seasons", "Times New Roman", serif;
     font-size: 0.7rem;
     letter-spacing: .2px;
     text-decoration: none !important;
@@ -6496,11 +6497,11 @@ input[type="checkbox"] {
   }
 
   .hero-overlay p, .hero-overlay h1{
-    color: #FDFBD4;
+    color: #EEE8DE;
   }
 
   .cta-button{
-    background-color: #FDFBD4;
+    background-color: #EEE8DE;
   }
 
   .footer-container p, .footer-container a{
@@ -6657,7 +6658,109 @@ input[type="checkbox"] {
 }
 
 
+/* Intro blurb styling */
+.intro-blurb {
+  margin: 2.5rem auto 0;          /* a little space below the hero */
+  max-width: 950px;
+  padding: 1rem 1.25rem;
+}
 
+.intro-text {
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  line-height: 1.7;
+  text-align: center;
+  color: #442e2e;                 
+}
+
+
+/* Contact > Location card */
+.location-card {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  padding: 1.25rem 1.25rem 1rem;
+  margin-top: 1rem;
+}
+
+.location-card p {
+  line-height: 1.7;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  margin: 0 0 .75rem;
+  color: #3c2f2f;
+}
+
+.location-points {
+  list-style: none;
+  padding: 0;
+  margin: .25rem 0 1rem;
+  display: grid;
+  gap: .5rem .75rem;
+}
+
+.location-points li {
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: .5rem;
+}
+
+.location-points i {
+  font-size: 1rem;
+  line-height: 1.4;
+  opacity: .9;
+}
+
+.location-note {
+  font-style: italic;
+  color: #5a4747;
+}
+
+/* Keep long paragraphs from stretching edge-to-edge */
+.location-card,
+.location-intro,
+.contact-lead {
+  max-width: 1150px;        /* pick 800–1000px to taste */
+  margin: 0 auto 1.25rem;  /* centers the block */
+  padding: 0 1rem;         /* side padding for small screens */
+}
+
+
+/* Desktop/laptop: center and shrink width */
+@media (min-width:900px){
+  .hero-carousel{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* one variable controls both paddings/gaps */
+:root {
+  --nav-space: clamp(8px, 3vw, 26px);
+}
+
+/* container padding uses the variable */
+.navbar .container {
+  padding-inline: var(--nav-space);
+}
+
+/* make the logo + brand sit in a row and use the SAME value as a gap */
 .logo-wrapper {
-  margin-right: 15%;
+  display: flex;
+  align-items: center;
+  column-gap: var(--nav-space);   /* equals left container padding */
+  text-decoration: none;
+}
+
+/* clean up any stray margins */
+.logo-img { display: block; width: 70px; height: auto; }
+.brand-name { margin: 0; }
+
+
+@media (min-width:800px){
+   .footer-left p,
+  .footer-right p {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
 }
