@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+:root { font-family: "Lora", serif; }
+
 /* Global Reset & Base Styles */
 * {
     margin: 0;
@@ -56,7 +60,7 @@
 
 /* Brand Name */
 .brand-name {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1.6rem;
   font-weight: 600;
   color: white;
@@ -354,7 +358,7 @@
   background-color: #c47676;;
   color: white;
   padding: 2rem 1rem 1rem;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 .footer-container {
@@ -440,7 +444,7 @@
 .contact-wrapper {
   padding: 5rem 1.5rem;
   background-color: #eee8de;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 
@@ -509,7 +513,7 @@
   /* Section Title */
   .section-title {
     text-align: center;
-    font-family:    "The Seasons", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #c47676;;
@@ -584,7 +588,7 @@
   align-items: center;
   color: #0f2e59;
   font-size: 1.2rem;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   margin-bottom: 0.5rem;
 }
 
@@ -936,7 +940,7 @@
 }
 
 .booking-form form {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1rem;
   color: #222;
   background: #fff;
@@ -1015,7 +1019,7 @@ label[for="policy"] {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:    "The Seasons", "Times New Roman", serif; ✅ match input font */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family: "Lora", serif; ✅ match input font */
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -1039,7 +1043,7 @@ label[for="policy"] {
 
 .date-cols input[type="date"] {
   height: 44px;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -1075,7 +1079,7 @@ label[for="policy"] {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   resize: vertical;
   min-height: 120px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1110,7 +1114,7 @@ label[for="policy"] {
 
 /* --- Main title --- */
 .order-summary.hotel-elegant h2 {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1.65rem;
   letter-spacing: 0.06em;
   font-weight: 800;
@@ -2144,7 +2148,7 @@ label[for="policy"]{
 
 /* ---------- NAV: fonts & base ---------- */
 .nav-links a, .menu-toggle {
-  font-family:   "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 /* ---------- Toggle button (hidden on desktop) ---------- */
@@ -2367,7 +2371,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Brand Name */
 .brand-name {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1.6rem;
   font-weight: 600;
   color: white;
@@ -2656,7 +2660,7 @@ img, video { max-width: 100%; height: auto; }
   background-color: #c47676;;
   color: white;
   padding: 2rem 1rem 1rem;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 .footer-container {
@@ -2742,7 +2746,7 @@ img, video { max-width: 100%; height: auto; }
 .contact-wrapper {
   padding: 5rem 1.5rem;
   background-color: #eee8de;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 
@@ -2805,7 +2809,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .contact-details h2 {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: #c47676;;
@@ -2822,7 +2826,7 @@ img, video { max-width: 100%; height: auto; }
   align-items: center;
   gap: 0.4rem;
   font-size: 0.95rem;
-  margin-bottom: 0.5rem; /* spacing between items */
+  margin-bottom: 0.5rem; 
   list-style: none;
   color: #c47676;;
 }
@@ -2877,7 +2881,7 @@ img, video { max-width: 100%; height: auto; }
   background: #eee8de;
   color: #2c2c2c;
   padding-block: clamp(48px, 6vw, 96px);
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 /* Title */
@@ -2991,7 +2995,7 @@ img, video { max-width: 100%; height: auto; }
   /* Section Title */
   .section-title {
     text-align: center;
-    font-family:    "The Seasons", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 2.5rem;
     font-weight: 700;
     color: #c47676;
@@ -3084,7 +3088,7 @@ img, video { max-width: 100%; height: auto; }
   align-items: center;
   color: #0f2e59;
   font-size: 1.2rem;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   margin-bottom: 0.5rem;
 }
 
@@ -3448,7 +3452,7 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .booking-form form {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1rem;
   color: #222;
   background: #fff;
@@ -3523,7 +3527,7 @@ input[type="checkbox"] {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 500;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family:    "The Seasons", "Times New Roman", serif; ✅ match input font */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; /* font-family: 'Poppins', sans-serif; *//* font-family: "Lora", serif; ✅ match input font */
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -3548,7 +3552,7 @@ input[type="checkbox"] {
 
 .date-cols input[type="date"] {
   height: 44px;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   padding: 0.6rem 0.75rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -3582,7 +3586,7 @@ input[type="checkbox"] {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   resize: vertical;
   min-height: 120px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -3617,7 +3621,7 @@ input[type="checkbox"] {
 
 /* --- Main title --- */
 .order-summary.hotel-elegant h2 {
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1.65rem;
   letter-spacing: 0.06em;
   font-weight: 800;
@@ -3660,7 +3664,7 @@ input[type="checkbox"] {
   font-weight: 700;
   color: #c47676;
   gap: 0.2em;
-  font-family:    "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
   font-size: 1.05em;
 }
 
@@ -3937,7 +3941,7 @@ span.flatpickr-weekday {
   }
 
   .otp-heading {
-    font-family:    "The Seasons", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 1.75rem;
     font-weight: 700;
     color: #6B2E2E;
@@ -4168,8 +4172,9 @@ span.flatpickr-weekday {
 
 .form-floating label {
   position: absolute;
-  top: 1rem;
+  top: 0.8rem;
   left: 0.75rem;
+  font-weight: 500;
   color: #A9A9A9;
   background: #f9fafd;
   padding: 0 0.25rem;
@@ -4405,7 +4410,7 @@ span.flatpickr-weekday {
   appearance: auto;              /* keep native checkbox look */
   -webkit-appearance: checkbox;  /* Safari */
   vertical-align: middle;
-  accent-color: #6B2E2E;         /* your dark blue tick */
+  accent-color: #6B2E2E;       
 }
 
 
@@ -4891,7 +4896,7 @@ label[for="policy"] .field-msg{
 
 /* ---------- NAV: fonts & base ---------- */
 .nav-links a, .menu-toggle {
-  font-family:   "The Seasons", "Times New Roman", serif;
+  font-family: "Lora", serif;
 }
 
 /* ---------- Toggle button (hidden on desktop) ---------- */
@@ -6228,7 +6233,7 @@ body,
     gap: 10px;
     height: clamp(48px, 12vw, 56px);
     padding: 0 12px;
-    font-family:    "The Seasons", "Times New Roman", serif;
+    font-family: "Lora", serif;
     font-size: 0.7rem;
     letter-spacing: .2px;
     text-decoration: none !important;
@@ -6246,7 +6251,6 @@ body,
     gap: 10px;
     height: clamp(48px, 12vw, 56px);
     padding: 0 12px;
-    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 0.7rem;
     letter-spacing: .2px;
     text-decoration: none !important;
@@ -6383,7 +6387,7 @@ body,
   max-height: 100%;
   border-radius: 12px;
 }
-.room-modal .modal-slides img.active{ display:block; }
+.room-modal .modal-slides img.active{ display:block; object-fit: contain;}
 
 /* keep arrows centered over the flexible height */
 .room-modal .modal-prev,
@@ -6449,7 +6453,7 @@ input[name="dates"].flatpickr-input:not(:placeholder-shown) {
 /* Hide placeholder when typing or when field is focused */
 .form-floating input:focus::placeholder,
 .form-floating input:not(:placeholder-shown)::placeholder {
-  opacity: 0;                 /* or: color: transparent; */
+  opacity: 0;                
 }
 
 /* Cross-browser (optional) */
@@ -6566,6 +6570,7 @@ input[type="checkbox"] {
 /* subtle custom bullet */
 .feature-list li{
   position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding-left: 1.05rem;
 }
 .feature-list li::before{
@@ -6633,30 +6638,24 @@ input[type="checkbox"] {
 
 /* Tagline above about copy — matches site palette & typography */
 .about-text .about-tagline{
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  font-size: clamp(11px, 1.05vw, 13px);
-  color: rgba(107, 46, 46, .78);           /* site burgundy (#6B2E2E) with a soft alpha */
-  margin: -4px 0 1.25rem;                  /* nudge closer to the heading */
-  display: flex;
-  align-items: center;
-  gap: .8rem;
-}
-
-.about-text .about-tagline::before{
-  content: "";
-  width: 3rem;
-  height: 1px;
-  background: rgba(107, 46, 46, .38);      /* thin hairline like your title underline */
-  border-radius: 1px;
-}
-
-@media (max-width: 560px){
-  .about-text .about-tagline{ margin-bottom: .9rem; }
-}
-
+    text-align: center;
+    font-family: "Lora", serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c47676;;
+    letter-spacing: 1px;
+    margin-bottom: 1.7rem;
+    position: relative;
+  }
+  .about-text .about-tagline:after {
+    content: "";
+    display: block;
+    margin: 0.1rem auto 0;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, #c47676 0%, #c47676 100%);
+    border-radius: 3px;
+  }
 
 /* Intro blurb styling */
 .intro-blurb {
@@ -6666,7 +6665,7 @@ input[type="checkbox"] {
 }
 
 .intro-text {
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: italic;
   font-size: clamp(1rem, 2.2vw, 1.15rem);
   line-height: 1.7;
   text-align: center;
@@ -6698,7 +6697,7 @@ input[type="checkbox"] {
 }
 
 .location-points li {
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   display: grid;
   grid-template-columns: 20px 1fr;
   align-items: start;
@@ -6712,7 +6711,7 @@ input[type="checkbox"] {
 }
 
 .location-note {
-  font-style: italic;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   color: #5a4747;
 }
 
@@ -6763,4 +6762,46 @@ input[type="checkbox"] {
     font-size: 1.1rem;
     font-weight: 600;
   }
+}
+
+
+@media (max-width:400px){
+  .location-card{
+    font-size: 0.8rem
+  }
+  .contact-details {
+    padding: 1rem 1.5rem;
+  }
+  .contact-details li{
+    gap: 0.2rem;    
+  }
+  .contact-details li img{
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@media (max-width:370px){
+  .contact-details li{
+    font-size: 0.5rem;
+    gap: 0.1rem;    
+  }
+  .contact-details li img{
+    height: 12px;
+    width: 12px;
+  }
+}
+
+
+#bookingForm .form-floating > label {
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+form#bookingFormHTML label.policy { 
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+form#bookingFormHTML label[for="firstName"],
+form#bookingFormHTML label[for="lastName"],
+form#bookingFormHTML label[for="email"] {
+
 }

@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport"
-      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>Rooms | Hotel Maroussi</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/codestyle.css" />
@@ -60,11 +58,12 @@
   
     <div class="room-grid">
 
-            <!-- Room 1 -->
+      <!-- Single Room -->
       <div class="room-card" data-aos="fade-up" data-aos-delay="200"
            data-title="Single Room" data-roomtypes='["Single Room","Double Room","Economy Room","Deluxe Room"]'
            data-description="Ideal for solo travelers. A private, quiet space with all essentials for work or relaxation."
            data-images='["assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2285.jpg", "assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2289.jpg"]'
+           data-price="Price on request"
            data-prices='{"1":62,"2":67}'>
         <img src="assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2285.jpg" alt="Single Room" loading="lazy" />
         <div class="room-content">
@@ -81,11 +80,11 @@
         </div>
       </div>
 
-            <!-- Room 2 -->
+      <!-- Double Room -->
       <div class="room-card" data-aos="fade-up" data-aos-delay="200"
            data-title="Double Room" data-roomtypes='["Double Room","Single Room","Economy Room","Deluxe Room"]'
            data-description="Bright and inviting, designed for couples or two guests seeking comfort and calm. All rooms feature a private balcony, some spacious with front views, others quieter at the back."
-            data-images='["assets-marousi/st1.jpg", "assets-marousi/st2.jpg", "assets-marousi/st3.jpg", "assets-marousi/st4.png", "assets-marousi/st5.jpg"]'
+            data-images='["assets-marousi/st1.jpg", "assets-marousi/st2.jpg", "assets-marousi/st3.jpg", "assets-marousi/st5.jpg"]'
            data-price="Price on request"
            data-prices='{"1":62,"2":67}'>
         <img src="assets-marousi/st1.jpg" alt="Double Room" loading="lazy" />
@@ -279,11 +278,11 @@
                         </div>
                       </div>
 
-                      <button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; color: #e8003a; font-weight: bold;">+ Add Another Room</button>
+                      <button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; color: #c56868; font-weight: bold;">+ Add Another Room</button>
                       
                       <div class="guest-summary" style="display:flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
                         <span id="summaryText">Room 1 | 1 Adult, 0 Children</span>
-                        <button type="button" id="updateGuests" style="background: #673131; color: white; padding: 6px 12px; border-radius: 6px; border: none;">Update</button>
+                        <button type="button" id="updateGuests" style="background: #c47676; color: white; padding: 6px 12px; border-radius: 6px; border: none;">Update</button>
                       </div>
 
                       <input type="hidden" id="guestsText" name="guestsText">

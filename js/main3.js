@@ -243,7 +243,7 @@ function resetRoomSelectionToDefault() {
     </div>
   `;
   if (!document.getElementById('addRoom')) {
-    const addRoomHTML = `<button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; font-weight: bold;">+ Add Another Room</button>`;
+    const addRoomHTML = `<button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; font-weight: bold; color: #c47676;">+ Add Another Room</button>`;
     roomsContainer.insertAdjacentHTML('afterend', addRoomHTML);
     document.getElementById('addRoom').addEventListener('click', addRoomHandler);
   }
@@ -577,7 +577,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (rooms.length < 2 && !document.getElementById('addRoom')) {
           const roomLimitMsg = document.getElementById('roomLimitMsg');
           if (roomLimitMsg) roomLimitMsg.remove();
-          const addRoomHTML = `<button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; font-weight: bold;">+ Add Another Room</button>`;
+          const addRoomHTML = `<button id="addRoom" type="button" style="margin-top: 10px; background: none; border: none; font-weight: bold; color: #c47676">+ Add Another Room</button>`;
           roomsContainer.insertAdjacentHTML('afterend', addRoomHTML);
           document.getElementById('addRoom').addEventListener('click', addRoomHandler);
         }
