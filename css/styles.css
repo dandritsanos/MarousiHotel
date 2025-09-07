@@ -6799,9 +6799,3 @@ input[type="checkbox"] {
 form#bookingFormHTML label.policy { 
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-
-form#bookingFormHTML label[for="firstName"],
-form#bookingFormHTML label[for="lastName"],
-form#bookingFormHTML label[for="email"] {
-
-}
