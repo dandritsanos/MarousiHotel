@@ -65,6 +65,8 @@ async function verifyTurnstile(token, req) {
   return { ok: !!resp.success, resp };
 }
 
+const LORA_IMPORT = "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');";
+const TITLE_FONT = "'Lora', Georgia, 'Times New Roman', serif";
 
 /* --------------------------- Utilities ---------------------------- */
 const escapeHtml = (s = '') =>
@@ -142,21 +144,27 @@ app.post('/send', async (req, res) => {
       </div>
 
       <style>
+        /* webfont (Apple Mail/iOS support; Gmail will fall back) */
+        ${LORA_IMPORT}
+
+        /* headings that should use Lora */
+        .brand, .title, .section-title {
+          font-family: ${TITLE_FONT} !important;
+        }
+
         @media only screen and (max-width: 480px) {
           .container { width:100% !important; border-radius:0 !important; }
           .px-24 { padding-left:16px !important; padding-right:16px !important; }
           .grid { display:block !important; }
           .value { text-align:left !important; display:block !important; padding-top:4px !important; }
-
-          /* Keep buttons INLINE on phones too (no stacking / full width) */
           .actions { white-space:nowrap !important; }
           .actions td { white-space:nowrap !important; }
           .actions a { display:inline-block !important; width:auto !important; font-size:14px !important; padding:10px 14px !important; }
         }
 
-        /* Small desktop refinement for rounded corners if client strips inline radius */
         .btn { border-radius:10px; }
       </style>
+
 
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
         <tr>
@@ -165,14 +173,14 @@ app.post('/send', async (req, res) => {
 
               <!-- Header -->
               <tr>
-                <td style="background:#673131;color:#000;padding:22px 24px;">
+                <td style="background:#c47676;color:#000;padding:22px 24px;">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="vertical-align:middle;">
                         <img src="cid:alfa-logo" alt="Hotel Maroussi" width="36" height="36" style="display:block;border-radius:4px;">
                       </td>
                       <td style="vertical-align:middle;padding-left:10px;">
-                        <div style="font-size:18px;font-weight:700;letter-spacing:.3px;font-family: Georgia, 'Times New Roman', serif;">Hotel Maroussi</div>
+                        <div  class="brand" style="font-family:'Lora', Georgia, 'Times New Roman', serif; font-size:18px;font-weight:700;letter-spacing:.3px;">Hotel Maroussi</div>
                         <div style="opacity:.9;font-size:12px;">${HOTEL_ADDR}</div>
                       </td>
                     </tr>
@@ -183,7 +191,7 @@ app.post('/send', async (req, res) => {
               <!-- Body -->
               <tr>
                 <td class="px-24" style="padding:28px 24px 8px;">
-                  <div style="font-family: Georgia, 'Times New Roman', serif; font-size:26px; color:#673131; font-weight:700; line-height:1.25; margin:0 0 10px;">
+                  <div class="title" style="font-family:'Lora', Georgia, 'Times New Roman', serif;font-size:26px; color:#c47676; font-weight:700; line-height:1.25; margin:0 0 10px;">
                     Booking Request
                   </div>
                   <div style="font-size:13px; color:#6b7280; letter-spacing:.4px; text-transform:uppercase; margin-bottom:16px;">
@@ -221,7 +229,7 @@ app.post('/send', async (req, res) => {
 
                   ${rowsHtml ? `
                     <div style="margin:22px 0 10px;">
-                      <div style="font-weight:700;margin:0 0 8px;color:#673131;">Rooms</div>
+                      <div style="font-weight:700;margin:0 0 8px;color:#c47676;">Rooms</div>
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;">
                         <thead>
                           <tr style="background:#f3f5fb;">
@@ -263,14 +271,14 @@ app.post('/send', async (req, res) => {
                     <tr>
                       <td align="left" style="padding:0;">
                         <a href="mailto:${escapeHtml(process.env.EMAIL_TO || process.env.EMAIL_USER || '')}"
-                          style="display:inline-block;background:#673131;color:#000;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
+                          style="display:inline-block;background:#c47676;color:#000;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
                           Reply with changes
                         </a>
                       </td>
                       <td style="width:10px;">&nbsp;</td>
                       <td align="left" style="padding:0;">
                         <a href="tel:+302106198338"
-                          style="display:inline-block;background:#eef2ff;color:#673131;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
+                          style="display:inline-block;background:#eef2ff;color:#c47676;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
                           Call reception
                         </a>
                       </td>
@@ -385,14 +393,14 @@ app.post('/contact', async (req, res) => {
 
               <!-- Header -->
               <tr>
-                <td style="background:#673131;color:#000;padding:22px 24px;">
+                <td style="background:#c47676;color:#000;padding:22px 24px;">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="vertical-align:middle;">
                         <img src="cid:alfa-logo" alt="Hotel Maroussi" width="36" height="36" style="display:block;border-radius:4px;">
                       </td>
                       <td style="vertical-align:middle;padding-left:10px;">
-                        <div style="font-size:18px;font-weight:700;letter-spacing:.3px;font-family: Georgia, 'Times New Roman', serif;">Hotel Maroussi</div>
+                        <div style="font-family:'Lora', Georgia, 'Times New Roman', serif;font-size:18px;font-weight:700;letter-spacing:.3px;">Hotel Maroussi</div>
                         <div style="opacity:.9;font-size:12px;">${HOTEL_ADDR}</div>
                       </td>
                     </tr>
@@ -402,8 +410,8 @@ app.post('/contact', async (req, res) => {
 
               <!-- Body -->
               <tr>
-                <td style="padding:28px 24px 18px;font-family: Georgia, 'Times New Roman', serif;">
-                  <div style="font-size:26px;color:#673131;font-weight:700;margin:0 0 12px;">We received your message</div>
+                <td style="padding:28px 24px 18px;">
+                  <div style="font-family:'Lora', Georgia, 'Times New Roman', serif;font-size:26px;color:#c47676;font-weight:700;margin:0 0 12px;">We received your message</div>
                   <div style="font-size:13px;color:#6b7280;letter-spacing:.4px;text-transform:uppercase;margin-bottom:16px;">
                     Reference: ${requestId}
                   </div>

@@ -848,75 +848,6 @@
   background: #ca3030;
 }
 
-
-#scroll-widget {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: white;
-  color: #111;
-  padding: 20px 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  border: 1px solid #eee;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateY(20px);
-  z-index: 1000;
-  max-width: 280px;
-  font-size: 15px;
-}
-
-#scroll-widget.visible {
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-#scroll-widget .contact-line {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-#scroll-widget .contact-line svg {
-  margin-right: 8px;
-  flex-shrink: 0;
-}
-
-#scroll-widget a {
-  color: #007BFF;
-  text-decoration: none;
-}
-
-#scroll-widget a:hover {
-  text-decoration: underline;
-}
-
-
-.modal-slider {
-  position: relative;
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  overflow: hidden;
-  background: #000; /* optional: makes colors pop */
-}
-
-.modal-slides img {
-  display: none;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* ensures image fills container */
-  aspect-ratio: 3 / 2;
-}
-
-.modal-slides img.active {
-  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.15); /* soft vignetting */
-}
-
-
 .modal-prev, .modal-next {
   background: rgba(255,255,255,0.8);
   color: #222;
@@ -2744,7 +2675,7 @@ img, video { max-width: 100%; height: auto; }
 
 /* Contact Page */
 .contact-wrapper {
-  padding: 5rem 1.5rem;
+  padding: 0.5rem 0.5rem;
   background-color: #eee8de;
   font-family: "Lora", serif;
 }
@@ -6799,3 +6730,5 @@ input[type="checkbox"] {
 form#bookingFormHTML label.policy { 
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
+
+html { -webkit-text-size-adjust: 100%; }     

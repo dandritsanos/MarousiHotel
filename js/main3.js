@@ -777,7 +777,7 @@ function addRoomHandler() {
     }, 10);
     roomsContainer.insertAdjacentHTML('afterend', `
       <div id="roomLimitMsg" style="margin-top: 10px; font-weight: 500;">
-        To add more than 2 rooms, please call <a href="tel:+302104949930" style="color:#673131;">+30 210 494 9930</a> or <a href="contact.html" style="color:#673131;">contact us</a>.
+        To add more than 2 rooms, please call <a href="tel:+302104949930" style="color:#c47676;">+30 210 494 9930</a> or <a href="contact.html" style="color:#c47676;">contact us</a>.
       </div>`);
     return;
   }
