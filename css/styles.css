@@ -2331,17 +2331,17 @@ img, video { max-width: 100%; height: auto; }
 }
 
 .hero-slide.slide1 {
-  background-image: url('../assets-marousi/carousel1.jpg');
+  background-image: url('../assets-marousi/PHOTOS MAROUSI/KOIXOXRHSTOI/carousel1.jpg');
   animation-delay: 0s;
 }
 
 .hero-slide.slide2 {
-  background-image: url('../assets-marousi/hm2.jpg');
+  background-image: url('../assets-marousi/PHOTOS MAROUSI/KOIXOXRHSTOI/hm2.jpg');
   animation-delay: 5s;
 }
 
 .hero-slide.slide3 {
-  background-image: url('../assets-marousi/hm3.jpg');
+  background-image: url('../assets-marousi/PHOTOS MAROUSI/KOIXOXRHSTOI/hm3.jpg');
   animation-delay: 10s;
 }
 
@@ -6732,3 +6732,24 @@ form#bookingFormHTML label.policy {
 }
 
 html { -webkit-text-size-adjust: 100%; }     
+
+.room-card{display:flex!important;flex-direction:column!important}
+.room-card .room-content{display:flex!important;flex-direction:column!important;flex:1!important}
+.room-card .room-details{margin-top:auto!important}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1; 
+}
+
+.footer-center {
+  flex: 2; 
+  text-align: center;
+}
+

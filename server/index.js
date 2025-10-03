@@ -3,7 +3,10 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const nodemailer = require('nodemailer');
+// --- Graph mail helper (Microsoft Graph, app permissions) ---
+const qs = require('querystring');
+const fs = require('fs');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -30,17 +33,80 @@ const inlineLogo = {
 };
 
 /* -------------------------- Mail transport ------------------------ */
-const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 465,
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-  // Dev-only: avoid local self-signed cert errors. Remove in production.
-  tls: { rejectUnauthorized: false }
+const {
+  TENANT_ID, CLIENT_ID, CLIENT_SECRET, SENDER_UPN, EMAIL_TO, EMAIL_USER
+} = process.env;
+
+["TENANT_ID","CLIENT_ID","CLIENT_SECRET","SENDER_UPN","EMAIL_TO"].forEach(k=>{
+  if(!process.env[k]) console.error(`[env] Missing ${k}`);
 });
+
+async function getGraphToken() {
+  const url = `https://login.microsoftonline.com/${TENANT_ID}/oauth2/v2.0/token`;
+  const body = qs.stringify({
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    scope: "https://graph.microsoft.com/.default",
+    grant_type: "client_credentials"
+  });
+  const r = await fetch(url, {
+    method: "POST",
+    headers: {"Content-Type":"application/x-www-form-urlencoded"},
+    body
+  });
+  const j = await r.json();
+  if (!j.access_token) throw new Error("Graph token error: " + JSON.stringify(j));
+  return j.access_token;
+}
+
+function fileToBase64(path) {
+  const buf = fs.readFileSync(path);
+  return buf.toString('base64');
+}
+
+/**
+ * Send mail via Microsoft Graph.
+ * Supports HTML or text and inline attachments via cid (contentId).
+ *   sendViaGraph({ to, subject, html, text, attachments: [{ filename, path, cid }] })
+ */
+async function sendViaGraph({ to, subject, html, text, attachments = [] }) {
+  const token = await getGraphToken();
+
+  const graphAttachments = attachments.map(att => ({
+    "@odata.type": "#microsoft.graph.fileAttachment",
+    name: att.filename,
+    contentBytes: fileToBase64(att.path),
+    isInline: !!att.cid,
+    contentId: att.cid || undefined
+  }));
+
+  const payload = {
+    message: {
+      subject,
+      body: { contentType: html ? "HTML" : "Text", content: html || text || "" },
+      toRecipients: [{ emailAddress: { address: to } }],
+      // The actual sender will be SENDER_UPN. Ensure that mailbox exists and is allowed.
+      from: { emailAddress: { address: SENDER_UPN } },
+      attachments: graphAttachments
+    },
+    saveToSentItems: true
+  };
+
+  const url = `https://graph.microsoft.com/v1.0/users/${encodeURIComponent(SENDER_UPN)}/sendMail`;
+  const resp = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!resp.ok) {
+    const t = await resp.text();
+    throw new Error(`Graph send failed ${resp.status}: ${t}`);
+  }
+}
 
 
 app.set('trust proxy', true); // get real client IP behind a proxy/CDN
@@ -65,8 +131,7 @@ async function verifyTurnstile(token, req) {
   return { ok: !!resp.success, resp };
 }
 
-const LORA_IMPORT = "@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');";
-const TITLE_FONT = "'Lora', Georgia, 'Times New Roman', serif";
+const TITLE_FONT = "Georgia, 'Times New Roman', Times, 'DejaVu Serif', 'Noto Serif', serif";
 
 /* --------------------------- Utilities ---------------------------- */
 const escapeHtml = (s = '') =>
@@ -128,7 +193,7 @@ app.post('/send', async (req, res) => {
   }).join('');
 
   // Email template (formal, icon-free)
-  const HOTEL_NAME = 'Hotel maroussi';
+  const HOTEL_NAME = 'Hotel Maroussi';
   const HOTEL_ADDR = 'Olympias 10, Maroussi, Athens, 15124, Greece';
   const guestLine = guestsText || guests || '-';
   const fmt = (n) => Number.isFinite(n) ? `€${Number(n).toFixed(2)}` : '-';
@@ -144,12 +209,9 @@ app.post('/send', async (req, res) => {
       </div>
 
       <style>
-        /* webfont (Apple Mail/iOS support; Gmail will fall back) */
-        ${LORA_IMPORT}
 
-        /* headings that should use Lora */
         .brand, .title, .section-title {
-          font-family: ${TITLE_FONT} !important;
+          font-family: ${TITLE_FONT}!important;
         }
 
         @media only screen and (max-width: 480px) {
@@ -177,11 +239,10 @@ app.post('/send', async (req, res) => {
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="vertical-align:middle;">
-                        <img src="cid:alfa-logo" alt="Hotel Maroussi" width="36" height="36" style="display:block;border-radius:4px;">
+                        <img src="cid:alfa-logo" alt="Hotel Maroussi" width="45" height="45" style="display:block;border-radius:4px;">
                       </td>
                       <td style="vertical-align:middle;padding-left:10px;">
-                        <div  class="brand" style="font-family:'Lora', Georgia, 'Times New Roman', serif; font-size:18px;font-weight:700;letter-spacing:.3px;">Hotel Maroussi</div>
-                        <div style="opacity:.9;font-size:12px;">${HOTEL_ADDR}</div>
+                        <div  class="brand" style="font-family: Georgia, 'Times New Roman', Times, 'DejaVu Serif', 'Noto Serif', serif; font-size:18px;font-weight:400;letter-spacing:.3px;">Hotel Maroussi</div>
                       </td>
                     </tr>
                   </table>
@@ -191,7 +252,7 @@ app.post('/send', async (req, res) => {
               <!-- Body -->
               <tr>
                 <td class="px-24" style="padding:28px 24px 8px;">
-                  <div class="title" style="font-family:'Lora', Georgia, 'Times New Roman', serif;font-size:26px; color:#c47676; font-weight:700; line-height:1.25; margin:0 0 10px;">
+                  <div class="title" style="font-family: Georgia, 'Times New Roman', Times, 'DejaVu Serif', 'Noto Serif', serif; font-size:26px; color:#c47676; font-weight:400; line-height:1.25; margin:0 0 10px;">
                     Booking Request
                   </div>
                   <div style="font-size:13px; color:#6b7280; letter-spacing:.4px; text-transform:uppercase; margin-bottom:16px;">
@@ -229,7 +290,7 @@ app.post('/send', async (req, res) => {
 
                   ${rowsHtml ? `
                     <div style="margin:22px 0 10px;">
-                      <div style="font-weight:700;margin:0 0 8px;color:#c47676;">Rooms</div>
+                      <div style="font-family: Georgia, 'Times New Roman', Times, 'DejaVu Serif', 'Noto Serif', serif;font-weight:400;margin:0 0 8px;color:#c47676;">Rooms</div>
                       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;">
                         <thead>
                           <tr style="background:#f3f5fb;">
@@ -270,9 +331,9 @@ app.post('/send', async (req, res) => {
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="actions" style="margin:18px 0 8px;">
                     <tr>
                       <td align="left" style="padding:0;">
-                        <a href="mailto:${escapeHtml(process.env.EMAIL_TO || process.env.EMAIL_USER || '')}"
+                        <a href="https://maps.app.goo.gl/qbPpfM9KXKvKtNpm8"
                           style="display:inline-block;background:#c47676;color:#000;text-decoration:none;padding:10px 16px;border-radius:8px;font-weight:600;white-space:nowrap;">
-                          Reply with changes
+                          Directions
                         </a>
                       </td>
                       <td style="width:10px;">&nbsp;</td>
@@ -324,10 +385,10 @@ ${message ? `Message:\n${message}\n\n` : ''}This is a confirmation that we recei
 
   // Admin
   const adminMail = {
-    from: `"${HOTEL_NAME} Website" <${process.env.EMAIL_USER}>`,
+    from: `"${HOTEL_NAME} Website" <${EMAIL_USER}>`,
     replyTo: (name && email) ? `"${name}" <${email}>` : undefined,
-    to: process.env.EMAIL_TO,
-    subject: `Booking request ${requestId} — ${HOTEL_NAME}`,
+    to: EMAIL_TO,
+    subject: `Booking request ${requestId} - ${HOTEL_NAME}`,
     text: textSummary,
     html: renderHTML({
       heading: 'New booking request received',
@@ -339,21 +400,37 @@ ${message ? `Message:\n${message}\n\n` : ''}This is a confirmation that we recei
 
   // Guest
   const guestMail = {
-    from: `"${HOTEL_NAME} Reservations" <${process.env.EMAIL_USER}>`,
+    from: `"${HOTEL_NAME} Reservations" <${EMAIL_USER}>`,
     to: email,
-    subject: `Your booking request — ${HOTEL_NAME} (Ref ${requestId})`,
+    subject: `Your booking request - ${HOTEL_NAME} (Ref ${requestId})`,
     text: textSummary,
     html: renderHTML({
       heading: 'Your booking request is being processed',
-      intro: `Hello ${name || 'there'}, thanks for choosing ${HOTEL_NAME}! We’ve received your request and our team will get back to you shortly to confirm availability and complete your reservation.`,
+      intro: `Hello ${name || 'there'}, thanks for choosing ${HOTEL_NAME}. We have received your request and our team will be in touch shortly to confirm availability and finalise your reservation.`,
       footer: 'Note: This is a confirmation of receipt, not a final booking. You can reply to this email for any changes or questions.'
     }),
     attachments: [inlineLogo] // logo only (no ICS)
   };
 
   try {
-    await transporter.sendMail(adminMail);
-    if (email) await transporter.sendMail(guestMail);
+    await sendViaGraph({
+      to: EMAIL_TO,
+      subject: adminMail.subject,
+      text: adminMail.text,
+      html: adminMail.html,
+      attachments: adminMail.attachments // [{ filename, path, cid }]
+    });
+
+    if (email) {
+      await sendViaGraph({
+        to: email,
+        subject: guestMail.subject,
+        text: guestMail.text,
+        html: guestMail.html,
+        attachments: guestMail.attachments
+      });
+    }
+
     return res.status(200).json({ message: 'Thank you! Your booking request has been submitted.' });
   } catch (err) {
     console.error('Mailer error:', err);
@@ -365,7 +442,7 @@ ${message ? `Message:\n${message}\n\n` : ''}This is a confirmation that we recei
 app.get('/health', (_, res) => res.send('OK'));
 
 /* ------------------------------ Start ----------------------------- */
-app.listen("3000", "0.0.0.0", () => console.log("Server has started on port " + process.env.PORT))
+app.listen(PORT, "0.0.0.0", () => console.log("Server has started on port " + PORT))
 
 
 
@@ -397,11 +474,10 @@ app.post('/contact', async (req, res) => {
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                     <tr>
                       <td style="vertical-align:middle;">
-                        <img src="cid:alfa-logo" alt="Hotel Maroussi" width="36" height="36" style="display:block;border-radius:4px;">
+                        <img src="cid:alfa-logo" alt="Hotel Maroussi" width="45" height="45" style="display:block;border-radius:4px;">
                       </td>
                       <td style="vertical-align:middle;padding-left:10px;">
-                        <div style="font-family:'Lora', Georgia, 'Times New Roman', serif;font-size:18px;font-weight:700;letter-spacing:.3px;">Hotel Maroussi</div>
-                        <div style="opacity:.9;font-size:12px;">${HOTEL_ADDR}</div>
+                        <div style="font-family: Georgia, 'Times New Roman', Times, 'DejaVu Serif', 'Noto Serif', serif; font-size:18px;font-weight:400;letter-spacing:.3px;">Hotel Maroussi</div>
                       </td>
                     </tr>
                   </table>
@@ -411,13 +487,13 @@ app.post('/contact', async (req, res) => {
               <!-- Body -->
               <tr>
                 <td style="padding:28px 24px 18px;">
-                  <div style="font-family:'Lora', Georgia, 'Times New Roman', serif;font-size:26px;color:#c47676;font-weight:700;margin:0 0 12px;">We received your message</div>
+                  <div style="font-family: Georgia, 'Times New Roman', Times, 'DejaVu Serif', 'Noto Serif', serif; font-size:26px;color:#c47676;font-weight:700;margin:0 0 12px;">We received your message</div>
                   <div style="font-size:13px;color:#6b7280;letter-spacing:.4px;text-transform:uppercase;margin-bottom:16px;">
                     Reference: ${requestId}
                   </div>
                   <p style="margin:0 0 18px;color:#2b2f36;line-height:1.65;">
-                    Hello ${escapeHtml(name || 'there')}, thank you for contacting ${HOTEL_NAME}.<br><br>
-                    We have received your message and our team will get back to you as soon as possible.
+                    Hello ${escapeHtml(name || 'there')}, thank you for choosing ${HOTEL_NAME}.<br><br>
+                    We have received your request and our team will be in touch shortly to confirm availability and finalise your reservation.
                   </p>
 
                   ${message ? `
@@ -462,9 +538,9 @@ Ref: ${requestId}
 
   // Admin notification
   const adminMail = {
-    from: `"${HOTEL_NAME} Website" <${process.env.EMAIL_USER}>`,
+    from: `"${HOTEL_NAME} Website" <${EMAIL_USER}>`,
     replyTo: email ? `"${name}" <${email}>` : undefined,
-    to: process.env.EMAIL_TO,
+    to: EMAIL_TO,
     subject: `New contact form message — ${HOTEL_NAME}`,
     text: textMessage,
     html: renderHTML({
@@ -477,21 +553,39 @@ Ref: ${requestId}
 
   // Guest confirmation
   const guestMail = {
-    from: `"${HOTEL_NAME} Team" <${process.env.EMAIL_USER}>`,
+    from: `"${HOTEL_NAME} Team" <${EMAIL_USER}>`,
     to: email,
     subject: `We received your message — ${HOTEL_NAME}`,
     text: textMessage,
     html: renderHTML({
       heading: 'We received your message',
-      intro: `Hello ${name || 'there'}, thank you for contacting ${HOTEL_NAME}.<br><br>We have received your message and our team will get back to you as soon as possible.`,
+      intro: `Hello ${name || 'there'}, thank you for choosing ${HOTEL_NAME}.<br><br>We have received your request and our team will be in touch shortly to confirm availability and finalise your reservation.`,
       footer: 'This is an automated confirmation that your message was received. Our team will contact you shortly.'
     }),
     attachments: [inlineLogo]
   };
 
+  
+
   try {
-    await transporter.sendMail(adminMail);
-    if (email) await transporter.sendMail(guestMail);
+    await sendViaGraph({
+      to: EMAIL_TO,
+      subject: adminMail.subject,
+      text: adminMail.text,
+      html: adminMail.html,
+      attachments: adminMail.attachments // [{ filename, path, cid }]
+    });
+
+    if (email) {
+      await sendViaGraph({
+        to: email,
+        subject: guestMail.subject,
+        text: guestMail.text,
+        html: guestMail.html,
+        attachments: guestMail.attachments
+      });
+    }
+
     return res.status(200).json({ message: 'Thank you! Your message has been received.' });
   } catch (err) {
     console.error('Mailer error (contact):', err);

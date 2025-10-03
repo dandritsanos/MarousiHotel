@@ -6,6 +6,17 @@
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 
   <title>Hotel Maroussi</title>
+  <meta name="description" content="Since 1998, Hotel Maroussi offers trusted hospitality in the northern suburbs of Athens. Near OAKA, metro, The Mall & Golden Hall. Bright rooms and 24/7 service." />
+  <link rel="canonical" href="https://www.hotelmaroussi.com/" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hotel Maroussi | Maroussi, Athens" />
+  <meta property="og:description" content="Comfort, style, and convenience near OAKA and major shopping. Explore our rooms and request a booking." />
+  <meta property="og:url" content="https://www.hotelmaroussi.com/" />
+  <meta property="og:image" content="https://www.hotelmaroussi.com/assets-marousi/PHOTOS MAROUSI/DOUBLE/st1.jpg" />
+  <meta property="og:site_name" content="Hotel Maroussi" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,44 +33,38 @@
 </head>
 <body>
   <header class="navbar">
-  <div class="container nav-content">
-    <a href="index.html" class="logo-wrapper">
-      <img src="assets-marousi/logo.png" alt="Maroussi Hotel Logo" class="logo-img" />
-      <span class="brand-name">Hotel Maroussi</span>
-    </a>
+    <div class="container nav-content">
+      <a href="index.html" class="logo-wrapper">
+        <img src="assets-marousi/logo.png" alt="Maroussi Hotel Logo" class="logo-img" />
+        <span class="brand-name">Hotel Maroussi</span>
+      </a>
 
-    <!-- Mobile/Tablet toggle -->
-    <button class="menu-toggle" aria-label="Open menu"
-            aria-controls="primaryNav" aria-expanded="false">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
+      <!-- Mobile/Tablet toggle -->
+      <button class="menu-toggle" aria-label="Open menu"
+              aria-controls="primaryNav" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
 
-    <!-- Primary nav -->
-    <nav id="primaryNav" class="nav-links" aria-hidden="true" role="dialog" aria-label="Main menu">
-  <!-- drawer header -->
-  <div class="drawer-header">
-    <a href="index.html" class="logo-wrapper">
-      <img src="assets-marousi/logo.png" alt="Hotel maroussi Logo" class="logo-img" />
-      <span class="brand-name">Hotel Maroussi</span>
-    </a>
-    <button class="drawer-close" aria-label="Close menu">×</button>
-  </div>
+      <!-- Primary nav -->
+      <nav id="primaryNav" class="nav-links" aria-hidden="true" role="dialog" aria-label="Main menu">
+        <!-- drawer header -->
+        <div class="drawer-header">
+          <a href="index.html" class="logo-wrapper">
+            <img src="assets-marousi/logo.png" alt="Hotel maroussi Logo" class="logo-img" />
+            <span class="brand-name">Hotel Maroussi</span>
+          </a>
+          <button class="drawer-close" aria-label="Close menu">×</button>
+        </div>
 
-  <!-- links -->
-  <a href="index.html" class="active">Home</a>
-  <a href="rooms.html">Rooms</a>
-  <a href="contact.html">Contact</a>
-  <a href="about.html">About</a>
-</nav>
-<div class="drawer-backdrop" id="navBackdrop" hidden></div>
-  </div>
-
-  
-  </header>
-  
-  
-  
-      
+        <!-- links -->
+        <a href="index.html" class="active">Home</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="drawer-backdrop" id="navBackdrop" hidden></div>
+    </div>
+  </header>     
 
   <section class="hero-carousel">
     <div class="hero-slide slide1"></div>
@@ -73,6 +78,7 @@
       <a href="rooms.html" class="cta-button">Explore Our Rooms</a>
     </div>
   </section>
+
   <section class="container intro-blurb" aria-label="Hotel Maroussi introduction">
     <p class="intro-text">
       Since 1998, Hotel Maroussi has been a legendary city hotel in the northern suburbs of Athens. 
@@ -82,55 +88,54 @@
   </section>
 
   <section class="features container">
-  <h2 class="section-title">Stay With Us</h2>
+    <h2 class="section-title">Stay With Us</h2>
+    <div class="feature-grid">
 
-  <div class="feature-grid">
-    <!-- Prime Location -->
-    <div class="feature-card" data-aos="fade-up">
-      <i class="fas fa-map-marker-alt feature-icon" aria-hidden="true"></i>
-      <h3>Prime Location</h3>
-      <p class="feature-subtitle">Steps from Metro, The Mall &amp; The Golden Hall</p>
-      <ul class="feature-list">
-        <li>In the heart of Maroussi’s business district and hospital hubs</li>
-        <li>25 minutes by train to Athens city center</li>
-        <li>Direct train to Athens International Airport in 25 minutes</li>
-      </ul>
+      <!-- Prime Location -->
+      <div class="feature-card" data-aos="fade-up">
+        <i class="fas fa-map-marker-alt feature-icon" aria-hidden="true"></i>
+        <h3>Prime Location</h3>
+        <p class="feature-subtitle">Steps from Metro, The Mall &amp; The Golden Hall</p>
+        <ul class="feature-list">
+          <li>In the heart of Maroussi’s business district and hospital hubs</li>
+          <li>25 minutes by train to Athens city center</li>
+          <li>Direct train to Athens International Airport in 25 minutes</li>
+        </ul>
+      </div>
+
+      <!-- Modern Comfort -->
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-bed feature-icon" aria-hidden="true"></i>
+        <h3>Modern Comfort</h3>
+        <p class="feature-subtitle">Thoughtful Rooms, 24/7 Service</p>
+        <ul class="feature-list">
+          <li>Bright, well-appointed rooms with modern essentials</li>
+          <li>Strong Wi-Fi for work or leisure</li>
+          <li>24-hour front desk and quiet surroundings for a restful stay</li>
+        </ul>
+      </div>
+
+      <!-- Trusted Hospitality -->
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-star feature-icon" aria-hidden="true"></i>
+        <h3>Trusted Hospitality</h3>
+        <p class="feature-subtitle">Service, Ease, and Guest Satisfaction</p>
+        <ul class="feature-list">
+          <li>Attentive staff offering discreet, warm hospitality</li>
+          <li>Easy, hassle-free street parking nearby</li>
+          <li>Consistently high guest ratings on Booking.com</li>
+        </ul>
+      </div>
     </div>
-
-    <!-- Modern Comfort -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-      <i class="fas fa-bed feature-icon" aria-hidden="true"></i>
-      <h3>Modern Comfort</h3>
-      <p class="feature-subtitle">Thoughtful Rooms, 24/7 Service</p>
-      <ul class="feature-list">
-        <li>Bright, well-appointed rooms with modern essentials</li>
-        <li>Strong Wi-Fi for work or leisure</li>
-        <li>24-hour front desk and quiet surroundings for a restful stay</li>
-      </ul>
-    </div>
-
-    <!-- Trusted Hospitality -->
-    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-      <i class="fas fa-star feature-icon" aria-hidden="true"></i>
-      <h3>Trusted Hospitality</h3>
-      <p class="feature-subtitle">Service, Ease, and Guest Satisfaction</p>
-      <ul class="feature-list">
-        <li>Attentive staff offering discreet, warm hospitality</li>
-        <li>Easy, hassle-free street parking nearby</li>
-        <li>Consistently high guest ratings on Booking.com</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-  
+  </section>
 
   <section class="room-preview container">
     <h2 class="section-title">Featured Rooms</h2>
     <div class="room-grid">
-      <!-- Room 1 -->
+
+      <!-- Single Room -->
       <a href="rooms.html" class="room-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2285.jpg" alt="Single Room" loading="lazy" />
+        <img src="assets-marousi/PHOTOS MAROUSI/SINGLE/DSC_2285.jpg" title="Single Room at Maroussi Hotel" alt="Single Room" loading="lazy"/>
         <div class="room-content">
           <h3>Single Room</h3>
           <p class="room-description">Ideal for solo travelers. A private, quiet space with all essentials for work or relaxation.</p>
@@ -142,9 +147,9 @@
         </div>
       </a>
 
-      <!-- Room 2 -->
+      <!-- Double Room -->
       <a href="rooms.html" class="room-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets-marousi/st1.jpg" alt="Double Room" loading="lazy" />
+        <img src="assets-marousi/PHOTOS MAROUSI/DOUBLE/st1.jpg" title="Double Room at Maroussi Hotel" alt="Double Room" loading="lazy" />
         <div class="room-content">
           <h3>Double Room</h3>
           <p class="room-description">Bright and inviting, designed for couples or two guests seeking comfort and calm. All rooms feature a private balcony, some spacious with front views, others quieter at the back.</p>
@@ -155,9 +160,9 @@
         </div>
       </a>
 
-      <!-- Room 3 -->
+      <!-- Deluxe Room -->
       <a href="rooms.html" class="room-card" data-aos="fade-up">
-        <img src="assets-marousi/deluxe.jpg" alt="Deluxe Room" loading="lazy" />
+        <img src="assets-marousi/PHOTOS MAROUSI/DELUXE/deluxe.jpg" title="Deluxe Room at Maroussi Hotel" alt="Deluxe Room" loading="lazy" />
         <div class="room-content">
           <h3>Deluxe Room</h3>
           <p class="room-description">Spacious rooms over 25 sqm with generous balconies. Refined design, extra comfort, and thoughtful details make it ideal for up to three guests.</p>
@@ -169,7 +174,7 @@
       </a>
 
       <a href="rooms.html" class="room-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="assets-marousi/economy2.jpg" alt="Economy Room" loading="lazy" />
+        <img src="assets-marousi/PHOTOS MAROUSI/ECONOMY/economy2.jpg" title="Economy Room at Maroussi Hotel" alt="Economy Room" loading="lazy" />
         <div class="room-content">
           <h3>Economy Room</h3>
           <p class="room-description">A smart choice for a short stay. Recently renovated rooms with clean design, simple comfort, and all essentials for rest and ease.</p>
@@ -190,7 +195,7 @@
     <div class="footer-left">
       <p>
         <i class="fas fa-envelope" style="margin-right: 5px; color: black;"></i>
-        <a href="mailto:info@lightskyhotels.gr">info@lightskyhotels.gr</a>
+        <a href="mailto:reception@hotelmaroussi.com">reception@hotelmaroussi.com</a>
       </p>
     </div>
     <div class="footer-center">
@@ -209,6 +214,7 @@
     </div>
   </div>
 </footer>
+
 <!-- AOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -217,11 +223,5 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="js/main3.js"></script>
-<script>
-</script>
-
-
-
-
 </body>
 </html>
