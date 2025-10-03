@@ -12,13 +12,17 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^2.2.0",
+    "compression": "^1.8.1",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "csurf": "^1.11.0",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
+    "express-rate-limit": "^6.11.2",
     "express-session": "^1.18.1",
     "googleapis": "^157.0.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
     "nodemailer": "^7.0.3",
     "twilio": "^5.8.0"
   }
